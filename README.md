@@ -1,1 +1,3 @@
-# wedding-app
+# Wedding app
+
+Get started.
