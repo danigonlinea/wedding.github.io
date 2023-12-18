@@ -1,7 +1,9 @@
 <template>
-  <div id="wrapper">
-    <button id="reset" @click="openEnvelope">Reset</button>
-
+  <div
+    v-if="!showWeddingInvitation"
+    class="wedding-envelope-container"
+    @click="openEnvelope"
+  >
     <div :class="openClass">
       <div class="flap front"></div>
       <div class="flap top"></div>
@@ -11,9 +13,12 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { debounce } from '../utils/helper.js'
+import { computed, ref, defineEmits } from 'vue'
 
 const isOpen = ref(false)
+
+const emit = defineEmits(['animation-envelope-done'])
 
 const openClass = computed(() => {
   return {
@@ -24,7 +29,13 @@ const openClass = computed(() => {
 
 const openEnvelope = () => {
   isOpen.value = !isOpen.value
+
+  onAnimationEnvelopeDone()
 }
+
+const onAnimationEnvelopeDone = debounce(function () {
+  emit('animation-envelope-done')
+}, 4000)
 </script>
 
 <style scoped>
@@ -32,15 +43,18 @@ const openEnvelope = () => {
   box-sizing: border-box;
 }
 
-#wrapper {
-  width: 400px;
-  margin: 0 auto;
+.wedding-envelope-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .envelope {
   width: 200px;
   height: 100px;
-  margin: 130px auto 0;
+
   background: #ddd;
   box-shadow:
     0 0 1px rgba(0, 0, 0, 0.5),
@@ -94,7 +108,7 @@ const openEnvelope = () => {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   -webkit-transform-origin-y: top;
-  transform-origin-y: top;
+
   perspective: 800;
   transform-style: preserve-3d;
 }
@@ -122,7 +136,7 @@ const openEnvelope = () => {
   left: 3px;
   border: 1px solid #ccc;
   z-index: 1;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
   transform-style: preserve-3d;
@@ -130,7 +144,7 @@ const openEnvelope = () => {
 .envelope.open .letter {
   animation-name: remove;
 }
-.envelope .letter:before,
+
 .envelope .letter:after {
   content: '';
   position: absolute;
@@ -143,26 +157,18 @@ const openEnvelope = () => {
   animation-delay: 4s;
   animation-fill-mode: forwards;
   -webkit-transform-origin-y: top;
-  transform-origin-y: top;
+
   transform-style: preserve-3d;
   transform: rotateX(10deg);
 }
-.envelope .letter:before {
-  z-index: 1;
-}
-.envelope.open .letter:before {
-  animation-name: fold-up;
-}
+
 .envelope .letter:after {
   animation-delay: 5s;
   animation-fill-mode: forwards;
   -webkit-transform-origin-y: bottom;
-  transform-origin-y: bottom;
+
   transform: rotateX(-5deg);
   bottom: 0;
-}
-.envelope.open .letter:after {
-  animation-name: fold-down;
 }
 
 @keyframes flip {
@@ -173,48 +179,26 @@ const openEnvelope = () => {
 }
 
 @keyframes remove {
-  50% {
-    top: -120px;
+  20% {
+    top: -220px;
+  }
+  30% {
+    top: -200px;
+  }
+  40% {
+    top: -210px;
+  }
+  60% {
+    top: -220px;
+  }
+  70% {
+    top: -205px;
+  }
+  90% {
+    top: -550px;
   }
   100% {
-    top: 8px;
-    z-index: 3;
+    display: none;
   }
-}
-
-@keyframes fold-up {
-  from {
-  }
-  to {
-    transform: rotateX(140deg);
-  }
-}
-
-@keyframes fold-down {
-  from {
-  }
-  to {
-    transform: rotateX(-140deg);
-  }
-}
-
-#reset {
-  background: #eee;
-  display: inline-block;
-  margin-top: -100px;
-  text-align: center;
-  padding: 10px 20px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  background: linear-gradient(#eee, #ccc);
-  color: #333;
-  text-shadow: 0 1px 0 #fff;
-  cursor: pointer;
-}
-#reset:hover {
-  opacity: 0.8;
-}
-#reset:active {
-  background: linear-gradient(#ccc, #eee);
 }
 </style>

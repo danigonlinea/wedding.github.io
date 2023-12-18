@@ -1,22 +1,21 @@
 <template>
-  <div class="layout">
+  <main id="main" class="layout">
     <transition name="fade" @before-enter="beforeEnter" @enter="enter">
       <div v-if="showWeddingInvitation" class="wedding-invitation">
         <h1>Wedding invitation</h1>
       </div>
     </transition>
 
-    <div v-if="!showWeddingInvitation">
-      <button @click="toggleBox">Show Wedding Invitation</button>
-      <EnvelopeApp></EnvelopeApp>
-    </div>
-  </div>
+    <EnvelopeApp
+      v-if="!showWeddingInvitation"
+      @animation-envelope-done="onAnimationEnvelopeDone"
+    ></EnvelopeApp>
+  </main>
 </template>
 <script setup>
 import { ref } from 'vue'
-import EnvelopeApp from './components/EnvelopeApp.vue'
-
 const showWeddingInvitation = ref(false)
+import EnvelopeApp from './components/EnvelopeApp.vue'
 
 const beforeEnter = (el) => {
   el.style.transform = 'translateY(-100%)'
@@ -31,22 +30,22 @@ const enter = (el, done) => {
   done()
 }
 
-const toggleBox = () => {
-  showWeddingInvitation.value = !showWeddingInvitation.value
+const onAnimationEnvelopeDone = () => {
+  showWeddingInvitation.value = true
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .layout {
-  width: 100%;
-  height: 100%;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100vw; /* 100% of the viewport width */
   box-sizing: border-box;
 
   .wedding-invitation {
-    background-color: rgb(141, 141, 141);
-    height: 100vh;
-    overflow: auto;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    background: green;
+    box-sizing: border-box;
   }
 }
 
