@@ -15,9 +15,9 @@
 <script setup>
 import { ref } from 'vue'
 // TODO change to false to see full sequence
-const showWeddingInvitation = ref(true)
+const showWeddingInvitation = ref(false)
 import EnvelopeApp from './components/envelope/EnvelopeMain.vue'
-import InvitationMain from './components/invitation/InvitationMain.vue'
+import InvitationMain from './components/invitation/weddingMain.vue'
 
 const beforeEnter = (el) => {
   el.style.transform = 'translateY(-100%)'
@@ -40,7 +40,6 @@ const onAnimationEnvelopeDone = () => {
 <style lang="scss" scoped>
 .layout {
   height: 100vh; /* 100% of the viewport height */
-  width: 100vw; /* 100% of the viewport width */
   box-sizing: border-box;
 
   .wedding-invitation {

@@ -20,16 +20,19 @@
     />
   </picture>
   <header>
-    <h1 class="header-name">Lidia &amp; Daniel</h1>
+    <h1 class="header-name">Daniel &amp; Lidia</h1>
     <div class="header-date">
-      <span>12 de Septiembre • Conil de la Frontera</span>
+      <span>12 de Octubre • Conil de la Frontera</span>
       <span>¡Quedan {{ daysLeftToWedding }} días!</span>
     </div>
   </header>
+
+  <WeddingSchedule></WeddingSchedule>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import WeddingSchedule from './weddingSchedule.vue'
 const daysLeftToWedding = ref(daysUntil('2024-10-12'))
 
 function daysUntil(targetDate) {
@@ -94,6 +97,12 @@ header {
   header {
     height: 400px;
     padding: 1em;
+
+    .header-date {
+      span {
+        text-align: center;
+      }
+    }
   }
 }
 
