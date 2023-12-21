@@ -2,12 +2,10 @@
 @import 'fonts.css';
 
 :root {
-  font-family: 'EBGaramond', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'EBGaramond', Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +25,6 @@
   --blue-munsell: hsla(192, 59%, 43%, 1);
   --taupe-gray: hsla(247, 3%, 50%, 1);
   --atomic-tangerine: hsla(18, 63%, 65%, 1);
-
 
   --text-color-primary: #414042;
 }
@@ -67,7 +64,8 @@ li {
   margin: 0px;
 }
 
-p, nav {
+p,
+nav {
   padding: 0;
   margin: 0;
 }
@@ -106,5 +104,12 @@ input:active {
   :root {
     color: #213547;
     background-color: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #f5f5f6;
+    background-color: #fbf9f9;
   }
 }

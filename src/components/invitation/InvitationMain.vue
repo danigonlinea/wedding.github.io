@@ -23,12 +23,31 @@
     <h1 class="header-name">Lidia &amp; Daniel</h1>
     <div class="header-date">
       <span>12 de Septiembre • Conil de la Frontera</span>
-      <span>282 Days To Go!</span>
+      <span>¡Quedan {{ daysLeftToWedding }} días!</span>
     </div>
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+const daysLeftToWedding = ref(daysUntil('2024-10-12'))
+
+function daysUntil(targetDate) {
+  // Get the current date
+  const currentDate = new Date()
+
+  // Parse the target date
+  const parsedTargetDate = new Date(targetDate)
+
+  // Calculate the time difference in milliseconds
+  const timeDifference = parsedTargetDate - currentDate
+
+  // Calculate the number of days
+  const days = Math.ceil(timeDifference / (1000 * 60 * 60 * 24))
+
+  return days
+}
+</script>
 
 <style lang="css">
 header {
@@ -67,6 +86,27 @@ header {
     font-size: 1.4em;
     font-weight: normal;
     text-transform: uppercase;
+  }
+}
+
+/* Tablet and smaller screens */
+@media screen and (max-width: 768px) {
+  header {
+    height: 400px;
+    padding: 1em;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 480px) {
+  header {
+    height: 240px;
+
+    .header-date {
+      span {
+        text-align: center;
+      }
+    }
   }
 }
 </style>
