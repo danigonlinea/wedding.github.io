@@ -2,7 +2,7 @@
   <main id="main" class="layout">
     <transition name="fade" @before-enter="beforeEnter" @enter="enter">
       <div v-if="showWeddingInvitation" class="wedding-invitation">
-        <h1>Wedding invitation</h1>
+        <InvitationMain />
       </div>
     </transition>
 
@@ -14,8 +14,10 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-const showWeddingInvitation = ref(false)
-import EnvelopeApp from './components/EnvelopeApp.vue'
+// TODO change to false to see full sequence
+const showWeddingInvitation = ref(true)
+import EnvelopeApp from './components/envelope/EnvelopeMain.vue'
+import InvitationMain from './components/invitation/InvitationMain.vue'
 
 const beforeEnter = (el) => {
   el.style.transform = 'translateY(-100%)'
@@ -44,8 +46,6 @@ const onAnimationEnvelopeDone = () => {
   .wedding-invitation {
     height: 100%;
     width: 100%;
-    background: green;
-    box-sizing: border-box;
   }
 }
 

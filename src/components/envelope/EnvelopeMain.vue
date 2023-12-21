@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { debounce } from '../utils/helper.js'
+import { debounce } from '../../utils/helper.js'
 import { computed, ref, defineEmits } from 'vue'
 
 const isOpen = ref(false)
