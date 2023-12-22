@@ -20,7 +20,7 @@
     />
   </picture>
   <header>
-    <h1 class="header-name">Daniel &amp; Lidia</h1>
+    <h1 class="header-name">Lidia &amp; Daniel</h1>
     <div class="header-date">
       <span>12 de Octubre • Conil de la Frontera</span>
       <span>¡Quedan {{ daysLeftToWedding }} días!</span>
