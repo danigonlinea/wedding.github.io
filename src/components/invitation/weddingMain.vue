@@ -25,7 +25,7 @@
       >¡Nos casamos y nos complace invitarte a ser parte de este gran día!
     </span>
     <div class="header-date">
-      <span>12 de Octubre • Conil de la Frontera</span>
+      <span>12 de Octubre 2024 • Conil de la Frontera</span>
       <span>¡Quedan {{ daysLeftToWedding }} días!</span>
     </div>
   </header>
