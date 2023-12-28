@@ -21,6 +21,9 @@
   </picture>
   <header>
     <h1 class="header-name">Lidia &amp; Daniel</h1>
+    <span
+      >¡Nos casamos y nos complace invitarte a ser parte de este gran día!
+    </span>
     <div class="header-date">
       <span>12 de Octubre • Conil de la Frontera</span>
       <span>¡Quedan {{ daysLeftToWedding }} días!</span>
@@ -69,6 +72,7 @@ header {
 }
 
 .header-name {
+  font-family: 'EBGaramond';
   line-height: 1;
   color: var(--text-color-primary);
   font-weight: normal;
@@ -83,7 +87,6 @@ header {
   span {
     line-height: 1;
     margin: 8px 0;
-    font-family: Open Sans Condensed;
     letter-spacing: 4px;
     color: var(--text-color-primary);
     font-size: 1.4em;
@@ -109,7 +112,7 @@ header {
 /* Mobile screens */
 @media screen and (max-width: 480px) {
   header {
-    height: 240px;
+    height: 300px;
 
     .header-date {
       span {
