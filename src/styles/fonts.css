@@ -29,6 +29,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Herr';
+  src: url('../assets/fonts/Herr_Von/HerrVonMuellerhoff-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 h1 {
   font-size: 4em;
 }

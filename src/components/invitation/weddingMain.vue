@@ -20,9 +20,10 @@
     />
   </picture>
   <header>
+    <span class="header-we-get-married">¡Nos casamos!</span>
     <h1 class="header-name">Lidia &amp; Daniel</h1>
-    <div class="header-date">
-      <span>12 de Octubre • Conil de la Frontera</span>
+    <div class="header-info">
+      <span>12 de Octubre 2024 • Conil de la Frontera</span>
       <span>¡Quedan {{ daysLeftToWedding }} días!</span>
     </div>
   </header>
@@ -52,7 +53,7 @@ function daysUntil(targetDate) {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 header {
   height: 500px;
   display: flex;
@@ -60,6 +61,10 @@ header {
   align-items: center;
   flex-direction: column;
   gap: 2em;
+
+  .header-we-get-married {
+    font-size: 2em;
+  }
 }
 
 .header-top-img {
@@ -74,7 +79,7 @@ header {
   font-weight: normal;
 }
 
-.header-date {
+.header-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
