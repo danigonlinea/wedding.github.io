@@ -80,11 +80,15 @@
         </p>
       </div>
     </div>
+
+    <div>
+      <div class="schedule-vertical-line"></div>
+      <div class="schedule-vertical-line-progress"></div>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
-/* The actual wedding-schedule (the vertical ruler) */
 .wedding-schedule {
   position: relative;
   max-width: 1200px;
@@ -92,7 +96,7 @@
 }
 
 /* The actual wedding-schedule (the vertical ruler) */
-.wedding-schedule::after {
+/* .wedding-schedule::after {
   content: '';
   position: absolute;
   width: 2px;
@@ -101,6 +105,33 @@
   bottom: 0;
   left: 50%;
   margin-left: -3px;
+} */
+
+.schedule-vertical-line,
+.schedule-vertical-line-progress {
+  position: absolute;
+  width: 2px;
+  background-color: yellow;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  animation: slide auto linear;
+  animation-timeline: scroll();
+}
+
+@keyframes slide {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: calc(-100% - 100vw);
+  }
+}
+
+.schedule-vertical-line-progress {
+  background-color: red;
+  height: 100px;
 }
 
 /* Container around content */

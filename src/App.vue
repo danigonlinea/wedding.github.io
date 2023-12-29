@@ -15,7 +15,7 @@
 <script setup>
 import { ref } from 'vue'
 // TODO change to false to see full sequence
-const showWeddingInvitation = ref(false)
+const showWeddingInvitation = ref(true)
 import EnvelopeApp from './components/envelope/EnvelopeMain.vue'
 import InvitationMain from './components/invitation/weddingMain.vue'
 

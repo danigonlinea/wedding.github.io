@@ -2,8 +2,8 @@
 @import 'fonts.css';
 
 :root {
-  font-family: 'EBGaramond', Inter, system-ui, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family: 'Quicksand', 'EBGaramond', Inter, system-ui, Avenir, Helvetica,
+    Arial, sans-serif;
 
   color-scheme: light dark;
   font-synthesis: none;
