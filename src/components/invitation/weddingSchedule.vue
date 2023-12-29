@@ -1,5 +1,5 @@
 <template>
-  <div class="wedding-schedule">
+  <div ref="scrollContainer" class="wedding-schedule" @scroll="handleScroll">
     <div class="container left">
       <div class="content">
         <div class="wedding-schedule-header">
@@ -88,6 +88,27 @@
   </div>
 </template>
 
+<script setup>
+import { useWindowScroll } from '@vueuse/core'
+import { ref, watch, computed } from 'vue'
+
+const { y } = useWindowScroll()
+
+const timelineHeight = ref(0)
+
+watch(
+  () => y.value,
+  (newValue, oldValue) => {
+    // console.log(`scrollY changed from ${oldValue} to ${newValue}`)
+
+    if (newValue > 300) {
+      timelineHeight.value = `${newValue - 300}px`
+      console.log(timelineHeight.value)
+    }
+  },
+)
+</script>
+
 <style lang="scss">
 .wedding-schedule {
   position: relative;
@@ -111,27 +132,12 @@
 .schedule-vertical-line-progress {
   position: absolute;
   width: 2px;
-  background-color: yellow;
+  background-color: #53917e;
   top: 0;
   bottom: 0;
   left: 50%;
   margin-left: -3px;
-  animation: slide auto linear;
-  animation-timeline: scroll();
-}
-
-@keyframes slide {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: calc(-100% - 100vw);
-  }
-}
-
-.schedule-vertical-line-progress {
-  background-color: red;
-  height: 100px;
+  height: v-bind(timelineHeight);
 }
 
 /* Container around content */
