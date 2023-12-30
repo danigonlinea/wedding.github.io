@@ -63,7 +63,7 @@
           </p>
         </div>
       </div>
-      <div class="container right">
+      <!-- <div class="container right">
         <div class="content">
           <h2>Recena</h2>
           <p>
@@ -73,15 +73,13 @@
             primis ea eam.
           </p>
         </div>
-      </div>
-      <div class="container left">
+      </div> -->
+      <div class="container right">
         <div class="content">
           <h2>Clausura</h2>
           <p>
             Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
-            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
-            primis ea eam.
+            admodum perfecto mnesarchum, vim ea mazim fierent detracto.
           </p>
         </div>
       </div>
@@ -105,8 +103,8 @@ const timelineHeight = ref(0)
 watch(
   () => y.value,
   (newValue, oldValue) => {
-    if (newValue > 800 && newValue < 4200) {
-      timelineHeight.value = `${newValue - 800}px`
+    if (newValue > 900 && newValue < 2100) {
+      timelineHeight.value = `${newValue - 900}px`
       console.log(timelineHeight.value)
     }
   },
