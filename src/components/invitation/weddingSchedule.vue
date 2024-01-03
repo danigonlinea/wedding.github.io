@@ -1,94 +1,124 @@
 <template>
-  <div class="wedding-schedule">
-    <div class="container left">
-      <div class="content">
-        <div class="wedding-schedule-header">
-          <h2>Ceremonia</h2>
-          <p>12:30</p>
-        </div>
-        <p>
-          Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-          perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-          expetendis his, te elit voluptua dignissim per, habeo iusto primis ea
-          eam.
-        </p>
-      </div>
-    </div>
-    <div class="container right">
-      <div class="content">
-        <h2>Aperitivos</h2>
-        <p>
-          Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-          perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-          expetendis his, te elit voluptua dignissim per, habeo iusto primis ea
-          eam.
-        </p>
-      </div>
-    </div>
-    <div class="container left">
-      <div class="content">
-        <h2>Banquete</h2>
-        <p>
-          Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-          perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-          expetendis his, te elit voluptua dignissim per, habeo iusto primis ea
-          eam.
-        </p>
-      </div>
-    </div>
-    <div class="container right">
-      <div class="content">
-        <h2>Baile Nupcial</h2>
-        <p>
-          Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-          perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-          expetendis his, te elit voluptua dignissim per, habeo iusto primis ea
-          eam.
-        </p>
-      </div>
-    </div>
-    <div class="container left">
-      <div class="content">
-        <h2>Fiesta</h2>
-        <p>
-          Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-          perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-          expetendis his, te elit voluptua dignissim per, habeo iusto primis ea
-          eam.
-        </p>
-      </div>
-    </div>
-    <div class="container right">
-      <div class="content">
-        <h2>Recena</h2>
-        <p>
-          Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-          perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-          expetendis his, te elit voluptua dignissim per, habeo iusto primis ea
-          eam.
-        </p>
-      </div>
-    </div>
-    <div class="container left">
-      <div class="content">
-        <h2>Clausura</h2>
-        <p>
-          Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum
-          perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret
-          expetendis his, te elit voluptua dignissim per, habeo iusto primis ea
-          eam.
-        </p>
-      </div>
+  <div>
+    <div class="wedding-schedule-title">
+      <h2>Te compartimos más detalles de nuestra celebración</h2>
     </div>
 
-    <div>
-      <div class="schedule-vertical-line"></div>
-      <div class="schedule-vertical-line-progress"></div>
+    <div ref="scrollContainer" class="wedding-schedule" @scroll="handleScroll">
+      <div class="container left">
+        <div class="content">
+          <div class="wedding-schedule-header">
+            <h2>Ceremonia</h2>
+            <p>12:30</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
+            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
+            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+            primis ea eam.
+          </p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>Aperitivos</h2>
+          <p>
+            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
+            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
+            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+            primis ea eam.
+          </p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>Banquete</h2>
+          <p>
+            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
+            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
+            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+            primis ea eam.
+          </p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>Baile Nupcial</h2>
+          <p>
+            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
+            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
+            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+            primis ea eam.
+          </p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>Fiesta</h2>
+          <p>
+            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
+            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
+            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+            primis ea eam.
+          </p>
+        </div>
+      </div>
+      <!-- <div class="container right">
+        <div class="content">
+          <h2>Recena</h2>
+          <p>
+            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
+            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
+            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+            primis ea eam.
+          </p>
+        </div>
+      </div> -->
+      <div class="container right">
+        <div class="content">
+          <h2>Clausura</h2>
+          <p>
+            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
+            admodum perfecto mnesarchum, vim ea mazim fierent detracto.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="schedule-vertical-line"></div>
+        <div class="schedule-vertical-line-progress"></div>
+      </div>
     </div>
   </div>
 </template>
 
+<script setup>
+import { useWindowScroll } from '@vueuse/core'
+import { ref, watch } from 'vue'
+
+const { y } = useWindowScroll()
+
+const timelineHeight = ref(0)
+
+watch(
+  () => y.value,
+  (newValue, oldValue) => {
+    if (newValue > 900 && newValue < 2100) {
+      timelineHeight.value = `${newValue - 900}px`
+      console.log(timelineHeight.value)
+    }
+  },
+)
+</script>
+
 <style lang="scss">
+.wedding-schedule-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2em 0;
+}
 .wedding-schedule {
   position: relative;
   max-width: 1200px;
@@ -111,27 +141,12 @@
 .schedule-vertical-line-progress {
   position: absolute;
   width: 2px;
-  background-color: yellow;
+  background-color: #53917e;
   top: 0;
   bottom: 0;
   left: 50%;
   margin-left: -3px;
-  animation: slide auto linear;
-  animation-timeline: scroll();
-}
-
-@keyframes slide {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: calc(-100% - 100vw);
-  }
-}
-
-.schedule-vertical-line-progress {
-  background-color: red;
-  height: 100px;
+  height: v-bind(timelineHeight);
 }
 
 /* Container around content */

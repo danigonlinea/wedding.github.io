@@ -30,12 +30,18 @@
     </div>
   </header>
 
+  <WeddingPlace></WeddingPlace>
   <WeddingSchedule></WeddingSchedule>
+  <WeddingInfo></WeddingInfo>
+  <WeddingForm></WeddingForm>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import WeddingSchedule from './weddingSchedule.vue'
+import WeddingPlace from './weddingPlace.vue'
+import WeddingInfo from './weddingInfo.vue'
+import WeddingForm from './weddingForm.vue'
 const daysLeftToWedding = ref(daysUntil('2024-10-12'))
 
 function daysUntil(targetDate) {
