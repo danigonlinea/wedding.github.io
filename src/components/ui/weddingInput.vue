@@ -15,6 +15,7 @@
 <script setup>
 import { ref, watch } from 'vue'
 
+const emit = defineEmits(['update:value'])
 const props = defineProps({
   label: {
     type: String,

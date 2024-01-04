@@ -1,7 +1,11 @@
 <template>
   <div class="wedding-select-input">
     <label :for="selectInputId">{{ label }}</label>
-    <select :id="selectInputId" v-model="selectedOption" class="styled-select">
+    <select
+      :id="selectInputId"
+      v-model="selectedOption"
+      class="styled-select"
+    >
       <option
         v-for="(option, index) in options"
         :key="index"
@@ -17,7 +21,16 @@
 import { ref, watchEffect } from 'vue'
 
 const selectInputId = `custom-input-${Math.floor(Math.random() * 1000000)}`
-const props = defineProps(['label', 'options'])
+const props = defineProps({
+  label: {
+    type: String,
+    default: '',
+  },
+  options: {
+    type: Array,
+    default: () => [],
+  },
+})
 const selectedOption = ref('')
 
 const emit = defineEmits(['update:modelValue'])
@@ -51,5 +64,4 @@ label {
   outline: none;
   background-color: #fff;
   color: var(--text-color-primary);
-}
-</style>
+}</style>

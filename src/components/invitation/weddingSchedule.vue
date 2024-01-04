@@ -4,7 +4,11 @@
       <h2>Te compartimos más detalles de nuestra celebración</h2>
     </div>
 
-    <div ref="scrollContainer" class="wedding-schedule" @scroll="handleScroll">
+    <div
+      ref="scrollContainer"
+      class="wedding-schedule"
+      @scroll="handleScroll"
+    >
       <div class="container left">
         <div class="content">
           <div class="wedding-schedule-header">
@@ -119,6 +123,7 @@ watch(
   width: 100%;
   padding: 2em 0;
 }
+
 .wedding-schedule {
   position: relative;
   max-width: 1200px;
@@ -141,7 +146,7 @@ watch(
 .schedule-vertical-line-progress {
   position: absolute;
   width: 2px;
-  background-color: #53917e;
+  background-color: var(--vertical-line-color-primary);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -198,6 +203,7 @@ watch(
 
 /* Media queries - Responsive wedding-schedule on screens less than 600px wide */
 @media screen and (max-width: 768px) {
+
   /* Place the timelime to the left */
   .wedding-schedule::after {
     left: 31px;
@@ -220,5 +226,4 @@ watch(
   .right {
     left: 0%;
   }
-}
-</style>
+}</style>

@@ -3,6 +3,9 @@
     <div class="wedding-place-column wedding-place-column-left">
       <h2>{{ title }}</h2>
       <p>{{ description }}</p>
+      <div class="center">
+        <WeddingLink :to="weddingPlaceGmapsLink">Ver mapa</WeddingLink>
+      </div>
     </div>
     <div class="wedding-place-column wedding-place-column-right">
       <img
@@ -15,10 +18,13 @@
 </template>
 
 <script setup>
+import WeddingLink from '../ui/weddingLink.vue'
+
 const title = 'La boda será en XXXXX'
 const description =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-const weddingPlaceSrc = '../../assets/img/place-wedding.jpg'
+
+const weddingPlaceGmapsLink = 'https://www.google.com/maps?q=36.2765,-6.0889'
 </script>
 
 <style lang="scss">
@@ -37,11 +43,13 @@ const weddingPlaceSrc = '../../assets/img/place-wedding.jpg'
     justify-content: space-evenly;
     padding: 1em 2em 1em 4em;
   }
+
   &-right {
     padding: 1em 1em 1em 0em;
   }
 
-  box-sizing: border-box; /* Ensure padding is included in the column width */
+  box-sizing: border-box;
+  /* Ensure padding is included in the column width */
 }
 
 .place-wedding-photo {

@@ -1,5 +1,6 @@
 @import 'normalize.css';
 @import 'fonts.css';
+@import 'global.css';
 
 :root {
   font-family: 'Quicksand', 'EBGaramond', Inter, system-ui, Avenir, Helvetica,
@@ -18,6 +19,7 @@
   --blue-munsell: #2d93adff;
   --taupe-gray: #7d7c84ff;
   --atomic-tangerine: #de8f6eff;
+  --green-dark: #53917e;
 
   /* CSS HSL */
   --straw: hsla(57, 60%, 65%, 1);
@@ -27,6 +29,13 @@
   --atomic-tangerine: hsla(18, 63%, 65%, 1);
 
   --text-color-primary: #414042;
+
+  --button-color-primary: var(--asparagus);
+  --link-color-primary: var(--asparagus);
+  --button-color-primary-hover: #6e954eff;
+  --link-color-primary-hover: #6e954eff;
+
+  --vertical-line-color-primary: var(--asparagus);
 }
 
 html {
