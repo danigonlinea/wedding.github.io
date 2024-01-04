@@ -6,6 +6,7 @@
       v-model="inputValue"
       :placeholder="placeholder"
       :type="type"
+      :required="required"
       class="wedding-input-field"
     />
   </div>
@@ -14,7 +15,28 @@
 <script setup>
 import { ref, watch } from 'vue'
 
-const props = defineProps(['label', 'value', 'placeholder', 'type'])
+const props = defineProps({
+  label: {
+    type: String,
+    default: '',
+  },
+  value: {
+    type: String,
+    default: '',
+  },
+  placeholder: {
+    type: String,
+    default: '',
+  },
+  type: {
+    type: String,
+    default: 'text',
+  },
+  required: {
+    type: Boolean,
+    default: false,
+  },
+})
 
 const inputId = `custom-input-${Math.floor(Math.random() * 1000000)}`
 const inputValue = ref(props.value)
