@@ -88,6 +88,12 @@ header {
   font-weight: normal;
 }
 
+.header-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header-info {
   display: flex;
   flex-direction: column;
@@ -110,12 +116,6 @@ header {
   header {
     height: 400px;
     padding: 1em;
-
-    .header-date {
-      span {
-        text-align: center;
-      }
-    }
   }
 }
 
@@ -123,12 +123,6 @@ header {
 @media screen and (max-width: 480px) {
   header {
     height: 300px;
-
-    .header-date {
-      span {
-        text-align: center;
-      }
-    }
   }
 }
 </style>

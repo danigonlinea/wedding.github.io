@@ -2,12 +2,15 @@
   <div class="wedding-form-container">
     <form @submit.prevent="submitForm">
       <div class="wedding-form-group">
-        <WeddingInput v-model="formData.fullName" label="Nombre y apellidos " />
+        <WeddingInput
+          v-model="formData.fullName"
+          label="Nombre y apellidos "
+        />
       </div>
       <div class="wedding-form-group">
         <WeddingInput
           v-model="formData.alergicField"
-          label="Si tienes alguna alergia/intolerancia o eres vegano, vegetariano por favor indica el nombre del invitado y el tipo de alergia/intolerancia o dieta."
+          label="Si tienes alguna alergia/intolerancia o eres vegano, vegetariano o estás embarazada por favor indícalo aquí"
         />
       </div>
 
@@ -56,5 +59,4 @@ const submitForm = () => {
   form {
     max-width: min(100%, 70ch);
   }
-}
-</style>
+}</style>

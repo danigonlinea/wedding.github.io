@@ -13,9 +13,8 @@
       <h3 class="wedding-q">¿Puedo traer a mis hijos?</h3>
       <p class="wedding-a">
         Nos encantan los chiquitines pero hemos decidido que este evento sea
-        exclusivo para adultos, a menos que sea completamente inevitable. Os
-        queremos animar para que aprovechen este día como uno especial para
-        vosotros también dos!
+        exclusivo para adultos. Os queremos animar para que lo disfrutéis más y
+        lo dediquéis también especialmente para vosotros.
       </p>
     </div>
     <div class="wedding-qa">
@@ -43,6 +42,7 @@
     max-width: min(100%, 70ch);
     gap: 1em;
     flex-direction: column;
+
     .wedding-q {
       font-weight: bold;
       text-transform: uppercase;
