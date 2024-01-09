@@ -16,7 +16,7 @@
     <img
       src="../../assets/flowers/header-flowers-top.webp"
       alt="Example Image"
-      class="header-top-img"
+      class="header-top-img animation-fade"
     />
   </picture>
   <header>
@@ -34,6 +34,7 @@
   <WeddingSchedule></WeddingSchedule>
   <WeddingInfo></WeddingInfo>
   <WeddingForm></WeddingForm>
+  <WeddingGift></WeddingGift>
 </template>
 
 <script setup>
@@ -42,6 +43,7 @@ import WeddingSchedule from './weddingSchedule.vue'
 import WeddingPlace from './weddingPlace.vue'
 import WeddingInfo from './weddingInfo.vue'
 import WeddingForm from './weddingForm.vue'
+import WeddingGift from './weddingGift.vue'
 const daysLeftToWedding = ref(daysUntil('2024-10-12'))
 
 function daysUntil(targetDate) {
@@ -62,6 +64,22 @@ function daysUntil(targetDate) {
 </script>
 
 <style lang="scss">
+.animation-fade {
+  opacity: 0;
+  animation: outOfView 1.2s ease-in-out forwards;
+}
+
+@keyframes outOfView {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 header {
   height: 500px;
   display: flex;

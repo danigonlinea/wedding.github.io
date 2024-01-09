@@ -4,11 +4,7 @@
       <h2>Te compartimos más detalles de nuestra celebración</h2>
     </div>
 
-    <div
-      ref="scrollContainer"
-      class="wedding-schedule"
-      @scroll="handleScroll"
-    >
+    <div ref="scrollContainer" class="wedding-schedule" @scroll="handleScroll">
       <div class="container left">
         <div class="content">
           <div class="wedding-schedule-header">
@@ -203,7 +199,6 @@ watch(
 
 /* Media queries - Responsive wedding-schedule on screens less than 600px wide */
 @media screen and (max-width: 768px) {
-
   /* Place the timelime to the left */
   .wedding-schedule::after {
     left: 31px;
@@ -226,4 +221,5 @@ watch(
   .right {
     left: 0%;
   }
-}</style>
+}
+</style>
