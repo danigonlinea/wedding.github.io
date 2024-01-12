@@ -16,7 +16,7 @@
     <img
       src="../../assets/flowers/header-flowers-top.webp"
       alt="Example Image"
-      class="header-top-img animation-fade"
+      class="section-image animation-from-top"
     />
   </picture>
   <header>
@@ -31,10 +31,26 @@
   </header>
 
   <WeddingPlace></WeddingPlace>
+  <img
+    src="../../assets/flowers/header-flowers-middle.webp"
+    alt="Example Image"
+    class="section-image inverse"
+  />
   <WeddingSchedule></WeddingSchedule>
+  <img
+    src="../../assets/flowers/header-flowers-middle.webp"
+    alt="Example Image"
+    class="section-image"
+  />
   <WeddingInfo></WeddingInfo>
   <WeddingForm></WeddingForm>
   <WeddingGift></WeddingGift>
+
+  <img
+    src="../../assets/flowers/header-flowers-top.webp"
+    alt="Example Image"
+    class="section-image inverse"
+  />
 </template>
 
 <script setup>
@@ -64,12 +80,12 @@ function daysUntil(targetDate) {
 </script>
 
 <style lang="scss">
-.animation-fade {
+.animation-from-top {
   opacity: 0;
-  animation: outOfView 1.2s ease-in-out forwards;
+  animation: outOfViewFromTop 1.2s ease-in-out forwards;
 }
 
-@keyframes outOfView {
+@keyframes outOfViewFromTop {
   0% {
     opacity: 0;
     transform: translateY(-100%);
@@ -93,10 +109,14 @@ header {
   }
 }
 
-.header-top-img {
+.section-image {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.inverse {
+  transform: scaleY(-1);
 }
 
 .header-name {

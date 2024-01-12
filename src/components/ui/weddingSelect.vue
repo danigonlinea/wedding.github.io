@@ -1,11 +1,7 @@
 <template>
   <div class="wedding-select-input">
     <label :for="selectInputId">{{ label }}</label>
-    <select
-      :id="selectInputId"
-      v-model="selectedOption"
-      class="styled-select"
-    >
+    <select :id="selectInputId" v-model="selectedOption" class="styled-select">
       <option
         v-for="(option, index) in options"
         :key="index"
@@ -30,8 +26,13 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  defaultValue: {
+    type: [String, Number],
+    default: '',
+  },
 })
-const selectedOption = ref('')
+
+const selectedOption = ref(props.defaultValue)
 
 const emit = defineEmits(['update:modelValue'])
 
@@ -64,4 +65,5 @@ label {
   outline: none;
   background-color: #fff;
   color: var(--text-color-primary);
-}</style>
+}
+</style>

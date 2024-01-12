@@ -18,9 +18,17 @@
             />
           </div>
           <div class="wedding-form-group">
+            <WeddingSelect
+              v-model="formData.numberPeople"
+              :options="numberPeople"
+              default-value="1"
+              label="¿Cuántas personas sois?"
+            />
+          </div>
+          <div class="wedding-form-group">
             <WeddingInput
               v-model="formData.alergicField"
-              label="Si tienes alguna alergia/intolerancia o eres vegano, vegetariano o estás embarazada por favor indícalo aquí"
+              label="Si tienes alguna alergia,intolerancia o eres vegano, vegetariano o estás embarazada por favor indícalo aquí"
             />
           </div>
 
@@ -28,6 +36,7 @@
             <WeddingSelect
               v-model="formData.mainPlateField"
               :options="mainPlatesOptions"
+              default-value="Carne"
               label="¿Qué plato principal en el menú prefieres?"
             />
           </div>
@@ -65,6 +74,7 @@ import WeddingButton from '../ui/weddingButton.vue'
 
 const formData = ref({
   fullName: '',
+  numberPeople: 1,
   alergicField: '',
   mainPlateField: '',
   songField: '',
@@ -73,6 +83,15 @@ const formData = ref({
 const mainPlatesOptions = [
   { label: 'Carne', value: 'carne' },
   { label: 'Pescado', value: 'pescado' },
+]
+
+const numberPeople = [
+  { label: 1, value: 1 },
+  { label: 2, value: 2 },
+  { label: 3, value: 3 },
+  { label: 4, value: 4 },
+  { label: 5, value: 5 },
+  { label: 6, value: 6 },
 ]
 
 const submitForm = () => {

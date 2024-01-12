@@ -13,6 +13,7 @@
         <div class="back">
           <h2>Nº cuenta bancaria</h2>
           <h3>ESXX XXXX XX XXXX XXXX</h3>
+          <WeddingButton label="Copiar"></WeddingButton>
         </div>
       </div>
     </div>
@@ -64,6 +65,7 @@ const flipCard = (flip) => {
   position: absolute;
   backface-visibility: hidden;
   display: flex;
+  gap: 1em;
   padding: 2em;
   justify-content: center;
   align-items: center;
