@@ -46,6 +46,8 @@
   <WeddingForm></WeddingForm>
   <WeddingGift></WeddingGift>
 
+  <WeddingPhotoGallery></WeddingPhotoGallery>
+
   <img
     src="../../assets/flowers/header-flowers-top.webp"
     alt="Example Image"
@@ -60,6 +62,7 @@ import WeddingPlace from './weddingPlace.vue'
 import WeddingInfo from './weddingInfo.vue'
 import WeddingForm from './weddingForm.vue'
 import WeddingGift from './weddingGift.vue'
+import WeddingPhotoGallery from './weddingPhotoGallery.vue'
 const daysLeftToWedding = ref(daysUntil('2024-10-12'))
 
 function daysUntil(targetDate) {
