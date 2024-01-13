@@ -7,7 +7,7 @@
     >
       <div :class="{ card: true, flipped: isFlipped }">
         <div class="front">
-          <h2>El regalo es opcional, la asistencia obligatoria.</h2>
+          <h3>El regalo es opcional, la asistencia obligatoria.</h3>
           <WeddingButton label="Ver Nº cuenta"></WeddingButton>
         </div>
         <div class="back">
@@ -46,7 +46,6 @@ const flipCard = (flip) => {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
-
   filter: drop-shadow(-6.4px 6.2px 8px rgba(0, 0, 0, 0.6));
 }
 
@@ -88,5 +87,12 @@ const flipCard = (flip) => {
 
 .card.flipped {
   transform: rotateY(180deg) translateZ(50px);
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    width: 300px;
+    height: 180px;
+  }
 }
 </style>

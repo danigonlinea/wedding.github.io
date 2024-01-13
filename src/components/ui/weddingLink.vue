@@ -1,9 +1,5 @@
 <template>
-  <a
-    :href="to"
-    class="wedding-link"
-    target="_blank"
-  >
+  <a :href="to" class="wedding-link" target="_blank">
     <slot></slot>
   </a>
 </template>
@@ -41,9 +37,9 @@ const props = defineProps({
 }
 
 @media (max-width: 768px) {
-
   /* Styles for smaller screens (phones) */
   .wedding-link {
-    font-size: 14px;
+    font-size: 1em;
   }
-}</style>
+}
+</style>

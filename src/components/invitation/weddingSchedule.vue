@@ -11,56 +11,31 @@
             <h2>Ceremonia</h2>
             <p>12:30</p>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
-            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
-            primis ea eam.
-          </p>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci</p>
         </div>
       </div>
       <div class="container right">
         <div class="content">
           <h2>Aperitivos</h2>
-          <p>
-            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
-            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
-            primis ea eam.
-          </p>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci</p>
         </div>
       </div>
       <div class="container left">
         <div class="content">
           <h2>Banquete</h2>
-          <p>
-            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
-            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
-            primis ea eam.
-          </p>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci</p>
         </div>
       </div>
       <div class="container right">
         <div class="content">
           <h2>Baile Nupcial</h2>
-          <p>
-            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
-            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
-            primis ea eam.
-          </p>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci</p>
         </div>
       </div>
       <div class="container left">
         <div class="content">
           <h2>Fiesta</h2>
-          <p>
-            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-            admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis
-            iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
-            primis ea eam.
-          </p>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci</p>
         </div>
       </div>
       <!-- <div class="container right">
@@ -77,10 +52,7 @@
       <div class="container right">
         <div class="content">
           <h2>Clausura</h2>
-          <p>
-            Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-            admodum perfecto mnesarchum, vim ea mazim fierent detracto.
-          </p>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci</p>
         </div>
       </div>
 
@@ -113,11 +85,9 @@ watch(
 
 <style lang="scss">
 .wedding-schedule-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   width: 100%;
-  padding: 2em 0;
+  padding: 2em;
 }
 
 .wedding-schedule {

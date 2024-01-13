@@ -42,5 +42,12 @@ const handleClick = () => {
 .full-width {
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  /* Styles for smaller screens (phones) */
+  .wedding-button {
+    font-size: 1.2em;
+  }
+}
 </style>
 ``

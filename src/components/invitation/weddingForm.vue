@@ -105,7 +105,7 @@ const submitForm = () => {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 4em 0;
+  padding: 4em 1em;
 
   .wedding-form-card {
     max-width: min(100%, 70ch);

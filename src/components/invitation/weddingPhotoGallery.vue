@@ -40,6 +40,7 @@
 <style lang="scss">
 .scroll-container {
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .image-container {
