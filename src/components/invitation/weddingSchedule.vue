@@ -4,7 +4,7 @@
       <h2>Te compartimos más detalles de nuestra celebración</h2>
     </div>
 
-    <div ref="scrollContainer" class="wedding-schedule" @scroll="handleScroll">
+    <div ref="scrollContainer" class="wedding-schedule">
       <div class="container left">
         <div class="content">
           <div class="wedding-schedule-header">
@@ -65,19 +65,59 @@
 </template>
 
 <script setup>
-import { useWindowScroll } from '@vueuse/core'
-import { ref, watch } from 'vue'
+import { useWindowScroll, useWindowSize } from '@vueuse/core'
+import { ref, watch, onMounted } from 'vue'
 
-const { y } = useWindowScroll()
+const { y: windowScrollY } = useWindowScroll()
+const { width: windowHeight } = useWindowSize()
 
 const timelineHeight = ref(0)
+const scrollContainer = ref(null)
+
+const observer = ref(null)
+const hasIntersectedFirstTime = ref(false)
+const scrollPixelsStart = ref(null)
+const scrollPixelsEnd = ref(null)
+
+onMounted(() => {
+  const options = {
+    threshold: 0.4,
+  }
+  observer.value = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        hasIntersectedFirstTime.value = true
+      }
+    })
+  }, options)
+
+  observer.value.observe(scrollContainer.value)
+})
 
 watch(
-  () => y.value,
+  () => hasIntersectedFirstTime.value,
+  () => {
+    console.log(hasIntersectedFirstTime)
+    scrollPixelsStart.value = windowScrollY.value
+    scrollPixelsEnd.value =
+      scrollPixelsStart.value + scrollContainer.value.offsetHeight
+
+    console.log(scrollPixelsStart.value, scrollContainer.value.offsetHeight)
+    if (observer.value) {
+      observer.value.disconnect()
+    }
+  },
+)
+
+watch(
+  () => windowScrollY.value,
   (newValue, oldValue) => {
-    if (newValue > 900 && newValue < 2100) {
-      timelineHeight.value = `${newValue - 900}px`
-      console.log(timelineHeight.value)
+    if (
+      scrollPixelsStart.value &&
+      newValue > scrollPixelsStart.value &&
+      newValue < scrollPixelsEnd.value
+    ) {
+      timelineHeight.value = `${newValue - scrollPixelsStart.value}px`
     }
   },
 )
