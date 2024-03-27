@@ -1537,6 +1537,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@heroicons/vue@npm:^2.1.3":
+  version: 2.1.3
+  resolution: "@heroicons/vue@npm:2.1.3"
+  peerDependencies:
+    vue: ">= 3"
+  checksum: af0b1336409aa054c22c572f9214009042aec163131c1de58b995fbec1dd4508b768500614100ed750e8911ca8a695e43efc87a8627c86a8c2387422fe2f6dd4
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.13":
   version: 0.11.13
   resolution: "@humanwhocodes/config-array@npm:0.11.13"
@@ -4220,6 +4229,7 @@ __metadata:
     "@babel/core": "npm:^7.23.3"
     "@babel/eslint-parser": "npm:^7.23.3"
     "@babel/preset-env": "npm:^7.23.3"
+    "@heroicons/vue": "npm:^2.1.3"
     "@stylistic/eslint-plugin-js": "npm:^1.1.0"
     "@vitejs/plugin-vue": "npm:^4.4.1"
     "@vueuse/core": "npm:^10.7.1"

@@ -1,6 +1,6 @@
 <template>
   <div class="scroll-container">
-    <div class="image-container">
+    <!-- <div class="image-container">
       <img
         src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba"
         alt="cat1"
@@ -33,7 +33,7 @@
         src="https://images.unsplash.com/photo-1517451330947-7809dead78d5"
         alt="cat4"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 

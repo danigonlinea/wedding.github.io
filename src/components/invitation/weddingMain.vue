@@ -36,6 +36,8 @@
 
   <WeddingPhotoGallery></WeddingPhotoGallery>
 
+  <WeddingSongPlayer />
+
   <img
     src="../../assets/flowers/header-flowers-top.webp"
     alt="Example Image"
@@ -51,6 +53,7 @@ import WeddingForm from './weddingForm.vue'
 import WeddingGift from './weddingGift.vue'
 import WeddingPhotoGallery from './weddingPhotoGallery.vue'
 import WeddingHeader from './weddingHeader.vue'
+import WeddingSongPlayer from './weddingSongPlayer.vue'
 </script>
 
 <style lang="scss">

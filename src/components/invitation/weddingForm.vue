@@ -3,10 +3,6 @@
     <div class="wedding-form-card">
       <div class="wedding-form-card-header">
         <h2 class="wedding-form-title">Confirma tu asistencia</h2>
-        <p class="wedding-form-description">
-          Por favor, rellena el siguiente formulario para confirmar tu
-          asistencia a la boda.
-        </p>
       </div>
       <div class="wedding-form-card-body">
         <form @submit.prevent="submitForm">
@@ -28,7 +24,7 @@
           <div class="wedding-form-group">
             <WeddingInput
               v-model="formData.alergicField"
-              label="Si tienes alguna alergia,intolerancia o eres vegano, vegetariano o estás embarazada por favor indícalo aquí"
+              label="Si tienes alguna alergia, intolerancia o eres vegano, vegetariano o estás embarazada por favor indícalo aquí"
             />
           </div>
 

@@ -224,12 +224,17 @@ watch(
   /* Make sure all circles are at the same spot */
   .left::after,
   .right::after {
-    left: 23px;
+    left: 28px;
   }
 
   /* Make all right containers behave like the left ones */
   .right {
     left: 0%;
+  }
+
+  .schedule-vertical-line,
+  .schedule-vertical-line-progress {
+    left: 10%;
   }
 }
 </style>
