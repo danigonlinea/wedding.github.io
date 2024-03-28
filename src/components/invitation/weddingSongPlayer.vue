@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <audio ref="audio" :src="audioSource"></audio>
     <button
       :class="['float-button', { playing: isPlaying }]"
@@ -41,12 +41,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
 .float-button {
   position: fixed;
   bottom: 20px;

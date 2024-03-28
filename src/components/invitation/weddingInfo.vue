@@ -20,7 +20,7 @@
     <div class="wedding-qa">
       <h3 class="wedding-q">¿Cómo llego a la celebración?</h3>
       <p class="wedding-a">
-        La ceremonia comenzará a las XX:XXh por lo que rogamos que asistan antes
+        La ceremonia comenzará a las 13:00h por lo que rogamos que asistan antes
         de que comience.
       </p>
     </div>
