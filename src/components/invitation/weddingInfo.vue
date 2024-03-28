@@ -12,16 +12,9 @@
     <div class="wedding-qa">
       <h3 class="wedding-q">¿Puedo traer a mis hijos?</h3>
       <p class="wedding-a">
-        Nos encantan los chiquitines pero hemos decidido que este evento sea
-        exclusivo para adultos. Os queremos animar para que lo disfrutéis más y
-        lo dediquéis también especialmente para vosotros.
-      </p>
-    </div>
-    <div class="wedding-qa">
-      <h3 class="wedding-q">¿Cómo llego a la celebración?</h3>
-      <p class="wedding-a">
-        La ceremonia comenzará a las 13:00h por lo que rogamos que asistan antes
-        de que comience.
+        Sin duda, los peques son adorables y una alegría para la familia pero en
+        esta ocasión, queremos que sea una celebración exclusiva para adultos
+        para que así los adultos se diviertan como niños en nuestro gran día.
       </p>
     </div>
   </div>

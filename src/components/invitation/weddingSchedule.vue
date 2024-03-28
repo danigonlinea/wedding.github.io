@@ -9,7 +9,7 @@
         <div class="content">
           <div class="wedding-schedule-header">
             <h2>Ceremonia</h2>
-            <p>12:30</p>
+            <p>13:00</p>
           </div>
           <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci</p>
         </div>

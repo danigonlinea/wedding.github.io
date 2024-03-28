@@ -2,12 +2,18 @@
   <div class="wedding-gift-container">
     <div
       class="card-container"
-      @mouseenter="flipCard(true)"
+      @click="flipCard(true)"
       @mouseleave="flipCard(false)"
     >
       <div :class="{ card: true, flipped: isFlipped }">
         <div class="front">
-          <h3>El regalo es opcional, la asistencia obligatoria.</h3>
+          <h3>
+            Si te estás preguntando qué regalarnos, aquí te dejamos una idea:
+            ¡una pequeña donación a nuestra cuenta bancaria para ayudarnos a
+            financiar nuestra luna de miel sería más que bienvenida! Por
+            supuesto que no es obligatoria, ya que lo más importante para
+            nosotros es compartir este día tan especial contigo.
+          </h3>
           <WeddingButton label="Ver Nº cuenta"></WeddingButton>
         </div>
         <div class="back">
