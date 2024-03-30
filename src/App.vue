@@ -39,7 +39,6 @@ const onAnimationEnvelopeDone = () => {
 
 <style lang="scss" scoped>
 .layout {
-  height: 100vh; /* 100% of the viewport height */
   box-sizing: border-box;
 
   .wedding-invitation {
