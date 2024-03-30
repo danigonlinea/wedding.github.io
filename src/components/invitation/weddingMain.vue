@@ -1,25 +1,5 @@
 <template>
-  <picture>
-    <!-- WebP source -->
-    <source
-      srcset="../../assets/flowers/header-flowers-top.webp"
-      type="image/webp"
-    />
-
-    <!-- Fallback JPEG source -->
-    <source
-      srcset="../../assets/flowers/header-flowers-top.webp"
-      type="image/jpeg"
-    />
-
-    <!-- Fallback PNG source -->
-    <img
-      src="../../assets/flowers/header-flowers-top.webp"
-      alt="Example Image"
-      class="section-image animation-from-top"
-    />
-  </picture>
-
+  <WeddingTopHeader />
   <WeddingHeader></WeddingHeader>
 
   <WeddingPlace></WeddingPlace>
@@ -46,6 +26,7 @@
 </template>
 
 <script setup>
+import WeddingTopHeader from './weddingTopHeader.vue'
 import WeddingSchedule from './weddingSchedule.vue'
 import WeddingPlace from './weddingPlace.vue'
 import WeddingInfo from './weddingInfo.vue'
@@ -57,22 +38,6 @@ import WeddingSongPlayer from './weddingSongPlayer.vue'
 </script>
 
 <style lang="scss">
-.animation-from-top {
-  opacity: 0;
-  animation: outOfViewFromTop 1.2s ease-in-out forwards;
-}
-
-@keyframes outOfViewFromTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .section-image {
   max-width: 100%;
   height: auto;

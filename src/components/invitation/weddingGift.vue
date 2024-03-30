@@ -39,34 +39,35 @@ const flipCard = (flip) => {
 
 <style scoped>
 .wedding-gift-container {
-  display: flex;
-  gap: 3em;
-  align-items: center;
-  flex-direction: column;
-  padding: 4em 0;
-}
-.card-container {
-  perspective: 1000px;
-  width: 460px;
-  height: 280px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-  filter: drop-shadow(-6.4px 6.2px 8px rgba(0, 0, 0, 0.6));
-}
-
-.card {
   width: 100%;
   height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4em 0;
+
+  .card-container {
+    perspective: 1000px;
+    width: 460px;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    filter: drop-shadow(-6.4px 6.2px 8px rgba(0, 0, 0, 0.6));
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+  }
 }
 
 .front,
 .back {
   width: 100%;
-  height: 100%;
+
   position: absolute;
   backface-visibility: hidden;
   display: flex;

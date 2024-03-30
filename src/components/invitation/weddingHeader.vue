@@ -33,7 +33,7 @@ function daysUntil(targetDate) {
 
 <style lang="scss">
 header {
-  height: 500px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,15 +78,12 @@ header {
 /* Tablet and smaller screens */
 @media screen and (max-width: 768px) {
   header {
-    height: 400px;
-    padding: 1em;
   }
 }
 
 /* Mobile screens */
 @media screen and (max-width: 480px) {
   header {
-    height: 300px;
   }
 }
 </style>
