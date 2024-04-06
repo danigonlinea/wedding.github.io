@@ -24,7 +24,7 @@ const handleClick = () => {
 <style scoped>
 .wedding-button {
   padding: 0.5em 1.2em;
-  font-size: 1.2em;
+  font-size: 1.4em;
   background-color: var(--button-color-primary);
   transition: background-color 0.3s ease;
   color: #fff;
@@ -46,7 +46,7 @@ const handleClick = () => {
 @media (max-width: 768px) {
   /* Styles for smaller screens (phones) */
   .wedding-button {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 </style>

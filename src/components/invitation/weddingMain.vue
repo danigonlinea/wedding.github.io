@@ -4,6 +4,8 @@
 
   <WeddingPlace></WeddingPlace>
 
+  <WeddingPlace2></WeddingPlace2>
+
   <WeddingSchedule></WeddingSchedule>
   <img
     src="../../assets/flowers/header-flowers-middle-cropped.webp"
@@ -29,6 +31,7 @@
 import WeddingTopHeader from './weddingTopHeader.vue'
 import WeddingSchedule from './weddingSchedule.vue'
 import WeddingPlace from './weddingPlace.vue'
+import WeddingPlace2 from './weddingPlace2.vue'
 import WeddingInfo from './weddingInfo.vue'
 import WeddingForm from './weddingForm.vue'
 import WeddingGift from './weddingGift.vue'
