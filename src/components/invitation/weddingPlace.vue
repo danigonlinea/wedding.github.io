@@ -1,5 +1,25 @@
 <template>
-  <div class="wedding-place-container">
+  <div class="container-place">
+    <img
+      class="photo left"
+      src="../../assets/img/alborea-2.webp"
+      alt="Left Photo"
+    />
+    <img
+      class="photo right"
+      src="../../assets/img/alborea-3.webp"
+      alt="Right Photo"
+    />
+    <div class="card">
+      <h2>{{ title }}</h2>
+      <p>{{ description }}</p>
+      <div class="center">
+        <WeddingLink :to="weddingPlaceGmapsLink">Ver mapa</WeddingLink>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="wedding-place-container">
     <div class="wedding-place-grid">
       <div class="wedding-place-column-left">
         <div class="wedding-place-column-info">
@@ -19,7 +39,16 @@
         />
       </div>
     </div>
-  </div>
+  </div> -->
+  <!--  <div class="wedding-parent">
+    <div class="wedding-photo">
+      <img src="../../assets/img/alborea-3.webp" alt="Photo" />
+    </div>
+    <div class="wedding-card">
+      <h2>{{ title }}</h2>
+      <p>{{ description }}</p>
+    </div>
+  </div> -->
 </template>
 
 <script setup>
@@ -34,6 +63,114 @@ const weddingPlaceGmapsLink =
 </script>
 
 <style lang="scss">
+.container-place {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16em;
+}
+
+.photo {
+  position: absolute;
+  width: 32em;
+  height: auto;
+  object-fit: cover;
+}
+
+.photo.left {
+  top: 12%;
+  left: 12%;
+}
+
+.photo.right {
+  bottom: 12%;
+  right: 12%;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2em;
+  box-sizing: border-box;
+}
+
+.card h2 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.card p {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .container-place {
+    padding: 2em;
+  }
+
+  .photo {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .photo.left {
+    top: 20%;
+    left: 0;
+  }
+
+  .photo.right {
+    bottom: 20%;
+    right: 0;
+  }
+}
+
+/* .wedding-parent {
+  position: relative; 
+  height: 40em;
+}
+
+.wedding-photo {
+  height: 36em;
+  width: 36em;
+  position: absolute;
+  z-index: 1;
+  img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: inherit;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.wedding-card {
+  height: 24em;
+  width: 24em;
+  position: absolute;
+  z-index: 1;
+
+  background: white;
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .wedding-schedule-title {
   text-align: center;
 }
@@ -76,7 +213,7 @@ const weddingPlaceGmapsLink =
   }
 
   box-sizing: border-box;
-  /* Ensure padding is included in the column width */
+  
 }
 
 .place-wedding-photo {
@@ -109,5 +246,5 @@ const weddingPlaceGmapsLink =
       }
     }
   }
-}
+} */
 </style>

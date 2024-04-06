@@ -24,7 +24,7 @@ const props = defineProps({
   border-radius: 5px;
   transition: background-color 0.3s ease;
   padding: 0.5em 1.2em;
-  font-size: 1.6em;
+  font-size: 1.2em;
   background-color: var(--button-color-primary);
   color: #fff;
   border-radius: 30px;

@@ -7,33 +7,20 @@
       <div class="wedding-form-card-body">
         <form @submit.prevent="submitForm">
           <div class="wedding-form-group">
-            <WeddingInput
-              v-model="formData.fullName"
-              label="Nombre y apellidos"
-              required
-            />
+            <WeddingInput v-model="formData.fullName" label="Nombre" required />
           </div>
           <div class="wedding-form-group">
             <WeddingSelect
               v-model="formData.numberPeople"
               :options="numberPeople"
               default-value="1"
-              label="¿Cuántas personas sois?"
+              label="¿Cuántas personas seréis?"
             />
           </div>
           <div class="wedding-form-group">
             <WeddingInput
               v-model="formData.alergicField"
-              label="Si tienes alguna alergia, intolerancia o eres vegano, vegetariano o estás embarazada por favor indícalo aquí"
-            />
-          </div>
-
-          <div class="wedding-form-group">
-            <WeddingSelect
-              v-model="formData.mainPlateField"
-              :options="mainPlatesOptions"
-              default-value="Carne"
-              label="¿Qué plato principal en el menú prefieres?"
+              label="¿Tienes alguna alergia o intolerancia, eres vegano o vegetariano o estás embarazada?"
             />
           </div>
 

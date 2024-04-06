@@ -3,10 +3,9 @@
     <div class="wedding-qa">
       <h3 class="wedding-q">¿Cómo hay que ir vestido?</h3>
       <p class="wedding-a">
-        Nos encantaría ver a nuestra familia y amigos vestidos elegantes para
-        nuestro gran día. El código de vestimenta es formal aunque rogamos que
-        llevéis calzado cómodo para andar por césped o un segundo par para
-        cambiaros in situ.
+        Nos encantaría ver a nuestra familia y amigos vestidos elegantes. El
+        código de vestimenta es formal aunque rogamos que llevéis calzado cómodo
+        para andar por césped o un segundo par para cambiaros in situ.
       </p>
     </div>
     <div class="wedding-qa">
@@ -14,7 +13,7 @@
       <p class="wedding-a">
         Sin duda, los peques son adorables y una alegría para la familia pero en
         esta ocasión, queremos que sea una celebración exclusiva para adultos
-        para que así los adultos se diviertan como niños en nuestro gran día.
+        para que así los adultos se diviertan como niños.
       </p>
     </div>
   </div>
