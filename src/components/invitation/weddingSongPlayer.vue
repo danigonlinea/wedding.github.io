@@ -49,7 +49,7 @@ export default {
   border-radius: 50%;
   width: 48px;
   height: 48px;
-  background-color: #6455a4;
+  background-color: var(--play-background);
   color: #fff;
   font-size: 24px;
   cursor: pointer;

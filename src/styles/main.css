@@ -14,28 +14,32 @@
   -webkit-text-size-adjust: 100%;
 
   /* CSS HEX */
-  --straw: #dbd56eff;
-  --asparagus: #88ab75ff;
-  --blue-munsell: #2d93adff;
-  --taupe-gray: #7d7c84ff;
-  --atomic-tangerine: #de8f6eff;
-  --green-dark: #53917e;
+  --pomp-and-power: #c9a2bf;
+  --pomp-and-power-middle: #805976;
+  --pomp-and-power-dark: #724c75ff;
+
+  --old-rose: #c98686ff;
+  --fawn: #f2b880ff;
+  --seashell: #fff4ecff;
+  --champagne-pink: #e7cfbcff;
 
   /* CSS HSL */
-  --straw: hsla(57, 60%, 65%, 1);
-  --asparagus: hsla(99, 24%, 56%, 1);
-  --blue-munsell: hsla(192, 59%, 43%, 1);
-  --taupe-gray: hsla(247, 3%, 50%, 1);
-  --atomic-tangerine: hsla(18, 63%, 65%, 1);
+  /* --pomp-and-power: hsla(292, 20%, 52%, 1);
+  --old-rose: hsla(0, 38%, 66%, 1);
+  --fawn: hsla(29, 81%, 73%, 1);
+  --seashell: hsla(25, 100%, 96%, 1);
+  --champagne-pink: hsla(27, 47%, 82%, 1); */
 
   --text-color-primary: #414042;
+  --card-border: var(--pomp-and-power-middle);
+  --play-background: var(--pomp-and-power-dark);
 
-  --button-color-primary: var(--asparagus);
-  --link-color-primary: var(--asparagus);
-  --button-color-primary-hover: #6e954eff;
-  --link-color-primary-hover: #6e954eff;
+  --button-color-primary: var(--pomp-and-power-middle);
+  --link-color-primary: var(--pomp-and-power-middle);
+  --button-color-primary-hover: var(--pomp-and-power-dark);
+  --link-color-primary-hover: var(--pomp-and-power-dark);
 
-  --vertical-line-color-primary: var(--asparagus);
+  --vertical-line-color-primary: var(--pomp-and-power-middle);
 }
 
 html {
