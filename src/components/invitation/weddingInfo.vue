@@ -6,6 +6,10 @@
 
     <div class="wedding-qa-list">
       <div class="wedding-qa-item">
+        <h3 class="wedding-q">¿Cómo va a ser la boda?</h3>
+        <p class="wedding-a">??</p>
+      </div>
+      <div class="wedding-qa-item">
         <h3 class="wedding-q">¿Cómo hay que ir vestido?</h3>
         <p class="wedding-a">
           Nos encantaría ver a nuestra familia y amigos vestidos elegantes. El
@@ -19,6 +23,18 @@
           Sin duda, los peques son adorables y una alegría para la familia pero
           en esta ocasión, queremos que sea una celebración exclusiva para
           adultos para que así los adultos se diviertan como niños.
+        </p>
+      </div>
+      <div class="wedding-qa-item">
+        <h3 class="wedding-q">
+          ¿Con cuándo tiempo con antelación tendría que confirmar nuestra
+          asistencia?
+        </h3>
+        <p class="wedding-a">
+          No queremos quedaros sin vosotros en esta fecha tan especial por lo
+          que lo ideal sería lo antes posible pero si necesitáis esperar para
+          confirmar vuestra asistencia, nos tendríais que confirmar antes del
+          día 3 de Octubre.
         </p>
       </div>
     </div>

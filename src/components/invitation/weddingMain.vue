@@ -15,9 +15,9 @@
   <WeddingSongPlayer />
 
   <img
-    src="../../assets/flowers/header-flowers-top.webp"
+    src="../../assets/flowers/flor-wedding-footer.webp"
     alt="Example Image"
-    class="section-image inverse"
+    class="section-image"
   />
 </template>
 

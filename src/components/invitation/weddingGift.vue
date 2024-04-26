@@ -1,5 +1,16 @@
 <template>
-  <div class="wedding-gift-container">
+  <div class="wedding-gift">
+    <div class="wedding-gift-title">
+      <h2>Regalo de bodas</h2>
+    </div>
+
+    <div>
+      <h3>
+        lo más importante para nosotros es compartir este día tan especial
+        contigo, pero si quieres tener un detalle:
+      </h3>
+    </div>
+
     <div
       class="card-container"
       @click="flipCard(true)"
@@ -7,13 +18,6 @@
     >
       <div :class="{ card: true, flipped: isFlipped }">
         <div class="front">
-          <h3>
-            Si te estás preguntando qué regalarnos, aquí te dejamos una idea:
-            ¡una pequeña donación a nuestra cuenta bancaria para ayudarnos a
-            financiar nuestra luna de miel sería más que bienvenida! Por
-            supuesto que no es obligatoria, ya que lo más importante para
-            nosotros es compartir este día tan especial contigo.
-          </h3>
           <WeddingButton label="Ver Nº cuenta"></WeddingButton>
         </div>
         <div class="back">
@@ -38,17 +42,25 @@ const flipCard = (flip) => {
 </script>
 
 <style scoped>
-.wedding-gift-container {
-  width: 100%;
-  height: 100%;
+.wedding-gift {
+  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   padding: 4em 0;
+
+  .wedding-gift-title {
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2em;
+    box-sizing: border-box;
+  }
 
   .card-container {
     perspective: 1000px;
-    width: 460px;
+    width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.5s;

@@ -72,8 +72,8 @@ import WeddingDiscoIcon from '../../assets/svg/wedding-disco.svg'
 .wedding-schedule-flower {
   position: absolute;
   right: 0;
-  bottom: 30%;
-  height: 45%;
+  top: 20%;
+  height: 35%;
 }
 
 .wedding-schedule-title {
