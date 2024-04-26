@@ -16,7 +16,13 @@
           alt="Left Photo"
         />
       </div>
+
       <div class="wedding-place-info">
+        <img
+          src="../../assets/flowers/flor-wedding-place.webp"
+          alt="Example Image"
+          class="wedding-place-flower"
+        />
         <h3>Finca Alboreá</h3>
         <div>
           <p>Carril de los Brenes, 6, 11149</p>
@@ -43,8 +49,17 @@ const weddingPlaceGmapsLink =
 </script>
 
 <style lang="scss">
+.wedding-place-flower {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
 .wedding-place {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .wedding-place-title {
@@ -63,7 +78,7 @@ const weddingPlaceGmapsLink =
 }
 
 .wedding-place-info {
-  padding: 2em;
+  padding: 6em 2em;
   border-left: 2px solid var(--card-border);
   border-right: 2px solid var(--card-border);
   border-bottom: 2px solid var(--card-border);
@@ -73,6 +88,8 @@ const weddingPlaceGmapsLink =
   align-items: center;
   justify-content: center;
   gap: 2em;
+
+  position: relative;
 }
 
 .wedding-place-blend {

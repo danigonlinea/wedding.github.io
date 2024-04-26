@@ -1,208 +1,119 @@
 <template>
-  <div>
+  <div class="wedding-schedule">
+    <img
+      src="../../assets/flowers/flor-wedding-schedule.webp"
+      alt="Example Image"
+      class="wedding-schedule-flower"
+    />
     <div class="wedding-schedule-title">
-      <h2>Te compartimos más detalles de nuestra celebración</h2>
+      <h2>Itinerario</h2>
     </div>
 
-    <div ref="scrollContainer" class="wedding-schedule">
-      <div class="container left">
-        <div class="content">
-          <h2>Ceremonia Civil</h2>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>Aperitivos</h2>
-        </div>
-      </div>
-      <div class="container left">
-        <div class="content">
-          <h2>Banquete</h2>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>Baile Nupcial</h2>
-        </div>
-      </div>
-      <div class="container left">
-        <div class="content">
-          <h2>¡Que empiece la fiesta!</h2>
+    <div class="wedding-schedule-list">
+      <div class="wedding-schedule-list-item">
+        <WeddingArchIcon class="wedding-schedule-icon" />
+        <div class="wedding-schedule-list-item-info">
+          <p class="wedding-schedule-list-item-title">Ceremonia Civil</p>
+          <p class="wedding-schedule-list-item-time">13:00</p>
         </div>
       </div>
 
-      <div>
-        <div class="schedule-vertical-line"></div>
-        <div class="schedule-vertical-line-progress"></div>
+      <div class="wedding-schedule-list-item">
+        <WeddingAperitivosIcon class="wedding-schedule-icon" />
+        <div class="wedding-schedule-list-item-info">
+          <p class="wedding-schedule-list-item-title">Aperitivos</p>
+          <p class="wedding-schedule-list-item-time">14:00</p>
+        </div>
+      </div>
+
+      <div class="wedding-schedule-list-item">
+        <WeddingBanqueteIcon class="wedding-schedule-icon" />
+        <div class="wedding-schedule-list-item-info">
+          <p class="wedding-schedule-list-item-title">Banquete</p>
+          <p class="wedding-schedule-list-item-time">15:30</p>
+        </div>
+      </div>
+
+      <div class="wedding-schedule-list-item">
+        <WeddingBaileIcon class="wedding-schedule-icon" />
+        <div class="wedding-schedule-list-item-info">
+          <p class="wedding-schedule-list-item-title">Baile Nupcial</p>
+          <p class="wedding-schedule-list-item-time">18:30</p>
+        </div>
+      </div>
+
+      <div class="wedding-schedule-list-item">
+        <WeddingDiscoIcon class="wedding-schedule-icon" />
+        <div class="wedding-schedule-list-item-info">
+          <p class="wedding-schedule-list-item-title">¡Fiesta!</p>
+          <p class="wedding-schedule-list-item-time">19:00</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useWindowScroll, useWindowSize } from '@vueuse/core'
-import { ref, watch, onMounted } from 'vue'
-
-const { y: windowScrollY } = useWindowScroll()
-const { width: windowHeight } = useWindowSize()
-
-const timelineHeight = ref(0)
-const scrollContainer = ref(null)
-
-const observer = ref(null)
-const hasIntersectedFirstTime = ref(false)
-const scrollPixelsStart = ref(null)
-const scrollPixelsEnd = ref(null)
-
-onMounted(() => {
-  const options = {
-    threshold: 0.4,
-  }
-  observer.value = new IntersectionObserver(function (entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        hasIntersectedFirstTime.value = true
-      }
-    })
-  }, options)
-
-  observer.value.observe(scrollContainer.value)
-})
-
-watch(
-  () => hasIntersectedFirstTime.value,
-  () => {
-    // console.log(hasIntersectedFirstTime)
-    scrollPixelsStart.value = windowScrollY.value
-    scrollPixelsEnd.value =
-      scrollPixelsStart.value + scrollContainer.value.offsetHeight
-
-    // console.log(scrollPixelsStart.value, scrollContainer.value.offsetHeight)
-    if (observer.value) {
-      observer.value.disconnect()
-    }
-  },
-)
-
-watch(
-  () => windowScrollY.value,
-  (newValue, oldValue) => {
-    if (
-      scrollPixelsStart.value &&
-      newValue > scrollPixelsStart.value &&
-      newValue < scrollPixelsEnd.value
-    ) {
-      timelineHeight.value = `${newValue - scrollPixelsStart.value}px`
-    }
-  },
-)
+import WeddingArchIcon from '../../assets/svg/wedding-arch.svg'
+import WeddingAperitivosIcon from '../../assets/svg/wedding-aperitivos.svg'
+import WeddingBanqueteIcon from '../../assets/svg/wedding-banquete.svg'
+import WeddingBaileIcon from '../../assets/svg/wedding-baile.svg'
+import WeddingDiscoIcon from '../../assets/svg/wedding-disco.svg'
 </script>
 
 <style lang="scss">
+.wedding-schedule {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.wedding-schedule-flower {
+  position: absolute;
+  right: 0;
+  bottom: 30%;
+  height: 45%;
+}
+
 .wedding-schedule-title {
+  padding: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 2em 0;
+  flex-direction: column;
+  gap: 2em;
+  box-sizing: border-box;
 }
 
-.wedding-schedule {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+.wedding-schedule-icon {
+  width: 64px;
+  height: auto;
 }
 
-.schedule-vertical-line,
-.schedule-vertical-line-progress {
-  position: absolute;
-  width: 2px;
-  background-color: var(--vertical-line-color-primary);
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-  height: v-bind(timelineHeight);
+.wedding-schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  padding: 2em 3em;
 }
 
-/* Container around content */
-.container {
-  padding: 10px 40px;
-  position: relative;
-  width: 50%;
-
-  /* The actual content */
-  .content {
-    padding: 0 16px 48px;
-    display: flex;
-    gap: 1em;
-    flex-direction: column;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    right: -4px;
-    background-color: white;
-
-    border: 2px solid var(--text-color-primary);
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-  }
-
-  /* Place the container to the left */
-  &.left {
-    left: 0;
-
-    .content {
-      align-items: end;
-    }
-  }
-  /* Place the container to the right */
-  &.right {
-    left: 50%;
-
-    &::after {
-      left: -8px;
-    }
-  }
+.wedding-schedule-list-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.wedding-schedule-list-item {
+  display: flex;
+  align-items: center;
+  gap: 2em;
 }
 
-/* Media queries - Responsive wedding-schedule on screens less than 600px wide */
-@media screen and (max-width: 768px) {
-  /* Place the timelime to the left */
-  .wedding-schedule::after {
-    left: 31px;
-  }
+.wedding-schedule-list-item-title {
+  font-size: 1.6em;
+}
 
-  /* Full-width containers */
-  .container {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-
-    &.left {
-      .content {
-        align-items: start;
-      }
-    }
-
-    &.left::after,
-    &.right::after {
-      left: 28px;
-    }
-
-    &.right {
-      left: 0%;
-    }
-  }
-
-  .schedule-vertical-line,
-  .schedule-vertical-line-progress {
-    left: 10%;
-  }
+.wedding-schedule-list-item-time {
+  font-size: 1.2em;
 }
 </style>

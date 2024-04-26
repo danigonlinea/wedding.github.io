@@ -5,11 +5,7 @@
   <WeddingPlace></WeddingPlace>
 
   <WeddingSchedule></WeddingSchedule>
-  <img
-    src="../../assets/flowers/header-flowers-middle-cropped.webp"
-    alt="Example Image"
-    class="section-image"
-  />
+
   <WeddingInfo></WeddingInfo>
   <WeddingForm></WeddingForm>
   <WeddingGift></WeddingGift>
@@ -27,15 +23,14 @@
 
 <script setup>
 import WeddingTopHeader from './weddingTopHeader.vue'
-import WeddingSchedule from './weddingSchedule.vue'
 import WeddingPlace from './weddingPlace.vue'
-
 import WeddingInfo from './weddingInfo.vue'
 import WeddingForm from './weddingForm.vue'
 import WeddingGift from './weddingGift.vue'
 import WeddingPhotoGallery from './weddingPhotoGallery.vue'
 import WeddingHeader from './weddingHeader.vue'
 import WeddingSongPlayer from './weddingSongPlayer.vue'
+import WeddingSchedule from './weddingSchedule.vue'
 </script>
 
 <style lang="scss">
