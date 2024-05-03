@@ -40,7 +40,7 @@
 <script setup>
 import WeddingLink from '../ui/weddingLink.vue'
 
-const title = 'Ceremonia civil y celebración'
+const title = 'Lugar de celebración'
 const description =
   'Hemos elegido la maravillosa finca Alboreá para llevar a cabo uno de los días más felices de nuestra vida.'
 
@@ -103,7 +103,7 @@ const weddingPlaceGmapsLink =
 
   aspect-ratio: 3 / 2;
 
-  > * {
+  >* {
     position: absolute;
     top: 0;
     left: 0;
@@ -113,11 +113,9 @@ const weddingPlaceGmapsLink =
   }
 
   .right {
-    -webkit-mask-image: linear-gradient(
-      calc(var(--angle) * 1deg),
-      transparent calc(var(--pct1) * 1%),
-      #fff calc(var(--pct2) * 1%)
-    );
+    -webkit-mask-image: linear-gradient(calc(var(--angle) * 1deg),
+        transparent calc(var(--pct1) * 1%),
+        #fff calc(var(--pct2) * 1%));
   }
 }
 </style>

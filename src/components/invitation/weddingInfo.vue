@@ -6,10 +6,6 @@
 
     <div class="wedding-qa-list">
       <div class="wedding-qa-item">
-        <h3 class="wedding-q">¿Cómo va a ser la boda?</h3>
-        <p class="wedding-a">??</p>
-      </div>
-      <div class="wedding-qa-item">
         <h3 class="wedding-q">¿Cómo hay que ir vestido?</h3>
         <p class="wedding-a">
           Nos encantaría ver a nuestra familia y amigos vestidos elegantes. El

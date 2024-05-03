@@ -47,14 +47,16 @@
   right: 0;
   width: 32em;
   height: auto;
+  z-index: 10;
 }
 
 .header-top-left {
   position: absolute;
-  bottom: 0;
+  bottom: -70px;
   left: 0;
   width: 14em;
   height: auto;
+  z-index: 10;
 }
 
 .header-top {
@@ -80,6 +82,7 @@
     opacity: 0;
     transform: translateY(100%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -90,16 +93,15 @@
   from {
     /* Starting position */
     opacity: 0;
-    transform: translateX(
-      -100%
-    ); /* Move image 100% of its width to the right */
+    transform: translateX(-100%);
+    /* Move image 100% of its width to the right */
   }
+
   to {
     /* Ending position */
     opacity: 1;
-    transform: translateX(
-      0
-    ); /* Move image back to its original position (leftmost) */
+    transform: translateX(0);
+    /* Move image back to its original position (leftmost) */
   }
 }
 
@@ -107,14 +109,15 @@
   from {
     /* Starting position */
     opacity: 0;
-    transform: translateX(100%); /* Move image 100% of its width to the right */
+    transform: translateX(100%);
+    /* Move image 100% of its width to the right */
   }
+
   to {
     /* Ending position */
     opacity: 1;
-    transform: translateX(
-      0
-    ); /* Move image back to its original position (leftmost) */
+    transform: translateX(0);
+    /* Move image back to its original position (leftmost) */
   }
 }
 
@@ -125,7 +128,7 @@
   }
 
   .header-top-left {
-    width: 8em;
+    width: 7em;
   }
 }
 </style>

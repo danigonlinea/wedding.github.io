@@ -3,14 +3,10 @@
   <WeddingHeader></WeddingHeader>
 
   <WeddingPlace></WeddingPlace>
-
   <WeddingSchedule></WeddingSchedule>
-
   <WeddingInfo></WeddingInfo>
   <WeddingForm></WeddingForm>
   <WeddingGift></WeddingGift>
-
-  <WeddingPhotoGallery></WeddingPhotoGallery>
 
   <WeddingSongPlayer />
 

@@ -2,8 +2,10 @@
 @import 'fonts.css';
 @import 'global.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merienda:wght@300..900&family=Parisienne&display=swap');
+
 :root {
-  font-family: 'Quicksand', 'EBGaramond', Inter, system-ui, Avenir, Helvetica,
+  font-family: 'Quicksand', Inter, system-ui, Avenir, Helvetica,
     Arial, sans-serif;
 
   color-scheme: light dark;
