@@ -214,7 +214,7 @@ function daysUntil(targetDate) {
   height: 25vh;
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   align-items: center;
   gap: 1em;
 }
@@ -230,7 +230,7 @@ function daysUntil(targetDate) {
 
 .header-flower-small {
   position: absolute;
-  bottom: -18%;
+  bottom: 0%;
   left: 0;
   width: 14em;
   height: auto;
@@ -251,12 +251,12 @@ function daysUntil(targetDate) {
 /* Tablet and smaller screens */
 @media screen and (max-width: 768px) {
   .header-flower-big {
-    width: 24em;
+    width: 21em;
   }
 
   .header-flower-small,
   .header-flower-small-simetric {
-    width: 8em;
+    width: 7em;
   }
 }
 
@@ -266,7 +266,7 @@ header {
   flex-direction: column;
 
   .header-image-hands-container {
-    padding: 1em;
+    padding: 0.4em;
     height: 50vh;
     display: flex;
     align-items: flex-end;
@@ -294,7 +294,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 2em;
+    gap: 3em;
   }
 
   .header-we-get-married {

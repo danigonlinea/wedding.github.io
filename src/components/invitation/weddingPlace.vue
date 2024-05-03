@@ -18,17 +18,30 @@
       </div>
 
       <div class="wedding-place-info">
-        <img
+        <!--  <img
           src="../../assets/flowers/flor-wedding-place.webp"
           alt="Example Image"
           class="wedding-place-flower"
-        />
+        /> -->
+
+        <picture class="wedding-place-flower-two">
+          <source
+            srcset="../../assets/flowers/flower-top-left.webp"
+            type="image/webp"
+          />
+
+          <img
+            src="../../assets/flowers/flower-top-left.webp"
+            alt="Example Image"
+            class="section-image animation-from-left"
+          />
+        </picture>
         <span class="wedding-title-handwriting">Finca Alboreá</span>
         <div>
           <p>Carril de los Brenes, 6, 11149</p>
           <p>Conil de la Frontera, Cádiz</p>
         </div>
-        <h3>13:00 horas</h3>
+
         <div class="center">
           <WeddingLink :to="weddingPlaceGmapsLink">Cómo llegar</WeddingLink>
         </div>
@@ -55,6 +68,14 @@ const weddingPlaceGmapsLink =
   top: 0;
 }
 
+.wedding-place-flower-two {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8em;
+}
+
 .wedding-place {
   height: 100vh;
   display: flex;
@@ -78,7 +99,7 @@ const weddingPlaceGmapsLink =
 }
 
 .wedding-place-info {
-  padding: 6em 2em;
+  padding: 4em 2em;
   border-left: 2px solid var(--card-border);
   border-right: 2px solid var(--card-border);
   border-bottom: 2px solid var(--card-border);
