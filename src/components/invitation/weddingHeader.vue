@@ -211,7 +211,7 @@ function daysUntil(targetDate) {
   height: 25vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1em;
 }
@@ -227,7 +227,7 @@ function daysUntil(targetDate) {
 
 .header-flower-small {
   position: absolute;
-  bottom: 0%;
+  bottom: 5%;
   left: 0;
   width: 14em;
   height: auto;
@@ -275,7 +275,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 3em;
+    gap: 2.4em;
   }
 
   .header-we-get-married {
@@ -362,11 +362,13 @@ header {
 
 /* Tablet and smaller screens */
 @media screen and (max-width: 768px) {
-  header {}
+  header {
+  }
 }
 
 /* Mobile screens */
 @media screen and (max-width: 480px) {
-  header {}
+  header {
+  }
 }
 </style>
