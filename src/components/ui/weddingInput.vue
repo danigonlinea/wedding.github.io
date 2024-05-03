@@ -52,7 +52,6 @@ watch(inputValue, (newValue) => {
 .wedding-input {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
 }
 
 label {

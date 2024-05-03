@@ -4,26 +4,30 @@
       <h2>Regalo de bodas</h2>
     </div>
 
-    <div>
-      <h3>
-        lo más importante para nosotros es compartir este día tan especial
-        contigo, pero si quieres tener un detalle:
-      </h3>
-    </div>
+    <div class="wedding-gift-content">
+      <div class="wedding-gift-content-message">
+        <span>
+          Lo más importante para nosotros es compartir este día tan especial
+          contigo, pero si quieres tener un detalle:
+        </span>
+      </div>
 
-    <div
-      class="card-container"
-      @click="flipCard(true)"
-      @mouseleave="flipCard(false)"
-    >
-      <div :class="{ card: true, flipped: isFlipped }">
-        <div class="front">
-          <WeddingButton label="Ver Nº cuenta"></WeddingButton>
-        </div>
-        <div class="back">
-          <h2>Nº cuenta bancaria</h2>
-          <h3>ESXX XXXX XX XXXX XXXX</h3>
-          <WeddingButton label="Copiar"></WeddingButton>
+      <div class="wedding-gift-card">
+        <div
+          class="card-container"
+          @click="flipCard(true)"
+          @mouseleave="flipCard(false)"
+        >
+          <div :class="{ card: true, flipped: isFlipped }">
+            <div class="front">
+              <WeddingGiftIcon />
+            </div>
+            <div class="back">
+              <h2>Nº cuenta bancaria</h2>
+              <h3>ESXX XXXX XX XXXX XXXX</h3>
+              <WeddingButton label="Copiar"></WeddingButton>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -33,6 +37,8 @@
 <script setup>
 import { ref } from 'vue'
 import WeddingButton from '../ui/WeddingButton.vue'
+
+import WeddingGiftIcon from '../../assets/svg/wedding-gift.svg'
 
 const isFlipped = ref(false)
 
@@ -58,14 +64,30 @@ const flipCard = (flip) => {
     box-sizing: border-box;
   }
 
+  .wedding-gift-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    padding: 2em 3em;
+  }
+
+  .wedding-gift-content-message {
+    text-align: center;
+    font-size: 1.4em;
+  }
+
+  .wedding-gift-card {
+    position: relative;
+  }
+
   .card-container {
+    position: relative;
     perspective: 1000px;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    filter: drop-shadow(-6.4px 6.2px 8px rgba(0, 0, 0, 0.6));
-
+    filter: drop-shadow(0 0 0.75rem var(--pomp-and-power));
     .card {
       width: 100%;
       height: 100%;
@@ -79,7 +101,6 @@ const flipCard = (flip) => {
 .front,
 .back {
   width: 100%;
-
   position: absolute;
   backface-visibility: hidden;
   display: flex;
@@ -100,7 +121,7 @@ const flipCard = (flip) => {
 .back {
   display: flex;
   flex-direction: column;
-  background-color: #ddd;
+  background-color: #f0f0f0;
   transform: rotateY(180deg);
 }
 

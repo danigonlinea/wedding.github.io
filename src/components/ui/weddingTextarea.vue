@@ -30,7 +30,6 @@ watch(textareaValue, (newValue) => {
 .wedding-textarea {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
 }
 
 label {

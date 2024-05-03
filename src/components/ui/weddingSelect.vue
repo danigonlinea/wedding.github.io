@@ -45,7 +45,6 @@ watchEffect(() => {
 
 <style scoped>
 .wedding-select-input {
-  margin-bottom: 20px;
 }
 
 label {
