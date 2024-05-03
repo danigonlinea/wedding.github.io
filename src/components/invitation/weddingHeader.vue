@@ -31,7 +31,7 @@
         <img
           src="../../assets/preboda/preboda_230_main.JPG"
           alt="Example Image"
-          class="header-image-hands"
+          class="header-image-with-frame"
         />
       </div>
 
@@ -116,9 +116,6 @@ function daysUntil(targetDate) {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merienda:wght@300..900&family=Parisienne&display=swap');
-
 .grid-container {
   display: grid;
   grid-template-columns: 45% 10% 45%;
@@ -270,22 +267,6 @@ header {
     height: 50vh;
     display: flex;
     align-items: flex-end;
-  }
-
-  .header-image-hands {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-
-    --s: 8px;
-    /* control the size */
-    padding: var(--s);
-    border: calc(2 * var(--s)) solid #0000;
-    outline: 1px solid var(--pomp-and-power-dark);
-    outline-offset: calc(-1 * var(--s));
-    background: conic-gradient(from 90deg at 2px 2px,
-        #0000 25%,
-        var(--pomp-and-power-middle) 0);
   }
 
   .header-info-container {

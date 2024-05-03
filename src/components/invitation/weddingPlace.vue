@@ -1,45 +1,43 @@
 <template>
   <div class="wedding-place">
+    <picture class="header-flower-small-right">
+      <source
+        srcset="../../assets/flowers/flower-top-left.webp"
+        type="image/webp"
+      />
+
+      <img
+        src="../../assets/flowers/flower-top-left.webp"
+        alt="Example Image"
+        class="section-image animation-from-left"
+      />
+    </picture>
     <div class="wedding-section-title">
       <h2>{{ title }}</h2>
     </div>
-    <div class="wedding-place-photo">
-      <div class="wedding-place-blend">
-        <img
-          class="photo2"
-          src="../../assets/img/alborea-3.webp"
-          alt="Right Photo"
-        />
-        <img
-          class="photo1 right"
-          src="../../assets/img/alborea-2.webp"
-          alt="Left Photo"
-        />
+    <div class="wedding-place-photo-info-container">
+      <div class="header-image-with-frame header-image-space">
+        <div class="wedding-place-blend">
+          <img
+            class="photo2"
+            src="../../assets/img/alborea-3.webp"
+            alt="Right Photo"
+          />
+          <img
+            class="photo1 right"
+            src="../../assets/img/alborea-2.webp"
+            alt="Left Photo"
+          />
+        </div>
       </div>
 
       <div class="wedding-place-info">
-        <!--  <img
-          src="../../assets/flowers/flor-wedding-place.webp"
-          alt="Example Image"
-          class="wedding-place-flower"
-        /> -->
-
-        <picture class="wedding-place-flower-two">
-          <source
-            srcset="../../assets/flowers/flower-top-left.webp"
-            type="image/webp"
-          />
-
-          <img
-            src="../../assets/flowers/flower-top-left.webp"
-            alt="Example Image"
-            class="section-image animation-from-left"
-          />
-        </picture>
-        <span class="wedding-title-handwriting">Finca Alboreá</span>
-        <div>
-          <p>Carril de los Brenes, 6, 11149</p>
-          <p>Conil de la Frontera, Cádiz</p>
+        <div class="wedding-place-info-name-address">
+          <span class="wedding-title-handwriting">Finca Alboreá</span>
+          <div class="wedding-place-address">
+            <span>Carril de los Brenes, 6, 11149</span>
+            <span>Conil de la Frontera, Cádiz</span>
+          </div>
         </div>
 
         <div class="center">
@@ -62,55 +60,60 @@ const weddingPlaceGmapsLink =
 </script>
 
 <style lang="scss">
+.header-flower-small-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8em;
+  transform: scaleX(-1);
+}
+
 .wedding-place-flower {
   width: 100%;
   position: absolute;
   top: 0;
 }
 
-.wedding-place-flower-two {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8em;
-}
-
 .wedding-place {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.wedding-place-title {
-  padding: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 2em;
-  box-sizing: border-box;
-}
-
-.wedding-place-photo {
   position: relative;
-  padding: 2em;
+}
+
+.wedding-place-photo-info-container {
+  position: relative;
+  height: 80vh;
+}
+
+.header-image-space {
+  margin: 0.4em;
+}
+
+.wedding-place-info-name-address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.wedding-place-address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  font-size: 1.2em;
 }
 
 .wedding-place-info {
-  padding: 4em 2em;
-  border-left: 2px solid var(--card-border);
-  border-right: 2px solid var(--card-border);
-  border-bottom: 2px solid var(--card-border);
-
+  padding: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2em;
 
+  gap: 4em;
   position: relative;
+  height: 40vh;
 }
 
 .wedding-place-blend {

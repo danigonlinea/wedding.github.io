@@ -20,6 +20,8 @@ body {
   font-size: 1.2rem;
   display: flex;
   justify-content: center;
+  height: 20vh;
+  align-items: center;
 }
 
 .wedding-title-handwriting {
@@ -29,4 +31,20 @@ body {
   font-style: normal;
   line-height: 1;
   color: var(--text-color-primary);
+}
+
+.header-image-with-frame {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  --s: 8px;
+  /* control the size */
+  padding: var(--s);
+  border: calc(2 * var(--s)) solid #0000;
+  outline: 1px solid var(--pomp-and-power-dark);
+  outline-offset: calc(-1 * var(--s));
+  background: conic-gradient(from 90deg at 2px 2px,
+      #0000 25%,
+      var(--pomp-and-power-middle) 0);
 }

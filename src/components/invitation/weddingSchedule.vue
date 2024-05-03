@@ -72,7 +72,7 @@ import WeddingDiscoIcon from '../../assets/svg/wedding-disco.svg'
 .wedding-schedule-flower {
   position: absolute;
   right: 0;
-  top: 20%;
+  top: 30%;
   height: 35%;
 }
 
@@ -111,7 +111,13 @@ import WeddingDiscoIcon from '../../assets/svg/wedding-disco.svg'
 }
 
 .wedding-schedule-list-item-title {
-  font-size: 1.6em;
+  font-size: 2em;
+
+  font-family: 'Parisienne', cursive;
+  font-weight: 400;
+  font-style: normal;
+
+  color: var(--text-color-primary);
 }
 
 .wedding-schedule-list-item-time {
