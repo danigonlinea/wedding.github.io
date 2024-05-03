@@ -1,7 +1,17 @@
 <template>
-  <main id="main" class="layout">
-    <transition name="fade" @before-enter="beforeEnter" @enter="enter">
-      <div v-if="showWeddingInvitation" class="wedding-invitation">
+  <main
+    id="main"
+    class="layout"
+  >
+    <transition
+      name="fade"
+      @before-enter="beforeEnter"
+      @enter="enter"
+    >
+      <div
+        v-if="showWeddingInvitation"
+        class="wedding-invitation"
+      >
         <InvitationMain />
       </div>
     </transition>

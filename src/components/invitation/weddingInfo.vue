@@ -1,6 +1,6 @@
 <template>
   <div class="wedding-qa">
-    <div class="wedding-qa-title">
+    <div class="wedding-section-title">
       <h2>Más detalles</h2>
     </div>
 

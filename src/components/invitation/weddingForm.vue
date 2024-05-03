@@ -1,6 +1,6 @@
 <template>
   <div class="wedding-form-container">
-    <div class="wedding-form-title">
+    <div class="wedding-section-title">
       <h2>Confírmanos tu asistencia</h2>
     </div>
 
@@ -8,7 +8,11 @@
       <form @submit.prevent="submitForm">
         <div class="wedding-form">
           <div class="wedding-form-group">
-            <WeddingInput v-model="formData.fullName" label="Nombre" required />
+            <WeddingInput
+              v-model="formData.fullName"
+              label="Nombre"
+              required
+            />
           </div>
           <div class="wedding-form-group">
             <WeddingSelect

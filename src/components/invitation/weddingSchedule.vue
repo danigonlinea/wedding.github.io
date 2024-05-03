@@ -5,7 +5,7 @@
       alt="Example Image"
       class="wedding-schedule-flower"
     />
-    <div class="wedding-schedule-title">
+    <div class="wedding-section-title">
       <h2>Itinerario</h2>
     </div>
 
@@ -103,6 +103,7 @@ import WeddingDiscoIcon from '../../assets/svg/wedding-disco.svg'
   flex-direction: column;
   gap: 0.4em;
 }
+
 .wedding-schedule-list-item {
   display: flex;
   align-items: center;

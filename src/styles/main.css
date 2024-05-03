@@ -2,11 +2,12 @@
 @import 'fonts.css';
 @import 'global.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Forum&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merienda:wght@300..900&family=Parisienne&display=swap');
 
 :root {
-  font-family: 'Quicksand', Inter, system-ui, Avenir, Helvetica,
-    Arial, sans-serif;
+  font-family: 'Aleo', Helvetica, sans-serif;
 
   color-scheme: light dark;
   font-synthesis: none;
@@ -60,6 +61,7 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
 }
 
 h1,

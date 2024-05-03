@@ -1,6 +1,6 @@
 <template>
   <div class="wedding-place">
-    <div class="wedding-place-title">
+    <div class="wedding-section-title">
       <h2>{{ title }}</h2>
     </div>
     <div class="wedding-place-photo">
@@ -23,7 +23,7 @@
           alt="Example Image"
           class="wedding-place-flower"
         />
-        <h3>Finca Alboreá</h3>
+        <span class="wedding-title-handwriting">Finca Alboreá</span>
         <div>
           <p>Carril de los Brenes, 6, 11149</p>
           <p>Conil de la Frontera, Cádiz</p>

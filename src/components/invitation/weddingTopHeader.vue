@@ -10,55 +10,11 @@
       class="section-image animation-from-top"
     />
   </picture> -->
-
-  <picture class="header-top-left">
-    <source
-      srcset="../../assets/flowers/flower-top-left.webp"
-      type="image/webp"
-    />
-
-    <img
-      src="../../assets/flowers/flower-top-left.webp"
-      alt="Example Image"
-      class="section-image animation-from-left"
-    />
-  </picture>
-
-  <picture class="header-top-right">
-    <source
-      srcset="../../assets/flowers/flower-top-right.webp"
-      type="image/webp"
-    />
-
-    <img
-      src="../../assets/flowers/flower-top-right.webp"
-      alt="Example Image"
-      class="section-image animation-from-right"
-    />
-  </picture>
 </template>
 
 <script setup></script>
 
 <style lang="scss">
-.header-top-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 32em;
-  height: auto;
-  z-index: 10;
-}
-
-.header-top-left {
-  position: absolute;
-  bottom: -70px;
-  left: 0;
-  width: 14em;
-  height: auto;
-  z-index: 10;
-}
-
 .header-top {
   position: absolute;
   top: 0;
@@ -118,17 +74,6 @@
     opacity: 1;
     transform: translateX(0);
     /* Move image back to its original position (leftmost) */
-  }
-}
-
-/* Tablet and smaller screens */
-@media screen and (max-width: 768px) {
-  .header-top-right {
-    width: 24em;
-  }
-
-  .header-top-left {
-    width: 7em;
   }
 }
 </style>
