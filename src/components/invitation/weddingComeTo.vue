@@ -6,7 +6,7 @@
       </span>
     </div>
 
-    <div class="">
+    <div class="header-image-with-space">
       <img
         src="../../assets/preboda/preboda_90.JPG"
         alt="Example Image"
@@ -19,6 +19,17 @@
         {{ messageComeTo2 }}
       </span>
     </div>
+    <picture class="flower-green">
+      <source
+        srcset="../../assets/flowers/flower-middle-green-big.webp"
+        type="image/webp"
+      />
+
+      <img
+        src="../../assets/flowers/flower-middle-green-big.webp"
+        alt="Example Image"
+      />
+    </picture>
   </div>
 </template>
 
@@ -59,6 +70,17 @@ const weddingPlaceGmapsLink =
     line-height: 1;
     color: var(--text-color-primary);
     text-align: center;
+  }
+}
+
+.flower-green {
+  position: absolute;
+  bottom: -2%;
+
+  img {
+    width: 100%;
+    height: 5em;
+    object-fit: cover;
   }
 }
 </style>

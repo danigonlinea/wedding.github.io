@@ -1,22 +1,36 @@
 <template>
   <div class="wedding-place">
-    <picture class="header-flower-small-right">
+    <picture class="wedding-place-flower wedding-place-flower-left">
       <source
-        srcset="../../assets/flowers/flower-top-left.webp"
+        srcset="../../assets/flowers/flor-ramillete-2.webp"
         type="image/webp"
       />
 
       <img
-        src="../../assets/flowers/flower-top-left.webp"
+        src="../../assets/flowers/flor-ramillete-2.webp"
         alt="Example Image"
-        class="section-image animation-from-left"
+        class="section-image"
       />
     </picture>
+
+    <picture class="wedding-place-flower wedding-place-flower-right">
+      <source
+        srcset="../../assets/flowers/flor-ramillete-2.webp"
+        type="image/webp"
+      />
+
+      <img
+        src="../../assets/flowers/flor-ramillete-2.webp"
+        alt="Example Image"
+        class="section-image"
+      />
+    </picture>
+
     <div class="wedding-section-title">
       <h2>{{ title }}</h2>
     </div>
     <div class="wedding-place-photo-info-container">
-      <div class="header-image-with-frame header-image-space">
+      <div class="header-image-with-frame header-image-with-space">
         <div class="wedding-place-blend">
           <img
             class="photo2"
@@ -60,18 +74,22 @@ const weddingPlaceGmapsLink =
 </script>
 
 <style lang="scss">
-.header-flower-small-right {
+.wedding-place-flower {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 8em;
+  bottom: -14%;
+  width: 7em;
+  height: auto;
+  z-index: 1;
+}
+
+.wedding-place-flower-left {
+  left: 0;
+  -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 
-.wedding-place-flower {
-  width: 100%;
-  position: absolute;
-  top: 0;
+.wedding-place-flower-right {
+  right: 0;
 }
 
 .wedding-place {
@@ -84,10 +102,6 @@ const weddingPlaceGmapsLink =
 .wedding-place-photo-info-container {
   position: relative;
   height: 80vh;
-}
-
-.header-image-space {
-  margin: 0.4em;
 }
 
 .wedding-place-info-name-address {
@@ -111,7 +125,7 @@ const weddingPlaceGmapsLink =
   flex-direction: column;
   align-items: center;
 
-  gap: 4em;
+  gap: 6em;
   position: relative;
   height: 40vh;
 }
@@ -127,7 +141,7 @@ const weddingPlaceGmapsLink =
 
   aspect-ratio: 3 / 2;
 
-  >* {
+  > * {
     position: absolute;
     top: 0;
     left: 0;
@@ -137,9 +151,11 @@ const weddingPlaceGmapsLink =
   }
 
   .right {
-    -webkit-mask-image: linear-gradient(calc(var(--angle) * 1deg),
-        transparent calc(var(--pct1) * 1%),
-        #fff calc(var(--pct2) * 1%));
+    -webkit-mask-image: linear-gradient(
+      calc(var(--angle) * 1deg),
+      transparent calc(var(--pct1) * 1%),
+      #fff calc(var(--pct2) * 1%)
+    );
   }
 }
 </style>

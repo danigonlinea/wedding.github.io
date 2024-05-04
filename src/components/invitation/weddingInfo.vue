@@ -1,5 +1,13 @@
 <template>
   <div class="wedding-qa">
+    <div class="header-image-with-space">
+      <img
+        src="../../assets/preboda/preboda_121.JPG"
+        alt="Example Image"
+        class="header-image-with-frame"
+      />
+    </div>
+
     <div class="wedding-section-title">
       <h2>Más detalles</h2>
     </div>
@@ -34,6 +42,13 @@
         </p>
       </div>
     </div>
+    <div class="header-image-with-space">
+      <img
+        src="../../assets/preboda/preboda_154.JPG"
+        alt="Example Image"
+        class="header-image-with-frame"
+      />
+    </div>
   </div>
 </template>
 
@@ -41,7 +56,6 @@
 
 <style lang="scss">
 .wedding-qa {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 

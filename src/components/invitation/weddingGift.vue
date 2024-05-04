@@ -52,7 +52,7 @@ const flipCard = (flip) => {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 4em 0;
+  padding: 2em 0;
 
   .wedding-gift-title {
     padding: 2em;
@@ -68,7 +68,7 @@ const flipCard = (flip) => {
     display: flex;
     flex-direction: column;
     gap: 5em;
-    padding: 2em 3em;
+    padding: 2em 1em;
   }
 
   .wedding-gift-content-message {
@@ -78,6 +78,7 @@ const flipCard = (flip) => {
 
   .wedding-gift-card {
     position: relative;
+    width: 100%;
   }
 
   .card-container {
@@ -88,6 +89,7 @@ const flipCard = (flip) => {
     transform-style: preserve-3d;
     transition: transform 0.5s;
     filter: drop-shadow(0 0 0.75rem var(--pomp-and-power));
+
     .card {
       width: 100%;
       height: 100%;

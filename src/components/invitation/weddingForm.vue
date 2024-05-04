@@ -8,11 +8,7 @@
       <form @submit.prevent="submitForm">
         <div class="wedding-form">
           <div class="wedding-form-group">
-            <WeddingInput
-              v-model="formData.fullName"
-              label="Nombre"
-              required
-            />
+            <WeddingInput v-model="formData.fullName" label="Nombre" required />
           </div>
           <div class="wedding-form-group">
             <WeddingSelect
@@ -43,6 +39,14 @@
           </div>
         </div>
       </form>
+    </div>
+
+    <div class="header-image-with-space">
+      <img
+        src="../../assets/preboda/preboda_221.JPG"
+        alt="Example Image"
+        class="header-image-with-frame"
+      />
     </div>
   </div>
 </template>
@@ -84,7 +88,6 @@ const submitForm = () => {
 
 <style lang="scss">
 .wedding-form-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 4em 0;

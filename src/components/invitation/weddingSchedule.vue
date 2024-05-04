@@ -1,10 +1,10 @@
 <template>
   <div class="wedding-schedule">
-    <img
+    <!--  <img
       src="../../assets/flowers/flor-wedding-schedule.webp"
       alt="Example Image"
       class="wedding-schedule-flower"
-    />
+    /> -->
     <div class="wedding-section-title">
       <h2>Itinerario</h2>
     </div>

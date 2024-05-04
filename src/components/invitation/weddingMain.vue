@@ -30,15 +30,3 @@ import WeddingSongPlayer from './weddingSongPlayer.vue'
 import WeddingSchedule from './weddingSchedule.vue'
 import WeddingComeTo from './weddingComeTo.vue'
 </script>
-
-<style lang="scss">
-.section-image {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.inverse {
-  transform: scaleY(-1);
-}
-</style>

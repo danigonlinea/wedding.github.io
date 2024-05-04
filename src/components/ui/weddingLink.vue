@@ -39,7 +39,7 @@ const props = defineProps({
 @media (max-width: 768px) {
   /* Styles for smaller screens (phones) */
   .wedding-link {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 </style>
