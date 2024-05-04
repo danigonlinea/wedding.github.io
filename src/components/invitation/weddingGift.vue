@@ -1,6 +1,6 @@
 <template>
   <div class="wedding-gift">
-    <div class="wedding-gift-title">
+    <div class="wedding-section-title">
       <h2>Regalo de bodas</h2>
     </div>
 
@@ -53,16 +53,6 @@ const flipCard = (flip) => {
   display: flex;
   flex-direction: column;
   padding: 2em 0;
-
-  .wedding-gift-title {
-    padding: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2em;
-    box-sizing: border-box;
-  }
 
   .wedding-gift-content {
     display: flex;

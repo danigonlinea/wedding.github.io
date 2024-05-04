@@ -19,13 +19,13 @@
             />
           </div>
 
-          <div class="wedding-form-group">
+          <!-- <div class="wedding-form-group">
             <WeddingInput
               v-model="formData.songField"
               label="¡Una canción que no puede faltar!
 "
             />
-          </div>
+          </div> -->
 
           <div class="wedding-form-group">
             <WeddingTextarea
@@ -35,7 +35,10 @@
           </div>
 
           <div class="wedding-form-submit">
-            <WeddingButton>Enviar</WeddingButton>
+            <WeddingButton v-if="!isFormSubmitted">Enviar</WeddingButton>
+            <div v-else class="wedding-form-thanks">
+              ¡Gracias por enviarnos tu información!
+            </div>
           </div>
         </div>
       </form>
@@ -68,6 +71,8 @@ const formData = ref({
   songField: '',
 })
 
+const isFormSubmitted = ref(false)
+
 const mainPlatesOptions = [
   { label: 'Carne', value: 'carne' },
   { label: 'Pescado', value: 'pescado' },
@@ -89,6 +94,8 @@ const submitForm = async () => {
       number: formData.value.numberPeople,
       message: formData.value.message,
     })
+
+    isFormSubmitted.value = true
     // console.log('Document written with ID: ', docRef.id)
   } catch (e) {
     console.error('Error adding document: ', e)
@@ -101,22 +108,18 @@ const submitForm = async () => {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyCcX2w-ZbqVZLVlIrz_eeMiNWI0H7qHCpc',
-  authDomain: 'wedlidiadani.firebaseapp.com',
-  projectId: 'wedlidiadani',
-  storageBucket: 'wedlidiadani.appspot.com',
-  messagingSenderId: '943148002809',
-  appId: '1:943148002809:web:4ecf657a0112ab7de86128',
-  measurementId: 'G-G4KTJYSDV0',
+  apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_APP_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_APP_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_APP_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_APP_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_APP_ID,
+  measurementId: import.meta.env.VITE_APP_MEASUREMENT_ID,
 }
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-
 const db = getFirestore(app)
-
-console.log(app)
-console.log(db)
 </script>
 
 <style lang="scss">
@@ -138,10 +141,19 @@ console.log(db)
   }
 
   .wedding-form-submit {
+    padding: 2em;
+    font-size: 1.2em;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .wedding-form-thanks {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Merienda', cursive;
   }
 }
 </style>
