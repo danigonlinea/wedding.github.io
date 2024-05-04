@@ -61,19 +61,6 @@
             <span>Daniel</span>
           </div>
         </div>
-
-        <!-- <div class="grid-container header-couple-central">
-          <div class="grid-item">
-            <span>Lidia</span>
-          </div>
-          <div
-            class="grid-item"
-            style="padding-left: 0.2em"
-          >&</div>
-          <div class="grid-item">
-            <span>Daniel</span>
-          </div>
-        </div> -->
       </div>
     </div>
     <div class="header-header-main-bottom">
@@ -92,22 +79,23 @@
             </div>
           </div>
         </div>
-        <!-- <div class="header-date-central">
-            <span class="day-week">Sábado</span>
-            <span class="day-number">12</span>
-            <span class="day-time">13:00h</span>
-          </div> -->
+
         <span class="date-year">2024</span>
       </div>
       <!-- <div class="header-info-quedan">
         <span>¡Quedan {{ daysLeftToWedding }} días!</span>
       </div> -->
     </div>
+
+    <div class="header-scroll-down">
+      <ChevronDoubleDownIcon />
+    </div>
   </header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
 
 const daysLeftToWedding = ref(daysUntil('2024-10-12'))
 
@@ -129,6 +117,33 @@ function daysUntil(targetDate) {
 </script>
 
 <style lang="scss">
+/* Keyframes for the animation */
+@keyframes scrollIcon {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.header-scroll-down {
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  width: 24px;
+  opacity: 0;
+  animation: scrollIcon 2s ease-in-out 2.2s 3;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 45% 10% 45%;
@@ -273,6 +288,7 @@ header {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   .header-image-hands-container {
     padding: 0.4em;

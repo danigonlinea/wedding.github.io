@@ -14,7 +14,9 @@
 <script>
 import { ref } from 'vue'
 import { PlayIcon, PauseIcon } from '@heroicons/vue/24/solid'
-import allOfMeSong from './../../assets/audio/john-legend-all-of-me.mp3'
+// import allOfMeSong from './../../assets/audio/john-legend-all-of-me.mp3'
+import algoSencillito from './../../assets/audio/marta-santos-algo-sencillito.mp3'
+import salitre from './../../assets/audio/manuel-carrasco-salitre.mp3'
 
 export default {
   components: {
@@ -23,7 +25,7 @@ export default {
   },
   setup() {
     const isPlaying = ref(false)
-    const audioSource = ref(allOfMeSong)
+    const audioSource = ref([algoSencillito, salitre])
     const audio = ref(null)
 
     const togglePlayPause = () => {
@@ -35,7 +37,10 @@ export default {
       isPlaying.value = !isPlaying.value
     }
 
-    return { isPlaying, audioSource, togglePlayPause, audio }
+    const songChosen =
+      audioSource.value[Math.floor(Math.random() * audioSource.value.length)]
+
+    return { isPlaying, audioSource: songChosen, togglePlayPause, audio }
   },
 }
 </script>
