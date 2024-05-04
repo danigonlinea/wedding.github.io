@@ -1,6 +1,6 @@
 <template>
   <div class="wedding-form-container">
-    <div class="wedding-section-title">
+    <div class="wedding-section-title wedding-form-title-space">
       <h2>Confírmanos tu asistencia</h2>
     </div>
 
@@ -29,13 +29,13 @@
 
           <div class="wedding-form-group">
             <WeddingTextarea
-              v-model="formData.songField"
+              v-model="formData.message"
               label="Coméntanos algo que necesitemos saber o si quieres dejar un mensaje en general"
             />
           </div>
 
           <div class="wedding-form-submit">
-            <WeddingButton @click="submitForm">Enviar</WeddingButton>
+            <WeddingButton>Enviar</WeddingButton>
           </div>
         </div>
       </form>
@@ -53,16 +53,18 @@
 
 <script setup>
 import { ref } from 'vue'
+import { initializeApp } from 'firebase/app'
+import { getFirestore, addDoc, collection } from 'firebase/firestore'
+
 import WeddingInput from '../ui/weddingInput.vue'
 import WeddingSelect from '../ui/weddingSelect.vue'
 import WeddingTextarea from '../ui/weddingTextarea.vue'
 import WeddingButton from '../ui/weddingButton.vue'
 
 const formData = ref({
-  fullName: '',
+  name: '',
   numberPeople: 1,
-  alergicField: '',
-  mainPlateField: '',
+  message: '',
   songField: '',
 })
 
@@ -80,10 +82,41 @@ const numberPeople = [
   { label: 6, value: 6 },
 ]
 
-const submitForm = () => {
-  // Handle form submission logic here (e.g., send data to server)
-  console.log('Form submitted with data:', formData.value)
+const submitForm = async () => {
+  try {
+    const docRef = await addDoc(collection(db, 'guests'), {
+      name: formData.value.name,
+      number: formData.value.numberPeople,
+      message: formData.value.message,
+    })
+    // console.log('Document written with ID: ', docRef.id)
+  } catch (e) {
+    console.error('Error adding document: ', e)
+  }
 }
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: 'AIzaSyCcX2w-ZbqVZLVlIrz_eeMiNWI0H7qHCpc',
+  authDomain: 'wedlidiadani.firebaseapp.com',
+  projectId: 'wedlidiadani',
+  storageBucket: 'wedlidiadani.appspot.com',
+  messagingSenderId: '943148002809',
+  appId: '1:943148002809:web:4ecf657a0112ab7de86128',
+  measurementId: 'G-G4KTJYSDV0',
+}
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig)
+
+const db = getFirestore(app)
+
+console.log(app)
+console.log(db)
 </script>
 
 <style lang="scss">
@@ -92,14 +125,9 @@ const submitForm = () => {
   flex-direction: column;
   padding: 4em 0;
 
-  .wedding-form-title {
+  .wedding-form-title-space {
     padding: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2em;
-    box-sizing: border-box;
+    text-align: center;
   }
 
   .wedding-form {

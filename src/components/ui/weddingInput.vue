@@ -15,7 +15,7 @@
 <script setup>
 import { ref, watch } from 'vue'
 
-const emit = defineEmits(['update:value'])
+const emit = defineEmits(['update:modelValue'])
 const props = defineProps({
   label: {
     type: String,
@@ -44,7 +44,7 @@ const inputValue = ref(props.value)
 
 watch(inputValue, (newValue) => {
   // Emit the input value when it changes
-  emit('update:value', newValue)
+  emit('update:modelValue', newValue)
 })
 </script>
 

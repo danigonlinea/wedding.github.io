@@ -16,13 +16,14 @@
 import { ref, watch } from 'vue'
 
 const props = defineProps(['label', 'value', 'placeholder', 'type'])
+const emit = defineEmits(['update:modelValue'])
 
 const textareaId = `custom-textarea-${Math.floor(Math.random() * 1000000)}`
 const textareaValue = ref(props.value)
 
 watch(textareaValue, (newValue) => {
   // Emit the textarea value when it changes
-  emit('update:value', newValue)
+  emit('update:modelValue', newValue)
 })
 </script>
 

@@ -84,7 +84,6 @@ const weddingPlaceGmapsLink =
 
 .wedding-place-flower-left {
   left: 0;
-  -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 
