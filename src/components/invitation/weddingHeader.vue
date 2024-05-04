@@ -9,7 +9,7 @@
       <img
         src="../../assets/flowers/flower-top-right.webp"
         alt="Example Image"
-        class="section-image animation-from-right"
+        class="section-image animation-wind"
       />
     </picture>
 
@@ -22,7 +22,7 @@
       <img
         src="../../assets/flowers/flower-top-left.webp"
         alt="Example Image"
-        class="section-image animation-from-left"
+        class="section-image animation-wind"
       />
     </picture>
 
@@ -35,7 +35,7 @@
       <img
         src="../../assets/flowers/flower-top-left.webp"
         alt="Example Image"
-        class="section-image animation-from-left"
+        class="section-image animation-wind"
       />
     </picture>
 
@@ -131,6 +131,22 @@ function daysUntil(targetDate) {
     opacity: 0;
     transform: translateY(20px);
   }
+}
+
+@keyframes windAnimation {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  50% {
+    transform: translateX(0) rotate(1deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+.animation-wind {
+  animation: windAnimation 5s ease-in-out infinite alternate;
 }
 
 .header-scroll-down {
@@ -246,8 +262,8 @@ function daysUntil(targetDate) {
 
 .header-flower-big {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -5px;
+  right: -5px;
   width: 32em;
   height: auto;
   z-index: 10;
