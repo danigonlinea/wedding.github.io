@@ -2,6 +2,7 @@
   <!--   <WeddingTopHeader /> -->
   <WeddingHeader></WeddingHeader>
 
+  <WeddingComeTo />
   <WeddingPlace></WeddingPlace>
   <WeddingSchedule></WeddingSchedule>
   <WeddingInfo></WeddingInfo>
@@ -27,6 +28,7 @@ import WeddingGift from './weddingGift.vue'
 import WeddingHeader from './weddingHeader.vue'
 import WeddingSongPlayer from './weddingSongPlayer.vue'
 import WeddingSchedule from './weddingSchedule.vue'
+import WeddingComeTo from './weddingComeTo.vue'
 </script>
 
 <style lang="scss">

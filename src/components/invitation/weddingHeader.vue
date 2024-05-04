@@ -13,7 +13,20 @@
       />
     </picture>
 
-    <picture class="header-flower-small">
+    <picture class="header-flower-small on-the-left">
+      <source
+        srcset="../../assets/flowers/flower-top-left.webp"
+        type="image/webp"
+      />
+
+      <img
+        src="../../assets/flowers/flower-top-left.webp"
+        alt="Example Image"
+        class="section-image animation-from-left"
+      />
+    </picture>
+
+    <picture class="header-flower-small on-the-right">
       <source
         srcset="../../assets/flowers/flower-top-left.webp"
         type="image/webp"
@@ -225,25 +238,24 @@ function daysUntil(targetDate) {
   z-index: 10;
 }
 
+.header-flower-small,
 .header-flower-small {
   position: absolute;
-  bottom: 5%;
-  left: 0;
+  bottom: -14%;
   width: 14em;
   height: auto;
-  z-index: 10;
+  z-index: 1;
 }
 
-// .header-flower-small-simetric {
-//   position: absolute;
-//   bottom: 5%;
-//   right: 0;
-//   width: 14em;
-//   height: auto;
-//   z-index: 10;
-//   -webkit-transform: scaleX(-1);
-//   transform: scaleX(-1);
-// }
+.on-the-left {
+  left: 0;
+}
+
+.on-the-right {
+  right: 0;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 
 /* Tablet and smaller screens */
 @media screen and (max-width: 768px) {
