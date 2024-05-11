@@ -46,7 +46,7 @@
 
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_215.jpg"
+        :src="preboda215"
         alt="Example Image"
         class="header-image-with-frame"
       />
@@ -55,6 +55,7 @@
 </template>
 
 <script setup>
+import preboda215 from '../../assets/preboda/preboda_215.jpg'
 import { ref } from 'vue'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, addDoc, collection } from 'firebase/firestore'
