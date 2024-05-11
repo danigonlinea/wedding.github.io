@@ -2,15 +2,8 @@
   <div class="wedding-playlist">
     <div class="wedding-playlist-flower-green">
       <picture>
-        <source
-          srcset="../../assets/flowers/flower-middle-green-big.webp"
-          type="image/webp"
-        />
-
-        <img
-          src="../../assets/flowers/flower-middle-green-big.webp"
-          alt="Example Image"
-        />
+        <source :srcset="flowerBigGreen" type="image/webp" />
+        <img :src="flowerBigGreen" alt="Example Image" />
       </picture>
     </div>
     <div class="wedding-section-title">
@@ -35,7 +28,8 @@
 </template>
 
 <script setup>
-import WeddingLink from '../ui/WeddingLink.vue'
+import flowerBigGreen from '@/assets/flowers/flower-middle-green-big.webp'
+import WeddingLink from '@/components/ui/WeddingLink.vue'
 </script>
 
 <style scoped>
