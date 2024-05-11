@@ -2,22 +2,15 @@
   <div class="wedding-last-message">
     <div class="wedding-last-message-content">
       <div class="wedding-last-message-ring">
-        <img
-          src="../../assets/svg/golden-ring.svg"
-          alt="Example Image"
-          class="wedding-ring-img"
-        />
+        <GoldenRingIcon />
+
         <div class="wedding-last-message-text">
           <span>¡Te esperamos!</span>
           <span>Quedan {{ daysLeftToWedding }} días</span>
         </div>
       </div>
       <div class="wedding-last-message-footer">
-        <img
-          src="../../assets/flowers/flor-wedding-footer.webp"
-          alt="Example Image"
-          class="section-image"
-        />
+        <img :src="flowerFooter" alt="Example Image" class="section-image" />
       </div>
     </div>
   </div>
@@ -25,6 +18,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import GoldenRingIcon from '@/assets/svg/golden-ring.svg'
+import flowerFooter from '@/assets/flowers/flor-wedding-footer.webp'
 
 const daysLeftToWedding = ref(daysUntil('2024-10-12'))
 
@@ -49,7 +44,7 @@ function daysUntil(targetDate) {
 .wedding-last-message {
   display: flex;
   flex-direction: column;
-  height: 60vh;
+  height: 70vh;
 
   .wedding-last-message-content {
     position: relative;
@@ -63,7 +58,7 @@ function daysUntil(targetDate) {
       display: inline-block;
       overflow: hidden;
 
-      img {
+      svg {
         width: 100%;
         animation: moveInCircle 60s linear infinite;
       }

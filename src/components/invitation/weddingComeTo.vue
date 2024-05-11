@@ -8,7 +8,7 @@
 
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_90.jpg"
+        :src="preboda90"
         alt="Example Image"
         class="header-image-with-frame"
       />
@@ -20,20 +20,16 @@
       </span>
     </div>
     <picture class="flower-green">
-      <source
-        srcset="../../assets/flowers/flower-middle-green-big.webp"
-        type="image/webp"
-      />
+      <source :srcset="flowerGreenBig" type="image/webp" />
 
-      <img
-        src="../../assets/flowers/flower-middle-green-big.webp"
-        alt="Example Image"
-      />
+      <img :src="flowerGreenBig" alt="Example Image" />
     </picture>
   </div>
 </template>
 
 <script setup>
+import preboda90 from '@/assets/preboda/preboda_90.jpg'
+import flowerGreenBig from '@/assets/flowers/flower-middle-green-big.webp'
 const messageComeTo =
   'Tras más de siete años compartiendo momentos inolvidables, te invitamos a ser parte de un momento único en nuestras vidas.'
 

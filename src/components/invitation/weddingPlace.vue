@@ -1,29 +1,15 @@
 <template>
   <div class="wedding-place">
     <picture class="wedding-place-flower wedding-place-flower-left">
-      <source
-        srcset="../../assets/flowers/flor-ramillete-2.webp"
-        type="image/webp"
-      />
+      <source :srcset="ramilleteFlower" type="image/webp" />
 
-      <img
-        src="../../assets/flowers/flor-ramillete-2.webp"
-        alt="Example Image"
-        class="section-image"
-      />
+      <img :src="ramilleteFlower" alt="Example Image" class="section-image" />
     </picture>
 
     <picture class="wedding-place-flower wedding-place-flower-right">
-      <source
-        srcset="../../assets/flowers/flor-ramillete-2.webp"
-        type="image/webp"
-      />
+      <source :srcset="ramilleteFlower" type="image/webp" />
 
-      <img
-        src="../../assets/flowers/flor-ramillete-2.webp"
-        alt="Example Image"
-        class="section-image"
-      />
+      <img :src="ramilleteFlower" alt="Example Image" class="section-image" />
     </picture>
 
     <div class="wedding-section-title">
@@ -32,16 +18,8 @@
     <div class="wedding-place-photo-info-container">
       <div class="header-image-with-frame header-image-with-space">
         <div class="wedding-place-blend">
-          <img
-            class="photo2"
-            src="../../assets/img/alborea-3.webp"
-            alt="Right Photo"
-          />
-          <img
-            class="photo1 right"
-            src="../../assets/img/alborea-2.webp"
-            alt="Left Photo"
-          />
+          <img class="photo2" :src="alboreaGarden" alt="Right Photo" />
+          <img class="photo1 right" :src="alboreaEntrance" alt="Left Photo" />
         </div>
       </div>
 
@@ -63,11 +41,12 @@
 </template>
 
 <script setup>
+import alboreaGarden from '@/assets/img/alborea-3.webp'
+import alboreaEntrance from '@/assets/img/alborea-2.webp'
+import ramilleteFlower from '@/assets/flowers/flor-ramillete-2.webp'
 import WeddingLink from '../ui/weddingLink.vue'
 
 const title = 'Lugar de celebración'
-const description =
-  'Hemos elegido la maravillosa finca Alboreá para llevar a cabo uno de los días más felices de nuestra vida.'
 
 const weddingPlaceGmapsLink =
   'https://www.google.es/maps/place/Finca+Albore%C3%A1+%7C+Albore%C3%A1+Eventos/@36.3139541,-6.0987968,14z/data=!4m6!3m5!1s0xd0c37ce34f873cf:0x258e47f1dbb5e922!8m2!3d36.3175581!4d-6.079622!16s%2Fg%2F11c1pqh07c?entry=ttu'

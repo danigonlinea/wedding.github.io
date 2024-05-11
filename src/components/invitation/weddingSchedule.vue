@@ -1,10 +1,5 @@
 <template>
   <div class="wedding-schedule">
-    <!--  <img
-      src="../../assets/flowers/flor-wedding-schedule.webp"
-      alt="Example Image"
-      class="wedding-schedule-flower"
-    /> -->
     <div class="wedding-section-title">
       <h2>Itinerario</h2>
     </div>
@@ -54,11 +49,11 @@
 </template>
 
 <script setup>
-import WeddingArchIcon from '../../assets/svg/wedding-arch.svg'
-import WeddingAperitivosIcon from '../../assets/svg/wedding-aperitivos.svg'
-import WeddingBanqueteIcon from '../../assets/svg/wedding-banquete.svg'
-import WeddingBaileIcon from '../../assets/svg/wedding-baile.svg'
-import WeddingDiscoIcon from '../../assets/svg/wedding-disco.svg'
+import WeddingArchIcon from '@/assets/svg/wedding-arch.svg'
+import WeddingAperitivosIcon from '@/assets/svg/wedding-aperitivos.svg'
+import WeddingBanqueteIcon from '@/assets/svg/wedding-banquete.svg'
+import WeddingBaileIcon from '@/assets/svg/wedding-baile.svg'
+import WeddingDiscoIcon from '@/assets/svg/wedding-disco.svg'
 </script>
 
 <style lang="scss">

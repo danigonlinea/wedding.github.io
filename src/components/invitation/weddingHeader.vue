@@ -1,39 +1,30 @@
 <template>
   <header>
     <picture class="header-flower-big">
-      <source
-        srcset="../../assets/flowers/flower-top-right.webp"
-        type="image/webp"
-      />
+      <source :srcset="ramilleteGrande" type="image/webp" />
 
       <img
-        src="../../assets/flowers/flower-top-right.webp"
+        :src="ramilleteGrande"
         alt="Example Image"
         class="section-image animation-wind"
       />
     </picture>
 
     <picture class="header-flower-small on-the-left">
-      <source
-        srcset="../../assets/flowers/flower-top-left.webp"
-        type="image/webp"
-      />
+      <source :srcset="ramilleteFino" type="image/webp" />
 
       <img
-        src="../../assets/flowers/flower-top-left.webp"
+        :src="ramilleteFino"
         alt="Example Image"
         class="section-image animation-wind"
       />
     </picture>
 
     <picture class="header-flower-small on-the-right">
-      <source
-        srcset="../../assets/flowers/flower-top-left.webp"
-        type="image/webp"
-      />
+      <source :srcset="ramilleteFino" type="image/webp" />
 
       <img
-        src="../../assets/flowers/flower-top-left.webp"
+        :src="ramilleteFino"
         alt="Example Image"
         class="section-image animation-wind"
       />
@@ -42,7 +33,7 @@
     <div class="wedding-header-main">
       <div class="header-image-hands-container">
         <img
-          src="../../assets/preboda/preboda_230_main.jpg"
+          :src="preboda230"
           alt="Example Image"
           class="header-image-with-frame"
         />
@@ -95,6 +86,9 @@
 
 <script setup>
 import { ref } from 'vue'
+import preboda230 from '@/assets/preboda/preboda_230_main.jpg'
+import ramilleteGrande from '@/assets/flowers/flower-top-right.webp'
+import ramilleteFino from '@/assets/flowers/flower-top-left.webp'
 import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
 
 const daysLeftToWedding = ref(daysUntil('2024-10-12'))

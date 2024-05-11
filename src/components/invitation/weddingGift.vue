@@ -40,9 +40,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import WeddingButton from '../ui/WeddingButton.vue'
-
-import WeddingGiftIcon from '../../assets/svg/wedding-gift.svg'
+import WeddingGiftIcon from '@/assets/svg/wedding-gift.svg'
 
 const isFlipped = ref(false)
 
@@ -154,7 +152,7 @@ const flipCard = (flip) => {
   display: flex;
   flex-direction: column;
   transform: rotateY(180deg);
-  background-image: url('../../assets/img/card-background.jpg');
+  background-image: url('@/assets/img/card-background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

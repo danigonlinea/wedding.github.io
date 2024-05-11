@@ -14,9 +14,9 @@
 <script>
 import { ref } from 'vue'
 import { PlayIcon, PauseIcon } from '@heroicons/vue/24/solid'
-// import allOfMeSong from './../../assets/audio/john-legend-all-of-me.mp3'
-import algoSencillito from './../../assets/audio/marta-santos-algo-sencillito.mp3'
-import salitre from './../../assets/audio/manuel-carrasco-salitre.mp3'
+
+import algoSencillito from '@/assets/audio/marta-santos-algo-sencillito.mp3'
+import salitre from '@/assets/audio/manuel-carrasco-salitre.mp3'
 
 export default {
   components: {

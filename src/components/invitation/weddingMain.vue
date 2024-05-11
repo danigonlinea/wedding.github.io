@@ -1,5 +1,4 @@
 <template>
-  <!--   <WeddingTopHeader /> -->
   <WeddingHeader></WeddingHeader>
 
   <WeddingComeTo />
@@ -15,7 +14,6 @@
 </template>
 
 <script setup>
-// import WeddingTopHeader from './weddingTopHeader.vue'
 import WeddingPlace from './weddingPlace.vue'
 import WeddingInfo from './weddingInfo.vue'
 import WeddingForm from './weddingForm.vue'
