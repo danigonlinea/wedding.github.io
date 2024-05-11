@@ -53,8 +53,8 @@
 </template>
 
 <script setup>
-import preboda121 from '../../assets/preboda/preboda_121.jpg'
-import preboda77 from '../../assets/preboda/preboda_77.jpg'
+import preboda121 from '@/assets/preboda/preboda_121.jpg'
+import preboda77 from '@/assets/preboda/preboda_77.jpg'
 </script>
 
 <style lang="scss">
