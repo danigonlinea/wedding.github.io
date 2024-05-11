@@ -20,7 +20,7 @@
         >
           <div :class="{ card: true, flipped: isFlipped }">
             <div class="front">
-              <div style="position: relative; width: 100%">
+              <!--  <div style="position: relative; width: 100%">
                 <div style="position: absolute; top: 0">
                   <picture>
                     <source
@@ -35,14 +35,14 @@
                     />
                   </picture>
                 </div>
-              </div>
+              </div> -->
 
               <div class="card-gift-info-container">
                 <WeddingGiftIcon />
               </div>
             </div>
             <div class="back">
-              <div style="position: relative; width: 100%">
+              <!-- <div style="position: relative; width: 100%">
                 <div style="position: absolute; top: 0">
                   <picture>
                     <source
@@ -57,7 +57,7 @@
                     />
                   </picture>
                 </div>
-              </div>
+              </div> -->
               <div class="card-gift-info-container">
                 <span>Nuestra cuenta bancaria</span>
                 <span class="bank-account">ESXX XXXX XX XXXX XXXX</span>
@@ -122,7 +122,6 @@ const flipCard = (flip) => {
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    filter: drop-shadow(0 0 0.75rem var(--pomp-and-power));
 
     .card {
       width: 100%;
@@ -141,28 +140,30 @@ const flipCard = (flip) => {
   backface-visibility: hidden;
   display: flex;
   gap: 1em;
-
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .front {
   display: flex;
   flex-direction: column;
-  background-color: #f0f0f0;
 
   .card-gift-info-container {
     padding: 2em;
-    width: 80%;
+    width: 75%;
+    filter: drop-shadow(0 0 2rem var(--pomp-and-power));
   }
 }
 
 .back {
   display: flex;
   flex-direction: column;
-  background-color: #f0f0f0;
   transform: rotateY(180deg);
+  background-image: url('../../assets/img/card-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   .card-gift-info-container {
     display: flex;
@@ -177,6 +178,7 @@ const flipCard = (flip) => {
     font-size: 1.2em;
     color: var(--pomp-and-power-dark);
     font-weight: bold;
+    filter: drop-shadow(0 0 2rem var(--pomp-and-power));
   }
 
   .card-thanks {
