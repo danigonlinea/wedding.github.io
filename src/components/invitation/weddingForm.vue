@@ -46,7 +46,7 @@
 
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_215.JPG"
+        src="../../assets/preboda/preboda_215.jpg"
         alt="Example Image"
         class="header-image-with-frame"
       />

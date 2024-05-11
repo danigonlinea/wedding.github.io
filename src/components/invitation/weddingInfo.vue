@@ -2,7 +2,7 @@
   <div class="wedding-qa">
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_121.JPG"
+        src="../../assets/preboda/preboda_121.jpg"
         alt="Example Image"
         class="header-image-with-frame"
       />
@@ -44,7 +44,7 @@
     </div>
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_77.JPG"
+        src="../../assets/preboda/preboda_77.jpg"
         alt="Example Image"
         class="header-image-with-frame"
       />

@@ -8,7 +8,7 @@
 
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_90.JPG"
+        src="../../assets/preboda/preboda_90.jpg"
         alt="Example Image"
         class="header-image-with-frame"
       />

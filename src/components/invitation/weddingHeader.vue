@@ -42,7 +42,7 @@
     <div class="wedding-header-main">
       <div class="header-image-hands-container">
         <img
-          src="../../assets/preboda/preboda_230_main.JPG"
+          src="../../assets/preboda/preboda_230_main.jpg"
           alt="Example Image"
           class="header-image-with-frame"
         />
