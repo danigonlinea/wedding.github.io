@@ -1,17 +1,7 @@
 <template>
-  <main
-    id="main"
-    class="layout"
-  >
-    <transition
-      name="fade"
-      @before-enter="beforeEnter"
-      @enter="enter"
-    >
-      <div
-        v-if="showWeddingInvitation"
-        class="wedding-invitation"
-      >
+  <main id="main" class="layout">
+    <transition name="fade" @before-enter="beforeEnter" @enter="enter">
+      <div v-if="showWeddingInvitation" class="wedding-invitation">
         <InvitationMain />
       </div>
     </transition>
@@ -25,19 +15,17 @@
 <script setup>
 import { ref } from 'vue'
 // TODO change to false to see full sequence
-const showWeddingInvitation = ref(true)
+const showWeddingInvitation = ref(false)
 import EnvelopeApp from './components/envelope/EnvelopeMain.vue'
 import InvitationMain from './components/invitation/weddingMain.vue'
 
 const beforeEnter = (el) => {
-  el.style.transform = 'translateY(-100%)'
   el.style.opacity = 0
 }
 
 const enter = (el, done) => {
   el.offsetHeight // Trigger reflow
-  el.style.transition = 'transform 0.5s, opacity 0.5s'
-  el.style.transform = 'translateY(0)'
+  el.style.transition = 'transform 0.8s, opacity 0.8s'
   el.style.opacity = 1
   done()
 }

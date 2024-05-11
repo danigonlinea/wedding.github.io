@@ -47,7 +47,7 @@ import WeddingLink from '../ui/WeddingLink.vue'
     display: flex;
     flex-direction: column;
     gap: 2em;
-    padding: 2em 2em 6em 2em;
+    padding: 0 2em 6em 2em;
 
     color: var(--text-color-primary);
     text-align: center;
