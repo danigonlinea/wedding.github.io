@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import preboda215 from '../../assets/preboda/preboda_215.jpg'
+import preboda215 from '@/assets/preboda/preboda_215.jpg'
 import { ref } from 'vue'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, addDoc, collection } from 'firebase/firestore'
