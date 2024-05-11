@@ -44,7 +44,7 @@
     </div>
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_154.JPG"
+        src="../../assets/preboda/preboda_77.JPG"
         alt="Example Image"
         class="header-image-with-frame"
       />
@@ -85,6 +85,10 @@
     .wedding-q {
       font-weight: bold;
       text-transform: uppercase;
+    }
+
+    .wedding-a {
+      font-size: 1.2em;
     }
   }
 }

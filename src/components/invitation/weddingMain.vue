@@ -8,14 +8,10 @@
   <WeddingInfo></WeddingInfo>
   <WeddingForm></WeddingForm>
   <WeddingGift></WeddingGift>
+  <WeddingPlaylist />
+  <WeddingLastMessage />
 
   <WeddingSongPlayer />
-
-  <img
-    src="../../assets/flowers/flor-wedding-footer.webp"
-    alt="Example Image"
-    class="section-image"
-  />
 </template>
 
 <script setup>
@@ -24,9 +20,10 @@ import WeddingPlace from './weddingPlace.vue'
 import WeddingInfo from './weddingInfo.vue'
 import WeddingForm from './weddingForm.vue'
 import WeddingGift from './weddingGift.vue'
-// import WeddingPhotoGallery from './weddingPhotoGallery.vue'
+import WeddingPlaylist from './weddingPlaylist.vue'
 import WeddingHeader from './weddingHeader.vue'
 import WeddingSongPlayer from './weddingSongPlayer.vue'
 import WeddingSchedule from './weddingSchedule.vue'
 import WeddingComeTo from './weddingComeTo.vue'
+import WeddingLastMessage from './weddingLastMessage.vue'
 </script>

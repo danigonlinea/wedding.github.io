@@ -1,44 +1,61 @@
 <template>
-  <div class="wedding-gift">
+  <div class="wedding-playlist">
     <div class="wedding-section-title">
-      <h2>Regalo de bodas</h2>
+      <h2>Lista de canciones</h2>
     </div>
 
-    <div class="wedding-gift-content">
-      <div class="wedding-gift-content-message">
-        <span>
-          Lo más importante para nosotros es compartir este día tan especial
-          contigo, pero si quieres tener un detalle:
-        </span>
+    <div class="wedding-playlist-content">
+      <span>
+        Añade la canción que te gustaría que sonase en nuestra boda y la
+        pondremos por ti.
+      </span>
+      <div class="wedding-playlist-link">
+        <WeddingLink class="wedding-spotify-playlist">
+          Ver canciones
+        </WeddingLink>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import WeddingLink from '../ui/WeddingLink.vue'
+</script>
 
 <style scoped>
-.wedding-gift {
-  height: 100vh;
+.wedding-playlist {
   display: flex;
   flex-direction: column;
-  padding: 2em 0;
 
-  .wedding-gift-content {
+  .wedding-playlist-content {
     display: flex;
     flex-direction: column;
-    gap: 5em;
-    padding: 2em 1em;
-  }
+    gap: 2em;
+    padding: 2em 2em 6em 2em;
 
-  .wedding-gift-content-message {
+    color: var(--text-color-primary);
     text-align: center;
-    font-size: 1.4em;
+
+    span {
+      font-size: 2em;
+      font-family: 'Parisienne', cursive;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1;
+    }
   }
 
-  .wedding-gift-card {
-    position: relative;
+  .wedding-playlist-link {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    align-items: center;
+  }
+
+  .wedding-spotify-playlist {
+    svg {
+      fill: white;
+    }
   }
 }
 </style>

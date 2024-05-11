@@ -46,7 +46,7 @@
 
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_221.JPG"
+        src="../../assets/preboda/preboda_215.JPG"
         alt="Example Image"
         class="header-image-with-frame"
       />
@@ -126,7 +126,6 @@ const db = getFirestore(app)
 .wedding-form-container {
   display: flex;
   flex-direction: column;
-  padding: 4em 0;
 
   .wedding-form-title-space {
     padding: 2em;

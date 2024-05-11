@@ -262,8 +262,8 @@ function daysUntil(targetDate) {
 
 .header-flower-big {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: 0;
+  right: 0;
   width: 32em;
   height: auto;
   z-index: 10;

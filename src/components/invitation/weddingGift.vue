@@ -20,44 +20,11 @@
         >
           <div :class="{ card: true, flipped: isFlipped }">
             <div class="front">
-              <!--  <div style="position: relative; width: 100%">
-                <div style="position: absolute; top: 0">
-                  <picture>
-                    <source
-                      srcset="../../assets/flowers/flor-ramillete.webp"
-                      type="image/webp"
-                    />
-
-                    <img
-                      src="../../assets/flowers/flor-ramillete.webp"
-                      alt="Example Image"
-                      class="section-image"
-                    />
-                  </picture>
-                </div>
-              </div> -->
-
               <div class="card-gift-info-container">
                 <WeddingGiftIcon />
               </div>
             </div>
             <div class="back">
-              <!-- <div style="position: relative; width: 100%">
-                <div style="position: absolute; top: 0">
-                  <picture>
-                    <source
-                      srcset="../../assets/flowers/flor-ramillete.webp"
-                      type="image/webp"
-                    />
-
-                    <img
-                      src="../../assets/flowers/flor-ramillete.webp"
-                      alt="Example Image"
-                      class="section-image on-the-right"
-                    />
-                  </picture>
-                </div>
-              </div> -->
               <div class="card-gift-info-container">
                 <span>Nuestra cuenta bancaria</span>
                 <span class="bank-account">ESXX XXXX XX XXXX XXXX</span>
@@ -86,15 +53,14 @@ const flipCard = (flip) => {
 
 <style scoped>
 .wedding-gift {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  padding: 2em 0;
 
   .wedding-gift-content {
     display: flex;
     flex-direction: column;
-    gap: 5em;
+    gap: 2em;
     padding: 2em 1em;
   }
 
@@ -152,9 +118,37 @@ const flipCard = (flip) => {
     padding: 2em;
     width: 75%;
     filter: drop-shadow(0 0 2rem var(--pomp-and-power));
+
+    svg {
+      animation: shake 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    }
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0) scale(1);
+  }
+  40%,
+  60% {
+    transform: translateX(-2px) rotate(-1deg) scale(1.01);
+  }
+  50%,
+  70% {
+    transform: translateX(2px) rotate(1deg) scale(1.01);
   }
 }
 
+/* Delay the animation for 3 seconds after it ends */
+
+@keyframes delay {
+  0% {
+    opacity: 0; /* Start delay with opacity 0 */
+  }
+  100% {
+    opacity: 0; /* End delay with opacity 0 */
+  }
+}
 .back {
   display: flex;
   flex-direction: column;
