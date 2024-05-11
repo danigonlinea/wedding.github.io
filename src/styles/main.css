@@ -8,7 +8,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
 
-
 :root {
   font-family: 'Aleo', Helvetica, sans-serif;
 
@@ -23,6 +22,7 @@
   --pomp-and-power: #c9a2bf;
   --pomp-and-power-middle: #805976;
   --pomp-and-power-dark: #724c75ff;
+  --pomp-and-power-darker: rgb(145, 94, 156);
 
   --old-rose: #c98686ff;
   --fawn: #f2b880ff;
@@ -64,7 +64,6 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
 }
 
 h1,

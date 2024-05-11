@@ -61,7 +61,7 @@ label {
 }
 
 .wedding-input-field {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1em;

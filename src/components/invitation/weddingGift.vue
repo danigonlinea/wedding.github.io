@@ -20,12 +20,49 @@
         >
           <div :class="{ card: true, flipped: isFlipped }">
             <div class="front">
-              <WeddingGiftIcon />
+              <div style="position: relative; width: 100%">
+                <div style="position: absolute; top: 0">
+                  <picture>
+                    <source
+                      srcset="../../assets/flowers/flor-ramillete.webp"
+                      type="image/webp"
+                    />
+
+                    <img
+                      src="../../assets/flowers/flor-ramillete.webp"
+                      alt="Example Image"
+                      class="section-image"
+                    />
+                  </picture>
+                </div>
+              </div>
+
+              <div class="card-gift-info-container">
+                <WeddingGiftIcon />
+              </div>
             </div>
             <div class="back">
-              <h2>Nº cuenta bancaria</h2>
-              <h3>ESXX XXXX XX XXXX XXXX</h3>
-              <WeddingButton label="Copiar"></WeddingButton>
+              <div style="position: relative; width: 100%">
+                <div style="position: absolute; top: 0">
+                  <picture>
+                    <source
+                      srcset="../../assets/flowers/flor-ramillete.webp"
+                      type="image/webp"
+                    />
+
+                    <img
+                      src="../../assets/flowers/flor-ramillete.webp"
+                      alt="Example Image"
+                      class="section-image on-the-right"
+                    />
+                  </picture>
+                </div>
+              </div>
+              <div class="card-gift-info-container">
+                <span>Nuestra cuenta bancaria</span>
+                <span class="bank-account">ESXX XXXX XX XXXX XXXX</span>
+                <span class="card-thanks">¡Muchísimas gracias!</span>
+              </div>
             </div>
           </div>
         </div>
@@ -63,7 +100,14 @@ const flipCard = (flip) => {
 
   .wedding-gift-content-message {
     text-align: center;
-    font-size: 1.4em;
+
+    font-size: 2em;
+    font-family: 'Parisienne', cursive;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    color: var(--text-color-primary);
+    text-align: center;
   }
 
   .wedding-gift-card {
@@ -97,7 +141,7 @@ const flipCard = (flip) => {
   backface-visibility: hidden;
   display: flex;
   gap: 1em;
-  padding: 2em;
+
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -106,8 +150,12 @@ const flipCard = (flip) => {
 .front {
   display: flex;
   flex-direction: column;
-  gap: 2em;
   background-color: #f0f0f0;
+
+  .card-gift-info-container {
+    padding: 2em;
+    width: 80%;
+  }
 }
 
 .back {
@@ -115,6 +163,29 @@ const flipCard = (flip) => {
   flex-direction: column;
   background-color: #f0f0f0;
   transform: rotateY(180deg);
+
+  .card-gift-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 4em 2em;
+  }
+
+  .bank-account {
+    font-size: 1.2em;
+    color: var(--pomp-and-power-dark);
+    font-weight: bold;
+  }
+
+  .card-thanks {
+    font-size: 2em;
+    font-family: 'Parisienne', cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-color-primary);
+  }
 }
 
 .card.flipped {
