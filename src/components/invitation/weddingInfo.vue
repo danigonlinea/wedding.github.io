@@ -2,7 +2,7 @@
   <div class="wedding-qa">
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_121.jpg"
+        :src="preboda121"
         alt="Example Image"
         class="header-image-with-frame"
       />
@@ -44,7 +44,7 @@
     </div>
     <div class="header-image-with-space">
       <img
-        src="../../assets/preboda/preboda_77.jpg"
+        :src="preboda77"
         alt="Example Image"
         class="header-image-with-frame"
       />
@@ -52,7 +52,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import preboda121 from '../../assets/preboda/preboda_121.jpg'
+import preboda77 from '../../assets/preboda/preboda_77.jpg'
+</script>
 
 <style lang="scss">
 .wedding-qa {
