@@ -1,5 +1,18 @@
 <template>
   <div class="wedding-playlist">
+    <div class="wedding-playlist-flower-green">
+      <picture>
+        <source
+          srcset="../../assets/flowers/flower-middle-green-big.webp"
+          type="image/webp"
+        />
+
+        <img
+          src="../../assets/flowers/flower-middle-green-big.webp"
+          alt="Example Image"
+        />
+      </picture>
+    </div>
     <div class="wedding-section-title">
       <h2>Lista de canciones</h2>
     </div>
@@ -59,6 +72,19 @@ import WeddingLink from '../ui/WeddingLink.vue'
     svg {
       fill: white;
     }
+  }
+}
+
+.wedding-playlist-flower-green {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 5em;
+    object-fit: cover;
   }
 }
 </style>

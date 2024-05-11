@@ -56,6 +56,7 @@ const flipCard = (flip) => {
   height: 80vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   .wedding-gift-content {
     display: flex;
@@ -186,6 +187,19 @@ const flipCard = (flip) => {
 
 .card.flipped {
   transform: rotateY(180deg) translateZ(50px);
+}
+
+.wedding-gift-flower-green {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 5em;
+    object-fit: cover;
+  }
 }
 
 @media screen and (max-width: 768px) {
