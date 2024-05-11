@@ -10,7 +10,10 @@
         pondremos por ti.
       </span>
       <div class="wedding-playlist-link">
-        <WeddingLink class="wedding-spotify-playlist">
+        <WeddingLink
+          to="https://www.youtube.com/playlist?list=PLpPEgsDKOaBa0hXjk8NHj3nlX7pDahd_q&jct=js1IldtdLGhMmV8Su8szbuv0nUq_uQ"
+          class="wedding-spotify-playlist"
+        >
           Ver canciones
         </WeddingLink>
       </div>
