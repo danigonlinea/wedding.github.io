@@ -6,7 +6,7 @@
         <img :src="flowerBigGreen" alt="Example Image" />
       </picture>
     </div>
-    <div class="wedding-section-title">
+    <!--   <div class="wedding-section-title">
       <h2>Lista de canciones</h2>
     </div>
 
@@ -23,7 +23,7 @@
           Ver canciones
         </WeddingLink>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

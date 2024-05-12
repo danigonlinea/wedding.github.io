@@ -115,7 +115,7 @@ const flipCard = (flip) => {
 
   .card-gift-info-container {
     padding: 2em;
-    width: 75%;
+    width: 65%;
     filter: drop-shadow(0 0 2rem var(--pomp-and-power));
 
     svg {

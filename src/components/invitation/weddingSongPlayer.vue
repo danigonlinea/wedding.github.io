@@ -48,12 +48,12 @@ export default {
 <style scoped>
 .float-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1em;
+  right: 1em;
   border: none;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   background-color: var(--play-background);
   color: #fff;
   font-size: 24px;

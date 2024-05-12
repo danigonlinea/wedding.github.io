@@ -14,7 +14,7 @@
 
 <script setup>
 import { debounce } from '@/utils/helper.js'
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 const isOpen = ref(false)
 
@@ -25,6 +25,13 @@ const openClass = computed(() => {
     envelope: true,
     open: isOpen.value,
   }
+})
+
+onMounted(() => {
+  setTimeout(() => {
+    console.log('Abriendo envelope')
+    openEnvelope()
+  }, 100)
 })
 
 const openEnvelope = () => {
