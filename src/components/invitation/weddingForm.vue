@@ -66,7 +66,7 @@ import WeddingTextarea from '../ui/weddingTextarea.vue'
 import WeddingButton from '../ui/weddingButton.vue'
 
 const formData = ref({
-  name: '',
+  fullName: '',
   numberPeople: 1,
   message: '',
   songField: '',
@@ -91,7 +91,7 @@ const numberPeople = [
 const submitForm = async () => {
   try {
     const docRef = await addDoc(collection(db, 'guests'), {
-      name: formData.value.name,
+      name: formData.value.fullName,
       number: formData.value.numberPeople,
       message: formData.value.message,
       song: formData.value.songField,
