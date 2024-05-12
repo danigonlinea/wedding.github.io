@@ -10,7 +10,11 @@
         </div>
       </div>
       <div class="wedding-last-message-footer">
-        <img :src="flowerFooter" alt="Example Image" class="section-image" />
+        <img
+          :src="flowerFooter"
+          alt="Example Image"
+          class="section-image animation-wind"
+        />
       </div>
     </div>
   </div>
@@ -97,5 +101,21 @@ function daysUntil(targetDate) {
   100% {
     transform: rotate(360deg); /* End position */
   }
+}
+
+@keyframes windAnimation {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  50% {
+    transform: translateX(0) rotate(1deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+.animation-wind {
+  animation: windAnimation 25s ease-in-out infinite alternate;
 }
 </style>

@@ -140,7 +140,7 @@ function daysUntil(targetDate) {
 }
 
 .animation-wind {
-  animation: windAnimation 5s ease-in-out infinite alternate;
+  animation: windAnimation 12s ease-in-out infinite alternate;
 }
 
 .header-scroll-down {
