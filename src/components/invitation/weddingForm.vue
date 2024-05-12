@@ -19,13 +19,13 @@
             />
           </div>
 
-          <!-- <div class="wedding-form-group">
+          <div class="wedding-form-group">
             <WeddingInput
               v-model="formData.songField"
               label="¡Una canción que no puede faltar!
 "
             />
-          </div> -->
+          </div>
 
           <div class="wedding-form-group">
             <WeddingTextarea
@@ -94,6 +94,7 @@ const submitForm = async () => {
       name: formData.value.name,
       number: formData.value.numberPeople,
       message: formData.value.message,
+      song: formData.value.songField,
     })
 
     isFormSubmitted.value = true
