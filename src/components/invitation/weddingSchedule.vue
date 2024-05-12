@@ -25,7 +25,7 @@
         <WeddingBanqueteIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">Banquete</p>
-          <p class="wedding-schedule-list-item-time">15:30</p>
+          <p class="wedding-schedule-list-item-time">16:00</p>
         </div>
       </div>
 
