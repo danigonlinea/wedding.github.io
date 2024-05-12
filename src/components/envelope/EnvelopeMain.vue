@@ -14,7 +14,7 @@
 
 <script setup>
 import { debounce } from '@/utils/helper.js'
-import { computed, ref, defineEmits } from 'vue'
+import { computed, ref } from 'vue'
 
 const isOpen = ref(false)
 

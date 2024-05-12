@@ -10,8 +10,6 @@
 
 :root {
   font-family: 'Aleo', Helvetica, sans-serif;
-
-  color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -117,18 +115,4 @@ input:active {
   display: block;
   clear: both;
   content: '';
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--text-color-primary);
-    background-color: #ffffff;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: var(--text-color-primary);
-    background-color: #fbf9f9;
-  }
 }
