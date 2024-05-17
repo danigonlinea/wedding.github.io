@@ -16,7 +16,7 @@ import { ref } from 'vue'
 import { PlayIcon, PauseIcon } from '@heroicons/vue/24/solid'
 
 import algoSencillito from '@/assets/audio/marta-santos-algo-sencillito.mp3'
-import salitre from '@/assets/audio/manuel-carrasco-salitre.mp3'
+import contigo from '@/assets/audio/solo-si-es-contigo-bombai.mp3'
 
 export default {
   components: {
@@ -25,7 +25,7 @@ export default {
   },
   setup() {
     const isPlaying = ref(false)
-    const audioSource = ref([algoSencillito, salitre])
+    const audioSource = ref([algoSencillito, contigo])
     const audio = ref(null)
 
     const togglePlayPause = () => {
