@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-if="!showWeddingInvitation"
-    class="wedding-envelope-container"
-    @click="openEnvelope"
-  >
+  <div class="wedding-envelope-container" @click="openEnvelope">
     <div :class="openClass">
       <div class="flap front"></div>
       <div class="flap top"></div>
@@ -29,7 +25,6 @@ const openClass = computed(() => {
 
 onMounted(() => {
   setTimeout(() => {
-    console.log('Abriendo envelope')
     openEnvelope()
   }, 100)
 })
