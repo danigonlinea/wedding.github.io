@@ -22,7 +22,6 @@
           <img class="photo1 right" :src="alboreaEntrance" alt="Left Photo" />
         </div>
       </div>
-
       <div class="wedding-place-info">
         <div class="wedding-place-info-name-address">
           <span class="wedding-title-handwriting">Finca Alboreá</span>
