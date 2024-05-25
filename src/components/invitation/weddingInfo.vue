@@ -84,14 +84,18 @@ import preboda77 from '@/assets/preboda/preboda_77.jpg'
     max-width: min(100%, 70ch);
     gap: 1em;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .wedding-q {
       font-weight: bold;
       text-transform: uppercase;
+      text-align: center;
     }
 
     .wedding-a {
       font-size: 1.2em;
+      text-align: center;
     }
   }
 }

@@ -12,11 +12,12 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { PlayIcon, PauseIcon } from '@heroicons/vue/24/solid'
 
 import algoSencillito from '@/assets/audio/marta-santos-algo-sencillito.mp3'
 import contigo from '@/assets/audio/solo-si-es-contigo-bombai.mp3'
+import yoQuieroVivir from '@/assets/audio/yo-quiero-vivir.mp3'
 
 export default {
   components: {
@@ -25,7 +26,7 @@ export default {
   },
   setup() {
     const isPlaying = ref(false)
-    const audioSource = ref([algoSencillito, contigo])
+    const audioSource = ref('')
     const audio = ref(null)
 
     const togglePlayPause = () => {
@@ -37,10 +38,30 @@ export default {
       isPlaying.value = !isPlaying.value
     }
 
-    const songChosen =
-      audioSource.value[Math.floor(Math.random() * audioSource.value.length)]
+    const handleVisibilityChange = () => {
+      if (document.hidden && isPlaying.value) {
+        audio.value.pause()
+        isPlaying.value = false
+      }
+    }
 
-    return { isPlaying, audioSource: songChosen, togglePlayPause, audio }
+    onMounted(() => {
+      const sources = [algoSencillito, contigo, yoQuieroVivir]
+      const songChosen = sources[Math.floor(Math.random() * sources.length)]
+      audioSource.value = songChosen
+
+      // Set volume to medium (0.5)
+      audio.value.volume = 0.07
+
+      // Listen for visibility change
+      document.addEventListener('visibilitychange', handleVisibilityChange)
+    })
+
+    onUnmounted(() => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    })
+
+    return { isPlaying, audioSource, togglePlayPause, audio }
   },
 }
 </script>

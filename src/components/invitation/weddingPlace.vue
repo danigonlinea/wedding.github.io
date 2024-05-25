@@ -102,7 +102,7 @@ const weddingPlaceGmapsLink =
   flex-direction: column;
   align-items: center;
 
-  gap: 6em;
+  gap: 2em;
   position: relative;
   height: 40vh;
 }

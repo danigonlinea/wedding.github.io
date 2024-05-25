@@ -13,11 +13,7 @@
       </div>
 
       <div class="wedding-gift-card">
-        <div
-          class="card-container"
-          @click="flipCard(true)"
-          @mouseleave="flipCard(false)"
-        >
+        <div class="card-container" @click="flipCard" @mouseleave="unflipCard">
           <div :class="{ card: true, flipped: isFlipped }">
             <div class="front">
               <div class="card-gift-info-container">
@@ -27,7 +23,7 @@
             <div class="back">
               <div class="card-gift-info-container">
                 <span>Nuestra cuenta bancaria</span>
-                <span class="bank-account">ESXX XXXX XX XXXX XXXX</span>
+                <span class="bank-account">ES48 0239 0806 7737 2523 9622</span>
                 <span class="card-thanks">¡Muchísimas gracias!</span>
               </div>
             </div>
@@ -44,8 +40,12 @@ import WeddingGiftIcon from '@/assets/svg/wedding-gift.svg'
 
 const isFlipped = ref(false)
 
-const flipCard = (flip) => {
-  isFlipped.value = flip
+const flipCard = () => {
+  isFlipped.value = !isFlipped.value
+}
+
+const unflipCard = () => {
+  isFlipped.value = false
 }
 </script>
 

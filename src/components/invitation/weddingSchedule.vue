@@ -4,7 +4,7 @@
       <h2>Itinerario</h2>
     </div>
 
-    <div class="wedding-schedule-list">
+    <div ref="fadeElements" class="wedding-schedule-list">
       <div class="wedding-schedule-list-item">
         <WeddingArchIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
@@ -49,14 +49,47 @@
 </template>
 
 <script setup>
+import { ref, onMounted, nextTick } from 'vue'
+
 import WeddingArchIcon from '@/assets/svg/wedding-arch.svg'
 import WeddingAperitivosIcon from '@/assets/svg/wedding-aperitivos.svg'
 import WeddingBanqueteIcon from '@/assets/svg/wedding-banquete.svg'
 import WeddingBaileIcon from '@/assets/svg/wedding-baile.svg'
 import WeddingDiscoIcon from '@/assets/svg/wedding-disco.svg'
+
+const fadeElements = ref([])
+
+onMounted(() => {
+  nextTick(() => {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible')
+          observer.unobserve(entry.target)
+        }
+      })
+    })
+
+    const elements = fadeElements.value.querySelectorAll(
+      '.wedding-schedule-list-item',
+    )
+
+    if (elements) {
+      elements.forEach((el) => {
+        observer.observe(el)
+      })
+    }
+  })
+})
 </script>
 
 <style lang="scss">
+/* Initial state for the fade-in effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
 .wedding-schedule {
   height: 100vh;
   display: flex;
@@ -103,11 +136,16 @@ import WeddingDiscoIcon from '@/assets/svg/wedding-disco.svg'
   display: flex;
   align-items: center;
   gap: 2em;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+
+  &.fade-in-visible {
+    opacity: 1;
+  }
 }
 
 .wedding-schedule-list-item-title {
   font-size: 2em;
-
   font-family: 'Parisienne', cursive;
   font-weight: 400;
   font-style: normal;
