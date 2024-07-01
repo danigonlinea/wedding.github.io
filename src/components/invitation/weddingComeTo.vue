@@ -8,7 +8,7 @@
 
     <div class="header-image-with-space">
       <img
-        :src="preboda90"
+        :src="preboda5"
         alt="Example Image"
         class="header-image-with-frame"
       />
@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import preboda90 from '@/assets/preboda/preboda_90.jpg'
+import preboda5 from '@/assets/preboda/preboda_5.jpeg'
 import flowerGreenBig from '@/assets/flowers/flower-middle-green-big.webp'
 const messageComeTo =
   'Tras más de siete años compartiendo momentos inolvidables, te invitamos a ser parte de un momento único en nuestras vidas.'
