@@ -16,17 +16,17 @@
       <div class="wedding-qa-item">
         <h3 class="wedding-q">¿Cómo hay que ir vestido?</h3>
         <p class="wedding-a">
-          Nos encantaría ver a nuestra familia y amigos vestidos elegantes. El
-          código de vestimenta es formal aunque rogamos que llevéis calzado
-          cómodo para andar por césped o un segundo par para cambiaros in situ.
+          Piensa en elegancia con un toque de confort, así que no olvides tus
+          zapatos cómodos para disfrutar y bailar durante todo el día.
         </p>
       </div>
       <div class="wedding-qa-item">
         <h3 class="wedding-q">¿Puedo traer a mis hijos?</h3>
         <p class="wedding-a">
-          Sin duda, los peques son adorables y una alegría para la familia pero
-          en esta ocasión, queremos que sea una celebración exclusiva para
-          adultos para que así los adultos se diviertan como niños.
+          Nos encantaría que esta noche fuera una oportunidad para que los
+          adultos se diviertan como niños. Por eso, hemos decidido que sea una
+          velada solo para adultos. ¡Gracias por tu comprensión y prepárate para
+          un día inolvidable!
         </p>
       </div>
       <div class="wedding-qa-item">
@@ -35,10 +35,10 @@
           asistencia?
         </h3>
         <p class="wedding-a">
-          No queremos quedaros sin vosotros en esta fecha tan especial por lo
-          que lo ideal sería lo antes posible pero si necesitáis esperar para
-          confirmar vuestra asistencia, nos tendríais que confirmar antes del
-          día 3 de Octubre.
+          Nos encantaría contar contigo en este día tan especial. Lo ideal sería
+          que nos confirmes lo antes posible para poder planear la mejor fiesta,
+          pero si necesitas tiempo, te pedimos que nos lo comuniques antes del 3
+          de octubre.
         </p>
       </div>
     </div>

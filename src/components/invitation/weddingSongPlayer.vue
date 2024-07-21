@@ -17,7 +17,8 @@ import { PlayIcon, PauseIcon } from '@heroicons/vue/24/solid'
 
 import algoSencillito from '@/assets/audio/marta-santos-algo-sencillito.mp3'
 import contigo from '@/assets/audio/solo-si-es-contigo-bombai.mp3'
-import yoQuieroVivir from '@/assets/audio/yo-quiero-vivir.mp3'
+
+import arrebato from '@/assets/audio/juanlu-montoya-arrebato.mp3'
 
 export default {
   components: {
@@ -46,12 +47,16 @@ export default {
     }
 
     onMounted(() => {
-      const sources = [algoSencillito, contigo, yoQuieroVivir]
+      const sources = [algoSencillito, contigo, arrebato]
       const songChosen = sources[Math.floor(Math.random() * sources.length)]
       audioSource.value = songChosen
 
       // Set volume to medium (0.5)
       audio.value.volume = 0.07
+
+      // setTimeout(() => {
+      //   togglePlayPause()
+      // }, 1000)
 
       // Listen for visibility change
       document.addEventListener('visibilitychange', handleVisibilityChange)
