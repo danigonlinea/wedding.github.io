@@ -86,7 +86,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import preboda230 from '@/assets/preboda/preboda_230_main.jpg'
+import preboda230 from '@/assets/preboda/preboda_main.jpg'
 import ramilleteGrande from '@/assets/flowers/flower-top-right.webp'
 import ramilleteFino from '@/assets/flowers/flower-top-left.webp'
 import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
@@ -398,15 +398,18 @@ header {
   }
 }
 
-/* Tablet and smaller screens */
-@media screen and (max-width: 768px) {
-  header {
-  }
-}
+@media screen and (min-width: 1024px) {
+  .header-image-hands-container {
+    width: 100%;
 
-/* Mobile screens */
-@media screen and (max-width: 480px) {
-  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 80%;
+      height: 100%;
+    }
   }
 }
 </style>

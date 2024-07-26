@@ -6,7 +6,7 @@
       </span>
     </div>
 
-    <div class="header-image-with-space">
+    <div class="header-image-with-space header-image-pre-wedding-photo">
       <img
         :src="preboda5"
         alt="Example Image"
@@ -77,6 +77,17 @@ const weddingPlaceGmapsLink =
     width: 100%;
     height: 5em;
     object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .wedding-come {
+    height: 100%;
+  }
+
+  .wedding-come-info {
+    width: 80%;
+    font-size: 1.4em;
   }
 }
 </style>
