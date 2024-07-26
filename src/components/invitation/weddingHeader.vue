@@ -86,7 +86,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import preboda230 from '@/assets/preboda/preboda_230_main.jpg'
+import preboda230 from '@/assets/preboda/preboda_main.jpg'
 import ramilleteGrande from '@/assets/flowers/flower-top-right.webp'
 import ramilleteFino from '@/assets/flowers/flower-top-left.webp'
 import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
