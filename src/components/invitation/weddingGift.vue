@@ -193,4 +193,12 @@ const unflipCard = () => {
     height: 180px;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .front {
+    .card-gift-info-container {
+      width: 40%;
+    }
+  }
+}
 </style>

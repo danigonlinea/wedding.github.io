@@ -398,15 +398,18 @@ header {
   }
 }
 
-/* Tablet and smaller screens */
-@media screen and (max-width: 768px) {
-  header {
-  }
-}
+@media screen and (min-width: 1024px) {
+  .header-image-hands-container {
+    width: 100%;
 
-/* Mobile screens */
-@media screen and (max-width: 480px) {
-  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 80%;
+      height: 100%;
+    }
   }
 }
 </style>

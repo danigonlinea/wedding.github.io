@@ -156,4 +156,12 @@ onMounted(() => {
 .wedding-schedule-list-item-time {
   font-size: 1.2em;
 }
+
+@media screen and (min-width: 1024px) {
+  .wedding-schedule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 </style>

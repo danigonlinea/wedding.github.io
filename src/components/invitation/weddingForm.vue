@@ -44,7 +44,7 @@
       </form>
     </div>
 
-    <div class="header-image-with-space">
+    <div class="header-image-with-space header-image-pre-wedding-photo">
       <img
         :src="preboda2"
         alt="Example Image"

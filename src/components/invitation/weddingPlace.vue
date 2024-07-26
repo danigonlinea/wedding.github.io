@@ -16,12 +16,17 @@
       <h2>{{ title }}</h2>
     </div>
     <div class="wedding-place-photo-info-container">
-      <div class="header-image-with-frame header-image-with-space">
-        <div class="wedding-place-blend">
-          <img class="photo2" :src="alboreaGarden" alt="Right Photo" />
-          <img class="photo1 right" :src="alboreaEntrance" alt="Left Photo" />
+      <div class="wedding-place-place-photo-container">
+        <div
+          class="header-image-with-frame header-image-with-space header-image-place-photo"
+        >
+          <div class="wedding-place-blend">
+            <img class="photo2" :src="alboreaGarden" alt="Right Photo" />
+            <img class="photo1 right" :src="alboreaEntrance" alt="Left Photo" />
+          </div>
         </div>
       </div>
+
       <div class="wedding-place-info">
         <div class="wedding-place-info-name-address">
           <span class="wedding-title-handwriting">Finca Alboreá</span>
@@ -133,6 +138,20 @@ const weddingPlaceGmapsLink =
       transparent calc(var(--pct1) * 1%),
       #fff calc(var(--pct2) * 1%)
     );
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-image-place-photo {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wedding-place-place-photo-container {
+    width: 70%;
+    margin: 0 auto;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="wedding-qa">
-    <div class="header-image-with-space">
+    <div class="header-image-with-space header-image-pre-wedding-photo">
       <img
         :src="preboda4"
         alt="Example Image"
@@ -42,7 +42,7 @@
         </p>
       </div>
     </div>
-    <div class="header-image-with-space">
+    <div class="header-image-with-space header-image-pre-wedding-photo">
       <img
         :src="preboda1"
         alt="Example Image"
@@ -61,6 +61,7 @@ import preboda1 from '@/assets/preboda/preboda_1.jpeg'
 .wedding-qa {
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   .wedding-qa-title {
     padding: 2em;
@@ -111,6 +112,14 @@ import preboda1 from '@/assets/preboda/preboda_1.jpeg'
 @media screen and (max-width: 480px) {
   .wedding-qa-list-container {
     padding: 4em 2em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .wedding-qa-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
