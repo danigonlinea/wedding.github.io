@@ -31,7 +31,7 @@
             <WeddingTextarea
               v-model="formData.message"
               label="¿Quieres decirnos algo más?"
-              description="Por favor, indícanos cualquier preferencia alimentaria o necesidad especial que debamos tener en cuenta. Por ejemplo, si eres vegano, vegetariano, tienes alguna alergia alimentaria o estás embarazada. Queremos asegurarnos de que todos nuestros invitados disfruten de una experiencia memorable y personalizada."
+              description="Por favor, indícanos cualquier preferencia alimentaria o necesidad especial que debamos tener en cuenta. Por ejemplo, si eres vegano, vegetariano, tienes alguna alergia alimentaria o estás embarazada."
             />
           </div>
 
