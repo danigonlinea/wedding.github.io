@@ -1,6 +1,9 @@
 <template>
   <div class="wedding-textarea">
     <label :for="textareaId">{{ label }}</label>
+    <div v-if="description" class="wedding-textarea-description">
+      {{ description }}
+    </div>
     <textarea
       :id="textareaId"
       v-model="textareaValue"
@@ -15,7 +18,13 @@
 <script setup>
 import { ref, watch } from 'vue'
 
-const props = defineProps(['label', 'value', 'placeholder', 'type'])
+const props = defineProps([
+  'label',
+  'value',
+  'placeholder',
+  'type',
+  'description',
+])
 const emit = defineEmits(['update:modelValue'])
 
 const textareaId = `custom-textarea-${Math.floor(Math.random() * 1000000)}`
@@ -37,6 +46,11 @@ label {
   margin-bottom: 1em;
   font-size: 1.2em;
   font-weight: bold;
+}
+
+.wedding-textarea-description {
+  margin-bottom: 0.5em;
+  font-size: 1em;
 }
 
 .wedding-textarea-field {
