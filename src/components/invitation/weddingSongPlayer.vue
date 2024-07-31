@@ -36,6 +36,15 @@ export default {
       } else {
         audio.value.play()
       }
+
+      if (window.gtag) {
+        window.gtag('event', 'Song Player', {
+          event_category: 'Song Player',
+          event_label: isPlaying.value ? 'Pause' : 'Play',
+          value: { value: isPlaying.value },
+        })
+      }
+
       isPlaying.value = !isPlaying.value
     }
 

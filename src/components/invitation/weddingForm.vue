@@ -87,12 +87,22 @@ const numberPeople = [
 
 const submitForm = async () => {
   try {
-    const docRef = await addDoc(collection(db, 'guests'), {
+    const infoGuest = {
       name: formData.value.fullName,
       number: formData.value.numberPeople,
       message: formData.value.message,
       song: formData.value.songField,
-    })
+    }
+
+    await addDoc(collection(db, 'guests'), { ...infoGuest })
+
+    if (window.gtag) {
+      window.gtag('event', 'Form', {
+        event_category: 'Form',
+        event_label: 'Guest Info',
+        value: { ...infoGuest },
+      })
+    }
 
     isFormSubmitted.value = true
     // console.log('Document written with ID: ', docRef.id)

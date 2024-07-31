@@ -41,7 +41,12 @@ import WeddingGiftIcon from '@/assets/svg/wedding-gift.svg'
 const isFlipped = ref(false)
 
 const flipCard = () => {
-  isFlipped.value = !isFlipped.value
+  if (!isFlipped.value) {
+    isFlipped.value = true
+    setTimeout(() => {
+      isFlipped.value = false
+    }, 10000)
+  }
 }
 
 const unflipCard = () => {
