@@ -73,9 +73,6 @@
 
         <span class="date-year">2024</span>
       </div>
-      <!-- <div class="header-info-quedan">
-        <span>¡Quedan {{ daysLeftToWedding }} días!</span>
-      </div> -->
     </div>
 
     <div class="header-scroll-down">
@@ -144,14 +141,14 @@ function daysUntil(targetDate) {
 }
 
 .header-scroll-down {
-  bottom: 5%;
+  bottom: 10%;
   left: 0;
   right: 0;
   margin: auto;
   position: absolute;
   width: 24px;
   opacity: 0;
-  animation: scrollIcon 2s ease-in-out 2.2s 3;
+  animation: scrollIcon 2s ease-in-out 2.2s 5;
 }
 
 .grid-container {
@@ -239,7 +236,7 @@ function daysUntil(targetDate) {
 }
 
 .wedding-header-main {
-  height: 75vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -302,18 +299,18 @@ header {
 
   .header-image-hands-container {
     padding: 0.4em;
-    height: 50vh;
+    height: 40vh;
     display: flex;
     align-items: flex-end;
   }
 
   .header-info-container {
-    height: 30vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 2.4em;
+    gap: 1.2em;
   }
 
   .header-we-get-married {
