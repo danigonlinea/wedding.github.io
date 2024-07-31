@@ -17,7 +17,7 @@
         <h3 class="wedding-q">¿Cómo hay que ir vestido?</h3>
         <p class="wedding-a">
           Nos encantaría ver a nuestra familia y amigos vestidos elegantes. El
-          código de vestimenta es formal aunque rogamos que llevéis calzado
+          código de vestimenta es formal, aunque rogamos que llevéis calzado
           cómodo para andar por césped o un segundo par para cambiaros in situ.
         </p>
       </div>
