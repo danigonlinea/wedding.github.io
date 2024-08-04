@@ -31,7 +31,7 @@
       </div>
       <div class="wedding-qa-item">
         <h3 class="wedding-q">
-          ¿Con cuándo tiempo con antelación tendría que confirmar nuestra
+          ¿Con cuánto tiempo con antelación tendría que confirmar nuestra
           asistencia?
         </h3>
         <p class="wedding-a">
