@@ -1,5 +1,5 @@
 <template>
-  <div class="wedding-envelope-container" @click="openEnvelope">
+  <div class="wedding-envelope-container">
     <div :class="openClass">
       <div class="flap front"></div>
       <div class="flap top"></div>
