@@ -31,8 +31,7 @@
       </div>
       <div class="wedding-qa-item">
         <h3 class="wedding-q">
-          ¿Con cuánto tiempo con antelación tendría que confirmar nuestra
-          asistencia?
+          ¿Con cuánta antelación deberíamos confirmar nuestra asistencia?
         </h3>
         <p class="wedding-a">
           Nos encantaría contar contigo en este día tan especial. Lo ideal sería
