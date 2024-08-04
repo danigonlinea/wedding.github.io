@@ -24,10 +24,9 @@
       <div class="wedding-qa-item">
         <h3 class="wedding-q">¿Puedo traer a mis hijos?</h3>
         <p class="wedding-a">
-          Nos encantaría que esta noche fuera una oportunidad para que los
-          adultos se diviertan como niños. Por eso, hemos decidido que sea una
-          celebración solo para adultos. ¡Gracias por tu comprensión y prepárate
-          para un día inolvidable!
+          Nos encantaría que este día fuera una oportunidad para que los adultos
+          se diviertan como niños. Por eso, hemos decidido que sea una
+          celebración solo para adultos. ¡Gracias por tu comprensión!
         </p>
       </div>
       <div class="wedding-qa-item">
