@@ -62,7 +62,7 @@ const unflipCard = () => {
 
 <style scoped>
 .wedding-gift {
-  height: 80vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   position: relative;

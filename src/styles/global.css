@@ -90,4 +90,9 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 1em;
+
+  p {
+    font-size: 1.1em;
+    text-align: center;
+  }
 }

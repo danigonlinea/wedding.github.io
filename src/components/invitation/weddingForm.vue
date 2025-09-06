@@ -1,37 +1,43 @@
 <template>
   <div class="wedding-form-container">
     <div class="wedding-section-title wedding-form-title-space">
-      <h2>Confírmanos tu asistencia</h2>
+      <h2>¿Contamos con vosotros?</h2>
     </div>
 
     <div class="wedding-form-card">
       <form @submit.prevent="submitForm">
         <div class="wedding-form">
+          <div class="wedding-block-center">
+            <p>
+              Confírmanos lo antes posible por favor, que así organizarlo todo
+              nos será mucho más fácil.
+            </p>
+            <p>
+              Para confirmar tu asistencia a la boda sólo tienes que enviarnos
+              el siguiente formulario.
+            </p>
+            <p>
+              ¿Alguna duda? ¿No estás segura de tu vestido? ¿Puedes llevar a los
+              niños? ¿Alguna aclaración?
+            </p>
+            <p>
+              Si tienes cualquier pregunta para nosotros o nos quieres comentar
+              algo, déjalo en el mensaje y nos llegará directamente a nosotros.
+            </p>
+            <p>
+              ¡Gracias por tu mensaje! (lo de dejar el mensaje es opcional pero
+              siempre hace ilusión).
+            </p>
+          </div>
           <div class="wedding-form-group">
             <WeddingInput v-model="formData.fullName" label="Nombre" required />
-          </div>
-          <div class="wedding-form-group">
-            <WeddingSelect
-              v-model="formData.numberPeople"
-              :options="numberPeople"
-              default-value="1"
-              label="¿Cuántas personas seréis?"
-            />
-          </div>
-
-          <div class="wedding-form-group">
-            <WeddingInput
-              v-model="formData.songField"
-              label="¡Una canción que no puede faltar!
-"
-            />
           </div>
 
           <div class="wedding-form-group">
             <WeddingTextarea
               v-model="formData.message"
-              label="¿Quieres decirnos algo más?"
-              description="Por favor, indícanos cualquier preferencia alimentaria o necesidad especial que debamos tener en cuenta. Por ejemplo, si eres vegano, vegetariano, tienes alguna alergia alimentaria o estás embarazada."
+              label="Déjanos un mensaje"
+              description=""
             />
           </div>
 

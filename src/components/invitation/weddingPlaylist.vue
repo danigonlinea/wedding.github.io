@@ -6,30 +6,11 @@
         <img :src="flowerBigGreen" alt="Example Image" />
       </picture>
     </div>
-    <!--   <div class="wedding-section-title">
-      <h2>Lista de canciones</h2>
-    </div>
-
-    <div class="wedding-playlist-content">
-      <span>
-        Añade la canción que te gustaría que sonase en nuestra boda y la
-        pondremos por ti.
-      </span>
-      <div class="wedding-playlist-link">
-        <WeddingLink
-          to="https://www.youtube.com/playlist?list=PLpPEgsDKOaBa0hXjk8NHj3nlX7pDahd_q&jct=js1IldtdLGhMmV8Su8szbuv0nUq_uQ"
-          class="wedding-spotify-playlist"
-        >
-          Ver canciones
-        </WeddingLink>
-      </div>
-    </div> -->
   </div>
 </template>
 
 <script setup>
-import flowerBigGreen from '@/assets/flowers/flower-middle-green-big.webp'
-import WeddingLink from '@/components/ui/WeddingLink.vue'
+import flowerBigGreen from '@/assets/flowers/flowers-green-group.webp'
 </script>
 
 <style scoped>
@@ -74,10 +55,11 @@ import WeddingLink from '@/components/ui/WeddingLink.vue'
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2em;
 
   img {
     width: 100%;
-    height: 5em;
+    height: auto;
     object-fit: cover;
   }
 }

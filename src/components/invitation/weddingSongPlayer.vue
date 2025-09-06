@@ -15,10 +15,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { PlayIcon, PauseIcon } from '@heroicons/vue/24/solid'
 
-import algoSencillito from '@/assets/audio/marta-santos-algo-sencillito.mp3'
-import contigo from '@/assets/audio/solo-si-es-contigo-bombai.mp3'
-import uno from '@/assets/audio/manuel-carrasco-uno.mp3'
-import arrebato from '@/assets/audio/juanlu-montoya-arrebato.mp3'
+import allOfMe from '@/assets/audio/all_of_me_legend.mp3'
 
 export default {
   components: {
@@ -56,7 +53,7 @@ export default {
     }
 
     onMounted(() => {
-      const sources = [algoSencillito, contigo, arrebato, uno]
+      const sources = [allOfMe]
       const songChosen = sources[Math.floor(Math.random() * sources.length)]
       audioSource.value = songChosen
 

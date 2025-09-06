@@ -49,8 +49,9 @@ label {
 }
 
 .wedding-textarea-description {
-  margin-bottom: 0.5em;
-  font-size: 1em;
+  margin-bottom: 1em;
+  font-size: 1.1em;
+  text-align: center;
 }
 
 .wedding-textarea-field {

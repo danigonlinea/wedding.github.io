@@ -5,11 +5,12 @@
   <WeddingPlace></WeddingPlace>
   <WeddingCelebration></WeddingCelebration>
   <WeddingSchedule></WeddingSchedule>
-  <WeddingInfo></WeddingInfo>
+  <!-- <WeddingInfo></WeddingInfo> -->
   <WeddingForm></WeddingForm>
   <WeddingGift></WeddingGift>
-  <WeddingPlaylist />
+
   <WeddingLastMessage />
+  <WeddingPlaylist />
 
   <WeddingSongPlayer />
 </template>
