@@ -1,23 +1,23 @@
 <template>
-  <div class="wedding-place">
+  <div class="wedding-celebration">
     <div class="wedding-section-title">
       <h2>{{ title }}</h2>
     </div>
-    <div class="wedding-place-photo-info-container">
-      <div class="wedding-place-place-photo-container">
+    <div class="wedding-celebration-photo-info-container">
+      <div class="wedding-celebration-place-photo-container">
         <div
           class="header-image-with-frame header-image-with-space header-image-place-photo"
         >
-          <div class="wedding-place-blend">
+          <div class="wedding-celebration-blend">
             <img class="photo2" :src="placeImg" alt="Right Photo" />
           </div>
         </div>
       </div>
 
-      <div class="wedding-place-info">
-        <div class="wedding-place-info-name-address">
+      <div class="wedding-celebration-info">
+        <div class="wedding-celebration-info-name-address">
           <span class="wedding-title-handwriting">Bodega Real Tesoro</span>
-          <div class="wedding-place-address">
+          <div class="wedding-celebration-address">
             <span>Jerez de la Frontera, Cádiz</span>
           </div>
         </div>
@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import placeImg from '@/assets/img/boda_sandra_pablo_lugar_fondo_blanco.jpeg'
+import placeImg from '@/assets/img/boda_sandra_pablo_lugar_fondo_blanco.webp'
 import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
 import WeddingLink from '../ui/weddingLink.vue'
 
@@ -50,7 +50,7 @@ const weddingPlaceGmapsLink =
 </script>
 
 <style lang="scss">
-.wedding-place-flower {
+.wedding-celebration-flower {
   position: absolute;
   bottom: -14%;
   width: 7em;
@@ -58,26 +58,24 @@ const weddingPlaceGmapsLink =
   z-index: 1;
 }
 
-.wedding-place {
-  height: 100vh;
+.wedding-celebration {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
-.wedding-place-photo-info-container {
+.wedding-celebration-photo-info-container {
   position: relative;
-  height: 80vh;
 }
 
-.wedding-place-info-name-address {
+.wedding-celebration-info-name-address {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6em;
 }
 
-.wedding-place-address {
+.wedding-celebration-address {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +83,7 @@ const weddingPlaceGmapsLink =
   font-size: 1.2em;
 }
 
-.wedding-place-info {
+.wedding-celebration-info {
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -93,35 +91,15 @@ const weddingPlaceGmapsLink =
 
   gap: 2em;
   position: relative;
-  height: 40vh;
 }
 
-.wedding-place-blend {
-  --pct1: 33;
-  --pct2: 66;
-  --angle: 90;
-
-  height: auto;
-  width: 100%;
+.wedding-celebration-blend {
   position: relative;
 
   aspect-ratio: 3 / 2;
 
   > * {
-    position: absolute;
-    top: 0;
-    left: 0;
-    inset: 0;
-    background-size: cover;
     width: 100%;
-  }
-
-  .right {
-    -webkit-mask-image: linear-gradient(
-      calc(var(--angle) * 1deg),
-      transparent calc(var(--pct1) * 1%),
-      #fff calc(var(--pct2) * 1%)
-    );
   }
 }
 
@@ -133,7 +111,7 @@ const weddingPlaceGmapsLink =
     align-items: center;
   }
 
-  .wedding-place-place-photo-container {
+  .wedding-celebration-place-photo-container {
     width: 70%;
     margin: 0 auto;
   }

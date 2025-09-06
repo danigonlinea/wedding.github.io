@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import placeImg from '@/assets/img/boda_sandra_pablo_lugar_fondo_blanco.jpeg'
+import placeImg from '@/assets/img/parroquia_santa_catalina.webp'
 
 import WeddingLink from '../ui/weddingLink.vue'
 
@@ -62,7 +62,6 @@ const weddingPlaceGmapsLink =
 }
 
 .wedding-place {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -70,7 +69,6 @@ const weddingPlaceGmapsLink =
 
 .wedding-place-photo-info-container {
   position: relative;
-  height: 80vh;
 }
 
 .wedding-place-info-name-address {
@@ -89,14 +87,14 @@ const weddingPlaceGmapsLink =
 }
 
 .wedding-place-info {
-  padding: 2em;
+  padding: 2em 2em 4em 2em;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 
   gap: 2em;
   position: relative;
-  height: 40vh;
 }
 
 .wedding-place-blend {
