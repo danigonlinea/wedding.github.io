@@ -6,7 +6,8 @@
 
     <div ref="fadeElements" class="wedding-schedule-list">
       <div class="wedding-schedule-list-item">
-        <WeddingArchIcon class="wedding-schedule-icon" />
+        <img class="wedding-schedule-icon" :src="parroquiaImg" />
+
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">Ceremonia</p>
           <p class="wedding-schedule-list-item-time">12:00</p>
@@ -14,7 +15,7 @@
       </div>
 
       <div class="wedding-schedule-list-item">
-        <WeddingArchIcon class="wedding-schedule-icon" />
+        <img class="wedding-schedule-icon icon-bigger" :src="idaImg" />
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">Autobuses</p>
           <p class="wedding-schedule-list-item-time">13:15</p>
@@ -22,7 +23,7 @@
       </div>
 
       <div class="wedding-schedule-list-item">
-        <WeddingAperitivosIcon class="wedding-schedule-icon" />
+        <img class="wedding-schedule-icon" :src="coctelImg" />
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">Cóctel</p>
           <p class="wedding-schedule-list-item-time">14:00</p>
@@ -30,7 +31,7 @@
       </div>
 
       <div class="wedding-schedule-list-item">
-        <WeddingBanqueteIcon class="wedding-schedule-icon" />
+        <img class="wedding-schedule-icon" :src="banqueteImg" />
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">Banquete</p>
           <p class="wedding-schedule-list-item-time">16:00</p>
@@ -38,7 +39,7 @@
       </div>
 
       <div class="wedding-schedule-list-item">
-        <WeddingDiscoIcon class="wedding-schedule-icon" />
+        <img class="wedding-schedule-icon" :src="fiestaImg" />
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">Fiesta</p>
           <p class="wedding-schedule-list-item-time">18:30</p>
@@ -46,11 +47,18 @@
       </div>
 
       <div class="wedding-schedule-list-item">
-        <WeddingBaileIcon class="wedding-schedule-icon" />
+        <img class="wedding-schedule-icon" :src="vueltaImg" />
         <div class="wedding-schedule-list-item-info">
           <p class="wedding-schedule-list-item-title">Autobuses de vuelta</p>
-          <p class="wedding-schedule-list-item-time">18:30</p>
         </div>
+      </div>
+
+      <div class="wedding-block-center">
+        <p style="font-size: 1.1em; text-align: center">
+          Se ruega confirmación de asistencia y de servicio de bús. Habrá
+          autobuses de vuelta en dos horarios distintos.
+        </p>
+        <WeddingLink :to="weddingMoreInfo">Más información</WeddingLink>
       </div>
     </div>
 
@@ -68,11 +76,15 @@
 import { ref, onMounted, nextTick } from 'vue'
 
 import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
-import WeddingArchIcon from '@/assets/svg/wedding-arch.svg'
-import WeddingAperitivosIcon from '@/assets/svg/wedding-aperitivos.svg'
-import WeddingBanqueteIcon from '@/assets/svg/wedding-banquete.svg'
-import WeddingBaileIcon from '@/assets/svg/wedding-baile.svg'
-import WeddingDiscoIcon from '@/assets/svg/wedding-disco.svg'
+import parroquiaImg from '@/assets/img/parroquia_santa_catalina.webp'
+import idaImg from '@/assets/img/programa_autobus_ida.webp'
+import vueltaImg from '@/assets/img/programa_autobus_vuelta.webp'
+import coctelImg from '@/assets/img/programa_coctel.webp'
+import banqueteImg from '@/assets/img/programa_banquete.webp'
+import fiestaImg from '@/assets/img/programa_fiesta.webp'
+import WeddingLink from '../ui/weddingLink.vue'
+
+const weddingMoreInfo = 'https://qr.me-qr.com/data/image-pack/1qeqXPP5'
 
 const fadeElements = ref([])
 
@@ -131,7 +143,7 @@ onMounted(() => {
 }
 
 .wedding-schedule-icon {
-  width: 64px;
+  width: 92px;
   height: auto;
 }
 

@@ -163,7 +163,7 @@ const unflipCard = () => {
   display: flex;
   flex-direction: column;
   transform: rotateY(180deg);
-  background-image: url('@/assets/img/card-background.jpg');
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

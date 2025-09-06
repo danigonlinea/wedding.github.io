@@ -83,3 +83,11 @@ body {
 .horizontal-flip {
   transform: scaleX(-1);
 }
+
+.wedding-block-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
