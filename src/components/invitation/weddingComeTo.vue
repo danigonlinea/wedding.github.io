@@ -8,8 +8,8 @@
 
     <div class="header-image-with-space header-image-pre-wedding-photo">
       <img
-        :src="preboda5"
-        alt="Example Image"
+        :src="juntosImg"
+        alt="Todos Juntos"
         class="header-image-with-frame"
       />
     </div>
@@ -19,30 +19,37 @@
         {{ messageComeTo2 }}
       </span>
     </div>
-    <picture class="flower-green">
-      <source :srcset="flowerGreenBig" type="image/webp" />
+    <div class="wedding-come-info">
+      <span>
+        {{ messageComeTo3 }}
+      </span>
+    </div>
 
-      <img :src="flowerGreenBig" alt="Example Image" />
-    </picture>
+    <div class="flowers-green-group-separator">
+      <picture>
+        <source :srcset="flowerGreenBig" type="image/webp" />
+
+        <img :src="flowerGreenBig" alt="Flowers Green Group Image" />
+      </picture>
+    </div>
   </div>
 </template>
 
 <script setup>
-import preboda5 from '@/assets/preboda/preboda_5.jpeg'
-import flowerGreenBig from '@/assets/flowers/flower-middle-green-big.webp'
+import juntosImg from '@/assets/img/boda_sandra_pablo_juntos.jpeg'
+import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
 const messageComeTo =
-  'Tras más de siete años compartiendo momentos inolvidables, te invitamos a ser parte de un momento único en nuestras vidas.'
+  'Estamos super felices y queremos compartir con vosotros toda nuestra alegría.  Por eso estamos preparando una boda con mucha ilusión y queremos que sea inolvidable.'
 
 const messageComeTo2 =
-  'Tu presencia hará aún más especial este día que guardaremos en nuestros corazones para siempre.'
+  'Nos conocimos hace casi nueve años, desde entonces hemos vivido muchas historias juntos, muchos viajes y anécdotas. Hace tres años llegó a nuestras vidas nuestro mayor amor. Ahora hemos tomado la decisión de unirnos en matrimonio y y así comenzar este nuevo capitulo.'
 
-const weddingPlaceGmapsLink =
-  'https://www.google.es/maps/place/Finca+Albore%C3%A1+%7C+Albore%C3%A1+Eventos/@36.3139541,-6.0987968,14z/data=!4m6!3m5!1s0xd0c37ce34f873cf:0x258e47f1dbb5e922!8m2!3d36.3175581!4d-6.079622!16s%2Fg%2F11c1pqh07c?entry=ttu'
+const messageComeTo3 =
+  'El 15 de noviembre será el inicio de esta etapa, y estamos emocionados de compartirlo con todas las personas que nos han acompañado en el camino.'
 </script>
 
 <style lang="scss">
 .wedding-come {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -25,7 +25,7 @@ import { ref } from 'vue'
 import GoldenRingIcon from '@/assets/svg/golden-ring.svg'
 import flowerFooter from '@/assets/flowers/flor-wedding-footer.webp'
 
-const daysLeftToWedding = ref(daysUntil('2024-10-12'))
+const daysLeftToWedding = ref(daysUntil('2025-11-15'))
 
 function daysUntil(targetDate) {
   // Get the current date

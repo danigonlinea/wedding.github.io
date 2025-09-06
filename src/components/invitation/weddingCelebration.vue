@@ -16,11 +16,9 @@
 
       <div class="wedding-place-info">
         <div class="wedding-place-info-name-address">
-          <span class="wedding-title-handwriting"
-            >Parroquia Santa Catalina</span
-          >
+          <span class="wedding-title-handwriting">Bodega Real Tesoro</span>
           <div class="wedding-place-address">
-            <span>Conil de la Frontera, Cádiz</span>
+            <span>Jerez de la Frontera, Cádiz</span>
           </div>
         </div>
 
@@ -29,18 +27,26 @@
         </div>
       </div>
     </div>
+
+    <div class="flowers-green-group-separator">
+      <picture>
+        <source :srcset="flowerGreenBig" type="image/webp" />
+
+        <img :src="flowerGreenBig" alt="Flowers Green Group Image" />
+      </picture>
+    </div>
   </div>
 </template>
 
 <script setup>
 import placeImg from '@/assets/img/boda_sandra_pablo_lugar_fondo_blanco.jpeg'
-
+import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
 import WeddingLink from '../ui/weddingLink.vue'
 
-const title = 'Lugar de la ceremonia'
+const title = 'Lugar de celebración'
 
 const weddingPlaceGmapsLink =
-  'https://www.google.com/maps/place/Parroquia+de+Santa+Catalina+de+Alejandr%C3%ADa/@36.2772042,-6.0905393,18z/data=!4m10!1m2!2m1!1siglesia+santa+catalina+conil!3m6!1s0xd0c381f44dfeeeb:0xee02664918beb65b!8m2!3d36.2772042!4d-6.0881575!15sChxpZ2xlc2lhIHNhbnRhIGNhdGFsaW5hIGNvbmlskgEGY2h1cmNoqgFgEAEqGiIWaWdsZXNpYSBzYW50YSBjYXRhbGluYSgOMh4QASIa8l7j_bURAB4Ppat3aPSB4lH2mjNmA2eCsH8yIBACIhxpZ2xlc2lhIHNhbnRhIGNhdGFsaW5hIGNvbmls4AEA!16s%2Fg%2F1z44b91g2?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D'
+  'https://www.google.es/maps/place/Grupo+Est%C3%A9vez/@36.6871722,-6.1570445,17z/data=!3m1!4b1!4m6!3m5!1s0xd0dc6d4fa11ddcf:0x4a805d93824adebc!8m2!3d36.6871722!4d-6.1544696!16s%2Fg%2F1tdzmtp2?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D'
 </script>
 
 <style lang="scss">
@@ -50,15 +56,6 @@ const weddingPlaceGmapsLink =
   width: 7em;
   height: auto;
   z-index: 1;
-}
-
-.wedding-place-flower-left {
-  left: 0;
-  transform: scaleX(-1);
-}
-
-.wedding-place-flower-right {
-  right: 0;
 }
 
 .wedding-place {

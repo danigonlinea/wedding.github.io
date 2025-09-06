@@ -44,19 +44,10 @@
         </div>
       </form>
     </div>
-
-    <div class="header-image-with-space header-image-pre-wedding-photo">
-      <img
-        :src="preboda2"
-        alt="Example Image"
-        class="header-image-with-frame"
-      />
-    </div>
   </div>
 </template>
 
 <script setup>
-import preboda2 from '@/assets/preboda/preboda_2.jpeg'
 import { ref } from 'vue'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, addDoc, collection } from 'firebase/firestore'

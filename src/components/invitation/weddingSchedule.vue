@@ -45,12 +45,21 @@
         </div>
       </div>
     </div>
+
+    <div class="flowers-green-group-separator">
+      <picture>
+        <source :srcset="flowerGreenBig" type="image/webp" />
+
+        <img :src="flowerGreenBig" alt="Flowers Green Group Image" />
+      </picture>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
 
+import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
 import WeddingArchIcon from '@/assets/svg/wedding-arch.svg'
 import WeddingAperitivosIcon from '@/assets/svg/wedding-aperitivos.svg'
 import WeddingBanqueteIcon from '@/assets/svg/wedding-banquete.svg'

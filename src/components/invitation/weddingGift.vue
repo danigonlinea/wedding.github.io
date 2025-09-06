@@ -5,13 +5,6 @@
     </div>
 
     <div class="wedding-gift-content">
-      <div class="wedding-gift-content-message">
-        <span>
-          Lo más importante para nosotros es compartir este día tan especial
-          contigo, pero si quieres tener un detalle:
-        </span>
-      </div>
-
       <div class="wedding-gift-card">
         <div class="card-container" @click="flipCard" @mouseleave="unflipCard">
           <div :class="{ card: true, flipped: isFlipped }">
@@ -21,10 +14,14 @@
               </div>
             </div>
             <div class="back">
-              <div class="card-gift-info-container">
-                <span>Nuestra cuenta bancaria</span>
-                <span class="bank-account">ES48 0239 0806 7737 2523 9622</span>
-                <span class="card-thanks">¡Muchísimas gracias!</span>
+              <div
+                class="header-image-with-space header-image-pre-wedding-photo"
+              >
+                <img
+                  :src="giftImg"
+                  alt="Wedding Gift Image"
+                  class="header-image-with-frame"
+                />
               </div>
             </div>
           </div>
@@ -37,6 +34,7 @@
 <script setup>
 import { ref } from 'vue'
 import WeddingGiftIcon from '@/assets/svg/wedding-gift.svg'
+import giftImg from '@/assets/img/boda_sandra_pablo_regalo.jpeg'
 
 const isFlipped = ref(false)
 

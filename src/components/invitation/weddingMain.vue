@@ -3,6 +3,7 @@
 
   <WeddingComeTo />
   <WeddingPlace></WeddingPlace>
+  <WeddingCelebration></WeddingCelebration>
   <WeddingSchedule></WeddingSchedule>
   <WeddingInfo></WeddingInfo>
   <WeddingForm></WeddingForm>
@@ -24,4 +25,5 @@ import WeddingSongPlayer from './weddingSongPlayer.vue'
 import WeddingSchedule from './weddingSchedule.vue'
 import WeddingComeTo from './weddingComeTo.vue'
 import WeddingLastMessage from './weddingLastMessage.vue'
+import WeddingCelebration from './weddingCelebration.vue'
 </script>

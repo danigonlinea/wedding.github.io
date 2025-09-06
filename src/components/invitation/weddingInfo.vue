@@ -1,13 +1,5 @@
 <template>
   <div class="wedding-qa">
-    <div class="header-image-with-space header-image-pre-wedding-photo">
-      <img
-        :src="preboda4"
-        alt="Example Image"
-        class="header-image-with-frame"
-      />
-    </div>
-
     <div class="wedding-section-title">
       <h2>Más detalles</h2>
     </div>
@@ -18,7 +10,7 @@
         <p class="wedding-a">
           Nos encantaría ver a nuestra familia y amigos vestidos elegantes. El
           código de vestimenta es formal, aunque rogamos que llevéis calzado
-          cómodo para andar por césped o un segundo par para cambiaros allí.
+          cómodo o un segundo par para cambiaros allí.
         </p>
       </div>
       <div class="wedding-qa-item">
@@ -40,13 +32,6 @@
           de octubre.
         </p>
       </div>
-    </div>
-    <div class="header-image-with-space header-image-pre-wedding-photo">
-      <img
-        :src="preboda1"
-        alt="Example Image"
-        class="header-image-with-frame"
-      />
     </div>
   </div>
 </template>

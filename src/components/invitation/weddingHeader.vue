@@ -1,6 +1,6 @@
 <template>
   <header>
-    <picture class="header-flower-big">
+    <!--  <picture class="header-flower-big">
       <source :srcset="ramilleteGrande" type="image/webp" />
 
       <img
@@ -8,9 +8,9 @@
         alt="Example Image"
         class="section-image animation-wind"
       />
-    </picture>
+    </picture> -->
 
-    <picture class="header-flower-small on-the-left">
+    <!-- <picture class="header-flower-small on-the-left">
       <source :srcset="ramilleteFino" type="image/webp" />
 
       <img
@@ -28,12 +28,12 @@
         alt="Example Image"
         class="section-image animation-wind"
       />
-    </picture>
+    </picture> -->
 
     <div class="wedding-header-main">
       <div class="header-image-hands-container">
         <img
-          :src="preboda230"
+          :src="handsImg"
           alt="Example Image"
           class="header-image-with-frame"
         />
@@ -43,68 +43,55 @@
         <span class="header-we-get-married">¡Nos casamos!</span>
 
         <div class="header-couple-names-container">
-          <div class="header-couple-first-name">
-            <span>Lidia &</span>
+          <span>Sandra & Pablo</span>
+
+          <!-- <div class="header-couple-second-name">
             <span></span>
-          </div>
-          <div class="header-couple-second-name">
-            <span></span>
-            <span>Daniel</span>
-          </div>
+            <span>Pablo</span>
+          </div> -->
         </div>
       </div>
-    </div>
-    <div class="header-header-main-bottom">
       <div class="header-date-info">
-        <span class="date-month">OCTUBRE </span>
+        <span class="date-month">NOVIEMBRE </span>
         <div class="grid-container header-date-central">
           <div class="grid-item day-week">
             <div class="lines-top-bottom">
               <span>SÁBADO</span>
             </div>
           </div>
-          <div class="grid-item day-number">12</div>
+          <div class="grid-item day-number">15</div>
           <div class="grid-item day-time">
             <div class="lines-top-bottom">
-              <span>13:00h.</span>
+              <span>12:00h.</span>
             </div>
           </div>
         </div>
 
-        <span class="date-year">2024</span>
+        <span class="date-year">2025</span>
       </div>
     </div>
 
     <div class="header-scroll-down">
       <ChevronDoubleDownIcon />
     </div>
+
+    <div class="flowers-green-group-separator">
+      <picture>
+        <source :srcset="flowerGreenBig" type="image/webp" />
+
+        <img :src="flowerGreenBig" alt="Flowers Green Group Image" />
+      </picture>
+    </div>
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import preboda230 from '@/assets/preboda/preboda_main.jpg'
+import handsImg from '@/assets/img/boda_sandra_pablo_manos.jpeg'
+
+import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
 import ramilleteGrande from '@/assets/flowers/flower-top-right.webp'
 import ramilleteFino from '@/assets/flowers/flower-top-left.webp'
 import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
-
-const daysLeftToWedding = ref(daysUntil('2024-10-12'))
-
-function daysUntil(targetDate) {
-  // Get the current date
-  const currentDate = new Date()
-
-  // Parse the target date
-  const parsedTargetDate = new Date(targetDate)
-
-  // Calculate the time difference in milliseconds
-  const timeDifference = parsedTargetDate - currentDate
-
-  // Calculate the number of days
-  const days = Math.ceil(timeDifference / (1000 * 60 * 60 * 24))
-
-  return days
-}
 </script>
 
 <style lang="scss">
@@ -176,7 +163,8 @@ function daysUntil(targetDate) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
+  gap: 1em;
+  padding-block: 1em;
   width: 100%;
 }
 
@@ -236,19 +224,8 @@ function daysUntil(targetDate) {
 }
 
 .wedding-header-main {
-  height: 65vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.header-header-main-bottom {
-  height: 25vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1em;
 }
 
 .header-flower-big {
@@ -279,6 +256,18 @@ function daysUntil(targetDate) {
   transform: scaleX(-1);
 }
 
+.flowers-green-group-separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+}
+
+.flowers-green-group-separator img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 /* Tablet and smaller screens */
 @media screen and (max-width: 768px) {
   .header-flower-big {
@@ -292,25 +281,24 @@ function daysUntil(targetDate) {
 }
 
 header {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
 
   .header-image-hands-container {
     padding: 0.4em;
-    height: 40vh;
+
     display: flex;
     align-items: flex-end;
   }
 
   .header-info-container {
-    height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 1.2em;
+    gap: 1em;
+    padding-block: 1em 2em;
   }
 
   .header-we-get-married {
@@ -339,23 +327,25 @@ header {
 
   .header-couple-names-container {
     display: flex;
+    align-items: center;
     flex-direction: column;
     width: 100%;
-    font-size: 4em;
+    font-size: 3em;
     font-family: 'Parisienne', cursive;
     font-weight: 500;
     color: var(--text-color-primary);
   }
 
-  .header-couple-first-name {
+  /*  .header-couple-first-name {
     display: grid;
+    place-items: center;
     grid-template-columns: 85% 15%;
 
     span:first-child {
       display: flex;
       justify-content: center;
     }
-  }
+  } */
 
   .header-couple-second-name {
     display: grid;
