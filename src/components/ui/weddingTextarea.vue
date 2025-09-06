@@ -9,7 +9,7 @@
       v-model="textareaValue"
       :placeholder="placeholder"
       :type="type"
-      rows="4"
+      rows="8"
       class="wedding-textarea-field"
     />
   </div>

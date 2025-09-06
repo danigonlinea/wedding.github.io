@@ -54,10 +54,6 @@
       </div>
 
       <div class="wedding-block-center">
-        <p>
-          Se ruega confirmación de asistencia y de servicio de bús. Habrá
-          autobuses de vuelta en dos horarios distintos.
-        </p>
         <WeddingLink :to="weddingMoreInfo">Más información</WeddingLink>
       </div>
     </div>

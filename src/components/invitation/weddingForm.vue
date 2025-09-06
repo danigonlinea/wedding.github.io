@@ -30,7 +30,11 @@
             </p>
           </div>
           <div class="wedding-form-group">
-            <WeddingInput v-model="formData.fullName" label="Nombre" required />
+            <WeddingInput
+              v-model="formData.fullName"
+              label="Nombre y apellidos"
+              required
+            />
           </div>
 
           <div class="wedding-form-group">
@@ -55,6 +59,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import emailjs from 'emailjs-com'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, addDoc, collection } from 'firebase/firestore'
 
@@ -84,22 +89,30 @@ const numberPeople = [
 
 const submitForm = async () => {
   try {
-    const infoGuest = {
-      name: formData.value.fullName,
-      number: formData.value.numberPeople,
-      message: formData.value.message,
-      song: formData.value.songField,
-    }
+    emailjs
+      .send(
+        'service_1vykrik',
+        'template_h8mqpql',
+        { name: formData.value.fullName, message: formData.value.message },
+        'veRoaIxY0Wl0qS94t',
+      )
+      .then(() => {
+        console.log('Correo enviado con éxito 🚀')
+        formData.value.fullName = ''
+        formData.value.message = ''
 
-    await addDoc(collection(db, 'guests'), { ...infoGuest })
-
-    if (window.gtag) {
-      window.gtag('event', 'Form', {
-        event_category: 'Form',
-        event_label: 'Guest Info',
-        value: { ...infoGuest },
+        if (window.gtag) {
+          window.gtag('event', 'Form', {
+            event_category: 'Form',
+            event_label: 'Guest Info',
+            value: { ...infoGuest },
+          })
+        }
       })
-    }
+      .catch((err) => {
+        console.error('Error:', err)
+        console.log('Hubo un error al enviar el correo')
+      })
 
     isFormSubmitted.value = true
     // console.log('Document written with ID: ', docRef.id)
@@ -113,7 +126,7 @@ const submitForm = async () => {
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+/* const firebaseConfig = {
   apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
@@ -125,7 +138,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
+const db = getFirestore(app) */
 </script>
 
 <style lang="scss">
