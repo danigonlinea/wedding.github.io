@@ -1,22 +1,30 @@
 <template>
   <div class="wedding-schedule">
     <div class="wedding-section-title">
-      <h2>Itinerario</h2>
+      <h2>Programa del día</h2>
     </div>
 
     <div ref="fadeElements" class="wedding-schedule-list">
       <div class="wedding-schedule-list-item">
         <WeddingArchIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">Ceremonia Civil</p>
-          <p class="wedding-schedule-list-item-time">13:00</p>
+          <p class="wedding-schedule-list-item-title">Ceremonia</p>
+          <p class="wedding-schedule-list-item-time">12:00</p>
+        </div>
+      </div>
+
+      <div class="wedding-schedule-list-item">
+        <WeddingArchIcon class="wedding-schedule-icon" />
+        <div class="wedding-schedule-list-item-info">
+          <p class="wedding-schedule-list-item-title">Autobuses</p>
+          <p class="wedding-schedule-list-item-time">13:15</p>
         </div>
       </div>
 
       <div class="wedding-schedule-list-item">
         <WeddingAperitivosIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">Aperitivos</p>
+          <p class="wedding-schedule-list-item-title">Cóctel</p>
           <p class="wedding-schedule-list-item-time">14:00</p>
         </div>
       </div>
@@ -30,18 +38,18 @@
       </div>
 
       <div class="wedding-schedule-list-item">
-        <WeddingBaileIcon class="wedding-schedule-icon" />
+        <WeddingDiscoIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">Baile Nupcial</p>
+          <p class="wedding-schedule-list-item-title">Fiesta</p>
           <p class="wedding-schedule-list-item-time">18:30</p>
         </div>
       </div>
 
       <div class="wedding-schedule-list-item">
-        <WeddingDiscoIcon class="wedding-schedule-icon" />
+        <WeddingBaileIcon class="wedding-schedule-icon" />
         <div class="wedding-schedule-list-item-info">
-          <p class="wedding-schedule-list-item-title">¡Fiesta!</p>
-          <p class="wedding-schedule-list-item-time">19:00</p>
+          <p class="wedding-schedule-list-item-title">Autobuses de vuelta</p>
+          <p class="wedding-schedule-list-item-time">18:30</p>
         </div>
       </div>
     </div>
@@ -100,7 +108,6 @@ onMounted(() => {
 }
 
 .wedding-schedule {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
