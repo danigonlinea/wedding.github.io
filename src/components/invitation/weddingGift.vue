@@ -51,7 +51,7 @@ const flipCard = () => {
 
     setTimeout(() => {
       isFlipped.value = false
-    }, 10000)
+    }, 20000)
   }
 }
 
