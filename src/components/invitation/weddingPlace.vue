@@ -40,7 +40,7 @@ import WeddingLink from '../ui/weddingLink.vue'
 const title = 'Lugar de la ceremonia'
 
 const weddingPlaceGmapsLink =
-  'https://www.google.com/maps/place/Parroquia+de+Santa+Catalina+de+Alejandr%C3%ADa/@36.2772042,-6.0905393,18z/data=!4m10!1m2!2m1!1siglesia+santa+catalina+conil!3m6!1s0xd0c381f44dfeeeb:0xee02664918beb65b!8m2!3d36.2772042!4d-6.0881575!15sChxpZ2xlc2lhIHNhbnRhIGNhdGFsaW5hIGNvbmlskgEGY2h1cmNoqgFgEAEqGiIWaWdsZXNpYSBzYW50YSBjYXRhbGluYSgOMh4QASIa8l7j_bURAB4Ppat3aPSB4lH2mjNmA2eCsH8yIBACIhxpZ2xlc2lhIHNhbnRhIGNhdGFsaW5hIGNvbmls4AEA!16s%2Fg%2F1z44b91g2?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D'
+  'https://www.google.com/maps/place/Parroquia+de+Santa+Catalina+de+Alejandr%C3%ADa/@36.2772042,-6.089445,18z/data=!3m1!4b1!4m6!3m5!1s0xd0c381f44dfeeeb:0xee02664918beb65b!8m2!3d36.2772042!4d-6.0881575!16s%2Fg%2F1z44b91g2?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D'
 </script>
 
 <style lang="scss">
