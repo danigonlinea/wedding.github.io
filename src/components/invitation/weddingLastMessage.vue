@@ -8,6 +8,13 @@
           <span>¡Nos vemos pronto!</span>
           <span>Quedan {{ daysLeftToWedding }} días</span>
         </div>
+
+        <div class="wedding-last-message-flower-green">
+          <picture>
+            <source :srcset="flowerBigGreen" type="image/webp" />
+            <img :src="flowerBigGreen" alt="Example Image" />
+          </picture>
+        </div>
       </div>
     </div>
   </div>
@@ -16,6 +23,7 @@
 <script setup>
 import { ref } from 'vue'
 import GoldenRingIcon from '@/assets/svg/golden-ring.svg'
+import flowerBigGreen from '@/assets/flowers/flowers-green-group.webp'
 
 const daysLeftToWedding = ref(daysUntil('2025-11-15'))
 
@@ -40,23 +48,27 @@ function daysUntil(targetDate) {
 .wedding-last-message {
   display: flex;
   flex-direction: column;
-  height: 30vh;
+  align-items: center;
 
   .wedding-last-message-content {
-    position: relative;
     color: var(--text-color-primary);
-    text-align: center;
     height: 100%;
 
     .wedding-last-message-ring {
-      padding: 2em;
+      margin: 1em;
       position: relative;
-      display: inline-block;
-      overflow: hidden;
 
       svg {
         width: 100%;
-        animation: moveInCircle 60s linear infinite;
+      }
+
+      .wedding-last-message-flower-green {
+        position: absolute;
+        bottom: 0;
+
+        img {
+          width: 100%;
+        }
       }
     }
 
@@ -65,6 +77,7 @@ function daysUntil(targetDate) {
       flex-direction: column;
       gap: 1em;
       position: absolute;
+      text-align: center;
       top: 50%;
       left: 50%;
       min-width: 400px;

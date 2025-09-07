@@ -10,7 +10,7 @@
   <WeddingGift></WeddingGift>
 
   <WeddingLastMessage />
-  <WeddingPlaylist />
+  <!--   <WeddingPlaylist /> -->
 
   <WeddingSongPlayer />
 </template>
