@@ -36,11 +36,6 @@
   </div>
 </template>
 
-<script setup>
-import preboda4 from '@/assets/preboda/preboda_4.jpeg'
-import preboda1 from '@/assets/preboda/preboda_1.jpeg'
-</script>
-
 <style lang="scss">
 .wedding-qa {
   display: flex;
