@@ -39,10 +39,10 @@
 import juntosImg from '@/assets/img/boda_sandra_pablo_juntos.jpeg'
 import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
 const messageComeTo =
-  'Estamos super felices y queremos compartir con vosotros toda nuestra alegría.  Por eso estamos preparando una boda con mucha ilusión y queremos que sea inolvidable.'
+  'Estamos super felices y queremos compartir con vosotros toda nuestra alegría. Por eso estamos preparando una boda con mucha ilusión y queremos que sea inolvidable.'
 
 const messageComeTo2 =
-  'Nos conocimos hace casi nueve años, desde entonces hemos vivido muchas historias juntos, muchos viajes y anécdotas. Hace tres años llegó a nuestras vidas nuestro mayor amor. Ahora hemos tomado la decisión de unirnos en matrimonio y y así comenzar este nuevo capitulo.'
+  'Nos conocimos hace casi nueve años, desde entonces hemos vivido muchas historias juntos, muchos viajes y anécdotas. Hace tres años llegó a nuestras vidas nuestro mayor amor. Ahora hemos tomado la decisión de unirnos en matrimonio y y así comenzar este nuevo capítulo.'
 
 const messageComeTo3 =
   'El 15 de noviembre será el inicio de esta etapa, y estamos emocionados de compartirlo con todas las personas que nos han acompañado en el camino.'

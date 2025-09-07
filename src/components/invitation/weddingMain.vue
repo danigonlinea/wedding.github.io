@@ -17,10 +17,10 @@
 
 <script setup>
 import WeddingPlace from './weddingPlace.vue'
-import WeddingInfo from './weddingInfo.vue'
+// import WeddingInfo from './weddingInfo.vue'
 import WeddingForm from './weddingForm.vue'
 import WeddingGift from './weddingGift.vue'
-import WeddingPlaylist from './weddingPlaylist.vue'
+// import WeddingPlaylist from './weddingPlaylist.vue'
 import WeddingHeader from './weddingHeader.vue'
 import WeddingSongPlayer from './weddingSongPlayer.vue'
 import WeddingSchedule from './weddingSchedule.vue'
