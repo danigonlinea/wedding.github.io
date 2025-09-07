@@ -69,10 +69,10 @@
 
         <span class="date-year">2025</span>
       </div>
-    </div>
 
-    <div class="header-scroll-down">
-      <ChevronDoubleDownIcon />
+      <div class="header-scroll-down">
+        <ChevronDoubleDownIcon />
+      </div>
     </div>
 
     <div class="flowers-green-group-separator">
@@ -128,14 +128,14 @@ import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
 }
 
 .header-scroll-down {
-  bottom: 10%;
+  bottom: -5%;
   left: 0;
   right: 0;
   margin: auto;
   position: absolute;
   width: 24px;
   opacity: 0;
-  animation: scrollIcon 2s ease-in-out 2.2s 5;
+  animation: scrollIcon 2s ease-in-out 2s 5;
 }
 
 .grid-container {
@@ -159,6 +159,7 @@ import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
 }
 
 .header-date-info {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -226,6 +227,7 @@ import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
 .wedding-header-main {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .header-flower-big {
