@@ -1,35 +1,5 @@
 <template>
   <header>
-    <!--  <picture class="header-flower-big">
-      <source :srcset="ramilleteGrande" type="image/webp" />
-
-      <img
-        :src="ramilleteGrande"
-        alt="Example Image"
-        class="section-image animation-wind"
-      />
-    </picture> -->
-
-    <!-- <picture class="header-flower-small on-the-left">
-      <source :srcset="ramilleteFino" type="image/webp" />
-
-      <img
-        :src="ramilleteFino"
-        alt="Example Image"
-        class="section-image animation-wind"
-      />
-    </picture>
-
-    <picture class="header-flower-small on-the-right">
-      <source :srcset="ramilleteFino" type="image/webp" />
-
-      <img
-        :src="ramilleteFino"
-        alt="Example Image"
-        class="section-image animation-wind"
-      />
-    </picture> -->
-
     <div class="wedding-header-main">
       <div class="header-image-hands-container">
         <img
@@ -86,11 +56,9 @@
 </template>
 
 <script setup>
-import handsImg from '@/assets/img/boda_sandra_pablo_manos.jpeg'
+import handsImg from '@/assets/img/boda_sandra_pablo_manos_2.jpeg'
 
 import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
-import ramilleteGrande from '@/assets/flowers/flower-top-right.webp'
-import ramilleteFino from '@/assets/flowers/flower-top-left.webp'
 import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
 </script>
 

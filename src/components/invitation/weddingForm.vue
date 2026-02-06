@@ -60,8 +60,8 @@
 <script setup>
 import { ref } from 'vue'
 import emailjs from 'emailjs-com'
-import { initializeApp } from 'firebase/app'
-import { getFirestore, addDoc, collection } from 'firebase/firestore'
+import { addDoc, collection } from 'firebase/firestore'
+import { db } from '@/firebase'
 
 import WeddingInput from '../ui/weddingInput.vue'
 import WeddingSelect from '../ui/weddingSelect.vue'
@@ -115,30 +115,22 @@ const submitForm = async () => {
       })
 
     isFormSubmitted.value = true
-    // console.log('Document written with ID: ', docRef.id)
+
+    // Add guest to Firestore
+    try {
+      const docRef = await addDoc(collection(db, 'guests'), {
+        fullName: formData.value.fullName,
+        message: formData.value.message,
+        timestamp: new Date(),
+      })
+      console.log('Document written with ID: ', docRef.id)
+    } catch (e) {
+      console.error('Error adding document: ', e)
+    }
   } catch (e) {
-    console.error('Error adding document: ', e)
+    console.error('Error in form submission: ', e)
   }
 }
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-/* const firebaseConfig = {
-  apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID,
-}
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app) */
 </script>
 
 <style lang="scss">
