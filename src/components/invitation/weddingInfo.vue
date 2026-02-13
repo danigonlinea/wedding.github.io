@@ -5,6 +5,19 @@
     </div>
 
     <div class="wedding-qa-list">
+      <!-- Save the Date -->
+      <div class="wedding-qa-item">
+        <h3 class="wedding-q">📅 Save the Date</h3>
+        <p class="wedding-a">
+          ¡Guarda la fecha! Añade nuestra boda a tu calendario para no
+          olvidarte.
+        </p>
+        <button class="calendar-button" @click="downloadICS">
+          <span class="calendar-icon">📆</span>
+          Añadir al calendario
+        </button>
+      </div>
+
       <div class="wedding-qa-item">
         <h3 class="wedding-q">¿Cómo hay que ir vestido?</h3>
         <p class="wedding-a">
@@ -35,6 +48,10 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { downloadICS } from '@/utils/calendar'
+</script>
 
 <style lang="scss">
 .wedding-qa {
@@ -80,16 +97,41 @@
   }
 }
 
+.calendar-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 1em 2em;
+  background-color: var(--pomp-and-power);
+  color: white;
+  border: none;
+  border-radius: 2em;
+  font-size: 1em;
+  font-family: 'Quicksand', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1em;
+
+  &:hover {
+    background-color: var(--pomp-and-power-dark);
+    transform: scale(1.05);
+  }
+
+  .calendar-icon {
+    font-size: 1.2em;
+  }
+}
+
 /* Tablet and smaller screens */
 @media screen and (max-width: 768px) {
-  .wedding-qa-list-container {
+  .wedding-qa-list_container {
     padding: 4em 3em;
   }
 }
 
 /* Mobile screens */
 @media screen and (max-width: 480px) {
-  .wedding-qa-list-container {
+  .wedding-qa-list_container {
     padding: 4em 2em;
   }
 }
