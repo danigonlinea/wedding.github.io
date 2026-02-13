@@ -13,6 +13,8 @@
 
     <!-- Floating Buttons Container - Only show when invitation is visible -->
     <div v-if="showWeddingInvitation" class="floating-buttons">
+      <ScrollToTop />
+
       <Suspense>
         <WeddingSongPlayer />
         <template #fallback>
@@ -53,6 +55,7 @@ import { ref, defineAsyncComponent } from 'vue'
 const showWeddingInvitation = ref(false)
 import EnvelopeApp from './components/envelope/EnvelopeMain.vue'
 import InvitationMain from './components/invitation/weddingMain.vue'
+import ScrollToTop from './components/ui/ScrollToTop.vue'
 
 const WeddingSongPlayer = defineAsyncComponent(
   () => import('./components/invitation/weddingSongPlayer.vue'),
