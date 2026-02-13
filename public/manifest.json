@@ -1,0 +1,27 @@
+{
+  "name": "Sandra y Pablo - Nuestra Boda",
+  "short_name": "Sandra y Pablo",
+  "description": "Invitación a nuestra boda. ¡Nos casamos el 15 de noviembre!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdf8f3",
+  "theme_color": "#d4a574",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/favicon/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/favicon/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "entertainment"],
+  "lang": "es",
+  "dir": "ltr"
+}
