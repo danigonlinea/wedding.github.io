@@ -34,22 +34,43 @@ const daysLeftToWedding = ref(daysUntil(WEDDING_DATE))
 const isWeddingPast = computed(() => daysLeftToWedding.value < 0)
 
 const weddingPastMessage = computed(() => {
-  const daysSinceWedding = Math.abs(daysLeftToWedding.value)
-  if (daysSinceWedding === 1) {
-    return '¡Fue ayer!'
-  } else if (daysSinceWedding < 7) {
-    return `Hace ${daysSinceWedding} días`
-  } else if (daysSinceWedding < 30) {
-    const weeks = Math.floor(daysSinceWedding / 7)
-    return `Hace ${weeks} ${weeks === 1 ? 'semana' : 'semanas'}`
-  } else if (daysSinceWedding < 365) {
-    const months = Math.floor(daysSinceWedding / 30)
-    return `Hace ${months} ${months === 1 ? 'mes' : 'meses'}`
-  } else {
-    const years = Math.floor(daysSinceWedding / 365)
-    return `Hace ${years} ${years === 1 ? 'año' : 'años'}`
+  const { years, months, days } = getExactTimeSinceWedding(WEDDING_DATE)
+  
+  const parts = []
+  if (years > 0) {
+    parts.push(`${years} ${years === 1 ? 'año' : 'años'}`)
   }
+  if (months > 0) {
+    parts.push(`${months} ${months === 1 ? 'mes' : 'meses'}`)
+  }
+  if (days > 0 || parts.length === 0) {
+    parts.push(`${days} ${days === 1 ? 'día' : 'días'}`)
+  }
+  
+  return `Hace ${parts.join(', ')}`
 })
+
+function getExactTimeSinceWedding(dateString) {
+  const weddingDate = new Date(dateString)
+  const today = new Date()
+  
+  let years = today.getFullYear() - weddingDate.getFullYear()
+  let months = today.getMonth() - weddingDate.getMonth()
+  let days = today.getDate() - weddingDate.getDate()
+  
+  if (days < 0) {
+    months--
+    const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0)
+    days += prevMonth.getDate()
+  }
+  
+  if (months < 0) {
+    years--
+    months += 12
+  }
+  
+  return { years, months, days }
+}
 
 function daysUntil(targetDate) {
   // Get the current date
