@@ -75,8 +75,8 @@ export default {
 <style scoped>
 .float-button {
   position: fixed;
-  bottom: 1em;
-  right: 1em;
+  bottom: 90px;
+  right: 20px;
   border: none;
   border-radius: 50%;
   width: 64px;
@@ -85,10 +85,19 @@ export default {
   color: #fff;
   font-size: 24px;
   cursor: pointer;
-  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
+}
+
+@media screen and (max-width: 768px) {
+  .float-button {
+    bottom: 75px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .song-icon {

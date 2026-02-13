@@ -9,13 +9,6 @@
   <WeddingGift />
 
   <WeddingLastMessage />
-
-  <Suspense>
-    <WeddingSongPlayer />
-    <template #fallback>
-      <div class="song-player-placeholder" />
-    </template>
-  </Suspense>
 </template>
 
 <script setup>
@@ -36,13 +29,4 @@ const WeddingGift = defineAsyncComponent(() => import('./weddingGift.vue'))
 const WeddingLastMessage = defineAsyncComponent(
   () => import('./weddingLastMessage.vue'),
 )
-const WeddingSongPlayer = defineAsyncComponent(
-  () => import('./weddingSongPlayer.vue'),
-)
 </script>
-
-<style scoped>
-.song-player-placeholder {
-  height: 64px;
-}
-</style>
