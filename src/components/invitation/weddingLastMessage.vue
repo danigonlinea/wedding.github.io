@@ -7,7 +7,7 @@
         <div class="wedding-last-message-text">
           <span v-if="isWeddingPast">{{ weddingPastMessage }}</span>
           <span v-else>¡Te esperamos!</span>
-          <span v-if="isWeddingPast">¡Gracias por compartir nuestro día!</span>
+          <span v-if="isWeddingPast">¡Gracias por haberlo compartido con nosotros!</span>
           <span v-else>Quedan {{ daysLeftToWedding }} días</span>
         </div>
       </div>
