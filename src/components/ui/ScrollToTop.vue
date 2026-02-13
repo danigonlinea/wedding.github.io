@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <button
-      v-if="isVisible"
+      v-show="isVisible"
       class="scroll-to-top"
       aria-label="Volver arriba"
       @click="scrollToTop"
@@ -28,14 +28,6 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const isVisible = ref(false)
 
-const handleScroll = () => {
-  const scrollTop =
-    document.documentElement.scrollTop ||
-    window.pageYOffset ||
-    document.body.scrollTop
-  isVisible.value = scrollTop > 300
-}
-
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -44,20 +36,20 @@ const scrollToTop = () => {
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-  // Check initial state
-  handleScroll()
+  window.addEventListener('scroll', () => {
+    isVisible.value = window.scrollY > 300
+  })
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('scroll', () => {})
 })
 </script>
 
 <style scoped>
 .scroll-to-top {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   border: none;
   background-color: var(--play-background, #8b5a5a);
@@ -77,8 +69,8 @@ onUnmounted(() => {
 }
 
 .scroll-to-top svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .fade-enter-active,
@@ -98,8 +90,8 @@ onUnmounted(() => {
   }
 
   .scroll-to-top svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 }
 </style>
