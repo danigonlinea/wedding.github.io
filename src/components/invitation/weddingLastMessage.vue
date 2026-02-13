@@ -5,8 +5,10 @@
         <GoldenRingIcon />
 
         <div class="wedding-last-message-text">
-          <span>¡Te esperamos!</span>
-          <span>Quedan {{ daysLeftToWedding }} días</span>
+          <span v-if="isWeddingPast">{{ weddingPastMessage }}</span>
+          <span v-else>¡Te esperamos!</span>
+          <span v-if="isWeddingPast">¡Gracias por compartir nuestro día!</span>
+          <span v-else>Quedan {{ daysLeftToWedding }} días</span>
         </div>
       </div>
       <div class="wedding-last-message-footer">
@@ -21,11 +23,33 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import GoldenRingIcon from '@/assets/svg/golden-ring.svg'
 import flowerFooter from '@/assets/flowers/flor-wedding-footer.webp'
 
-const daysLeftToWedding = ref(daysUntil('2024-10-12'))
+const WEDDING_DATE = '2024-10-12'
+
+const daysLeftToWedding = ref(daysUntil(WEDDING_DATE))
+
+const isWeddingPast = computed(() => daysLeftToWedding.value < 0)
+
+const weddingPastMessage = computed(() => {
+  const daysSinceWedding = Math.abs(daysLeftToWedding.value)
+  if (daysSinceWedding === 1) {
+    return '¡Fue ayer!'
+  } else if (daysSinceWedding < 7) {
+    return `Hace ${daysSinceWedding} días`
+  } else if (daysSinceWedding < 30) {
+    const weeks = Math.floor(daysSinceWedding / 7)
+    return `Hace ${weeks} ${weeks === 1 ? 'semana' : 'semanas'}`
+  } else if (daysSinceWedding < 365) {
+    const months = Math.floor(daysSinceWedding / 30)
+    return `Hace ${months} ${months === 1 ? 'mes' : 'meses'}`
+  } else {
+    const years = Math.floor(daysSinceWedding / 365)
+    return `Hace ${years} ${years === 1 ? 'año' : 'años'}`
+  }
+})
 
 function daysUntil(targetDate) {
   // Get the current date
