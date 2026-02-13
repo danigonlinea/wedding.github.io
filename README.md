@@ -28,6 +28,30 @@ A beautiful, interactive wedding invitation web application built with Vue.js. T
 - **Utilities**: @vueuse/core
 - **Deployment**: GitHub Pages
 
+## Environment Variables
+
+This project uses environment variables for configuration. Copy the example file and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
+### Available Variables
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_GA_MEASUREMENT_ID` | Google Analytics measurement ID (format: G-XXXXXXXXXX) |
+| `VITE_APP_FIREBASE_API_KEY` | Firebase API key |
+| `VITE_APP_FIREBASE_AUTH_DOMAIN` | Firebase auth domain |
+| `VITE_APP_FIREBASE_PROJECT_ID` | Firebase project ID |
+| `VITE_APP_FIREBASE_STORAGE_BUCKET` | Firebase storage bucket |
+| `VITE_APP_FIREBASE_MESSAGING_SENDER_ID` | Firebase messaging sender ID |
+| `VITE_APP_FIREBASE_APP_ID` | Firebase app ID |
+| `VITE_APP_FIREBASE_MEASUREMENT_ID` | Firebase measurement ID |
+| `VITE_WEDDING_URL` | Your wedding website URL (for OG tags) |
+
+> **Note**: Variables prefixed with `VITE_` are exposed to the client-side code.
+
 ## Getting Started
 
 ### Prerequisites
