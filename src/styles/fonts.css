@@ -4,6 +4,7 @@
     format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
     format('truetype');
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
     format('truetype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -27,12 +30,14 @@
   src: url('../assets/fonts/EB_Garamond/EBGaramond-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Quicksand';
   src: url('../assets/fonts/Quicksand/Quicksand-Light.ttf') format('truetype');
   font-weight: 300;
+  font-display: swap;
 }
 
 @font-face {
@@ -40,6 +45,7 @@
   src: url('../assets/fonts/Quicksand/Quicksand-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -47,6 +53,7 @@
   src: url('../assets/fonts/Quicksand/Quicksand-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -54,6 +61,7 @@
   src: url('../assets/fonts/Quicksand/Quicksand-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 h1 {

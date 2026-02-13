@@ -11,7 +11,20 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID,
 }
 
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
+let app = null
+let db = null
 
-export { app, db }
+export const initFirebase = () => {
+  if (!app) {
+    app = initializeApp(firebaseConfig)
+    db = getFirestore(app)
+  }
+  return { app, db }
+}
+
+export const getDb = () => {
+  if (!db) {
+    initFirebase()
+  }
+  return db
+}

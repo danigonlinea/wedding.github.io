@@ -34,7 +34,7 @@
 <script setup>
 import { ref } from 'vue'
 import WeddingGiftIcon from '@/assets/svg/wedding-gift.svg'
-import giftImg from '@/assets/img/boda_sandra_pablo_regalo.jpeg'
+import giftImg from '@/assets/img/boda_sandra_pablo_regalo.webp'
 
 const isFlipped = ref(false)
 

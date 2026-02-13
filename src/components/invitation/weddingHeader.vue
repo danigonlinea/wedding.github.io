@@ -56,7 +56,7 @@
 </template>
 
 <script setup>
-import handsImg from '@/assets/img/boda_sandra_pablo_manos_2.jpeg'
+import handsImg from '@/assets/img/boda_sandra_pablo_manos_2.webp'
 
 import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
 import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'

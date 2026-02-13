@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import juntosImg from '@/assets/img/boda_sandra_pablo_juntos.jpeg'
+import juntosImg from '@/assets/img/boda_sandra_pablo_juntos.webp'
 import flowerGreenBig from '@/assets/flowers/flowers-green-group.webp'
 const messageComeTo =
   'Estamos super felices y queremos compartir con vosotros toda nuestra alegría. Por eso estamos preparando una boda con mucha ilusión y queremos que sea inolvidable.'

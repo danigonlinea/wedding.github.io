@@ -61,7 +61,7 @@
 import { ref } from 'vue'
 import emailjs from 'emailjs-com'
 import { addDoc, collection } from 'firebase/firestore'
-import { db } from '@/firebase'
+import { getDb } from '@/firebase'
 
 import WeddingInput from '../ui/weddingInput.vue'
 import WeddingSelect from '../ui/weddingSelect.vue'
@@ -116,9 +116,9 @@ const submitForm = async () => {
 
     isFormSubmitted.value = true
 
-    // Add guest to Firestore
+    // Add guest to Firestore (lazy initialize Firebase on first form submission)
     try {
-      const docRef = await addDoc(collection(db, 'guests'), {
+      const docRef = await addDoc(collection(getDb(), 'guests'), {
         fullName: formData.value.fullName,
         message: formData.value.message,
         timestamp: new Date(),

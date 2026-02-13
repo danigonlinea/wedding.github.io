@@ -1,30 +1,48 @@
 <template>
-  <WeddingHeader></WeddingHeader>
+  <WeddingHeader />
 
   <WeddingComeTo />
-  <WeddingPlace></WeddingPlace>
-  <WeddingCelebration></WeddingCelebration>
-  <WeddingSchedule></WeddingSchedule>
-  <!-- <WeddingInfo></WeddingInfo> -->
-  <WeddingForm></WeddingForm>
-  <WeddingGift></WeddingGift>
+  <WeddingPlace />
+  <WeddingCelebration />
+  <WeddingSchedule />
+  <WeddingForm />
+  <WeddingGift />
 
   <WeddingLastMessage />
-  <!--   <WeddingPlaylist /> -->
 
-  <WeddingSongPlayer />
+  <Suspense>
+    <WeddingSongPlayer />
+    <template #fallback>
+      <div class="song-player-placeholder" />
+    </template>
+  </Suspense>
 </template>
 
 <script setup>
-import WeddingPlace from './weddingPlace.vue'
-// import WeddingInfo from './weddingInfo.vue'
-import WeddingForm from './weddingForm.vue'
-import WeddingGift from './weddingGift.vue'
-// import WeddingPlaylist from './weddingPlaylist.vue'
-import WeddingHeader from './weddingHeader.vue'
-import WeddingSongPlayer from './weddingSongPlayer.vue'
-import WeddingSchedule from './weddingSchedule.vue'
-import WeddingComeTo from './weddingComeTo.vue'
-import WeddingLastMessage from './weddingLastMessage.vue'
-import WeddingCelebration from './weddingCelebration.vue'
+import { defineAsyncComponent } from 'vue'
+
+// Lazy load components for better performance
+const WeddingHeader = defineAsyncComponent(() => import('./weddingHeader.vue'))
+const WeddingComeTo = defineAsyncComponent(() => import('./weddingComeTo.vue'))
+const WeddingPlace = defineAsyncComponent(() => import('./weddingPlace.vue'))
+const WeddingCelebration = defineAsyncComponent(
+  () => import('./weddingCelebration.vue'),
+)
+const WeddingSchedule = defineAsyncComponent(
+  () => import('./weddingSchedule.vue'),
+)
+const WeddingForm = defineAsyncComponent(() => import('./weddingForm.vue'))
+const WeddingGift = defineAsyncComponent(() => import('./weddingGift.vue'))
+const WeddingLastMessage = defineAsyncComponent(
+  () => import('./weddingLastMessage.vue'),
+)
+const WeddingSongPlayer = defineAsyncComponent(
+  () => import('./weddingSongPlayer.vue'),
+)
 </script>
+
+<style scoped>
+.song-player-placeholder {
+  height: 64px;
+}
+</style>
