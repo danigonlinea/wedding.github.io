@@ -29,7 +29,11 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isVisible = ref(false)
 
 const handleScroll = () => {
-  isVisible.value = window.scrollY > 300
+  const scrollTop =
+    document.documentElement.scrollTop ||
+    window.pageYOffset ||
+    document.body.scrollTop
+  isVisible.value = scrollTop > 300
 }
 
 const scrollToTop = () => {
@@ -41,6 +45,8 @@ const scrollToTop = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  // Check initial state
+  handleScroll()
 })
 
 onUnmounted(() => {
