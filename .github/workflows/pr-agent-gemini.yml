@@ -1,14 +1,11 @@
 name: PR Agent (Gemini)
 
 on:
-  pull_request:
-    types: [opened, reopened, ready_for_review, synchronize]
-
   workflow_dispatch:
     inputs:
       pull_request_number:
         description: 'Número de PR a revisar manualmente'
-        required: false
+        required: true
         type: number
       model:
         description: 'Gemini model to use'
@@ -26,12 +23,8 @@ on:
           - 'gemini-2.5-flash-lite'
           - 'gemini-2.0-flash'
 
-  issue_comment:
-    types: [created]
-
 jobs:
   pr_agent_job:
-    if: ${{ github.event.sender.type != 'Bot' }}
     runs-on: ubuntu-latest
 
     permissions:
@@ -43,15 +36,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Get model (manual trigger)
-        if: github.event_name == 'workflow_dispatch'
+      - name: Set model
         run: |
           echo "GEMINI_MODEL=${{ github.event.inputs.model }}" >> $GITHUB_ENV
-
-      - name: Get model (automatic trigger)
-        if: github.event_name == 'pull_request'
-        run: |
-          echo "GEMINI_MODEL=gemini-3.1-pro-preview" >> $GITHUB_ENV
 
       - name: Run PR-Agent with Gemini
         uses: qodo-ai/pr-agent@main
@@ -77,7 +64,7 @@ jobs:
           echo "**Workflow:** PR Agent (Gemini)" >> review-results/summary.md
           echo "**Model:** ${{ env.GEMINI_MODEL }}" >> review-results/summary.md
           echo "**Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> review-results/summary.md
-          echo "**PR Number:** ${{ github.event.pull_request.number || github.event.inputs.pull_request_number }}" >> review-results/summary.md
+          echo "**PR Number:** ${{ github.event.inputs.pull_request_number }}" >> review-results/summary.md
           echo "**Triggered by:** ${{ github.event_name }}" >> review-results/summary.md
           echo "" >> review-results/summary.md
           echo "## Workflow Details" >> review-results/summary.md
@@ -90,6 +77,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pr-agent-review-${{ github.event.pull_request.number || github.event.inputs.pull_request_number }}-${{ github.run_number }}
+          name: pr-agent-review-${{ github.event.inputs.pull_request_number }}-${{ github.run_number }}
           path: review-results/
           retention-days: 30
