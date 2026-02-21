@@ -3,13 +3,13 @@
     <picture class="wedding-place-flower wedding-place-flower-left">
       <source :srcset="ramilleteFlower" type="image/webp" />
 
-      <img :src="ramilleteFlower" alt="Example Image" class="section-image" />
+      <img :src="ramilleteFlower" alt="Flores decorativas izquierda" class="section-image" loading="lazy" />
     </picture>
 
     <picture class="wedding-place-flower wedding-place-flower-right">
       <source :srcset="ramilleteFlower" type="image/webp" />
 
-      <img :src="ramilleteFlower" alt="Example Image" class="section-image" />
+      <img :src="ramilleteFlower" alt="Flores decorativas derecha" class="section-image" loading="lazy" />
     </picture>
 
     <div class="wedding-section-title">

@@ -24,10 +24,11 @@ const beforeEnter = (el) => {
 }
 
 const enter = (el, done) => {
-  el.offsetHeight // Trigger reflow
-  el.style.transition = 'transform 0.8s, opacity 0.8s'
-  el.style.opacity = 1
-  done()
+  requestAnimationFrame(() => {
+    el.style.transition = 'transform 0.8s, opacity 0.8s'
+    el.style.opacity = 1
+    done()
+  })
 }
 
 const onAnimationEnvelopeDone = () => {
