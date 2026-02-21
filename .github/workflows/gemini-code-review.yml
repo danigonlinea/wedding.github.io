@@ -60,6 +60,7 @@ jobs:
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI.KEY: ${{ secrets.GEM_MODEL_APIK_GH_WORKFLOW }}
           GOOGLE_AI_STUDIO.GEMINI_API_KEY: ${{ secrets.GEM_MODEL_APIK_GH_WORKFLOW }}
           config.model: 'gemini/${{ env.GEMINI_MODEL }}'
           config.fallback_models: '["gemini/gemini-2.5-flash","gemini/gemini-2.0-flash"]'
