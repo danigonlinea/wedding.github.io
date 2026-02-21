@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Get PR number and model (manual trigger)
         if: github.event_name == 'workflow_dispatch'
