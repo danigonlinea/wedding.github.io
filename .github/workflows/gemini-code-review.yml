@@ -98,6 +98,67 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Extract and post review summary
+        if: always()
+        run: |
+          # Wait a bit for PR-Agent to post comments
+          sleep 10
+
+          # Get the latest comments from the PR
+          COMMENTS=$(gh pr view ${{ env.PR_NUMBER }} --json comments --jq '.comments[] | select(.author.login == "github-actions") | select(.body | contains("## PR Reviewer Guide") or contains("## Code feedback") or contains("## Review")) | .body' | tail -1)
+
+          if [ -z "$COMMENTS" ]; then
+            echo "No review comments found from PR-Agent"
+            COMMENTS="⚠️ No se encontraron comentarios de revisión del agente. Por favor, revisa los artifacts para más detalles."
+          fi
+
+          # Create a formatted review summary
+          cat > review-summary.md << 'EOF'
+          ## 🤖 Resumen de Revisión de Código por IA
+
+          **Modelo utilizado:** ${{ env.GEMINI_MODEL }}
+          **Fecha:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+
+          ---
+
+          ### 📋 Revisión Completa
+
+          EOF
+
+          echo "$COMMENTS" >> review-summary.md
+
+          cat >> review-summary.md << 'EOF'
+
+          ---
+
+          ### 💡 Sugerencias Generales
+
+          Para resolver los problemas identificados:
+
+          1. **Revisa cada punto mencionado** en la sección de revisión anterior
+          2. **Prioriza los problemas de seguridad** si los hay
+          3. **Mejora la legibilidad del código** siguiendo las sugerencias de estilo
+          4. **Añade tests** para las funcionalidades nuevas o modificadas
+          5. **Documenta los cambios** en comentarios cuando sea necesario
+          6. **Verifica el rendimiento** de las optimizaciones sugeridas
+
+          ### 📦 Artifacts Disponibles
+
+          Puedes descargar el análisis completo desde los artifacts de esta ejecución:
+          - `pr-comments.md`: Comentarios completos del PR
+          - `pr-details.json`: Detalles estructurados del PR
+          - `summary.md`: Metadata de la revisión
+
+          ---
+
+          *Esta revisión fue generada automáticamente por Gemini AI. Para más detalles, consulta los artifacts o los comentarios individuales en el PR.*
+          EOF
+
+          # Post the comment to the PR
+          gh pr comment ${{ env.PR_NUMBER }} --body-file review-summary.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create review summary
         if: always()
         run: |
