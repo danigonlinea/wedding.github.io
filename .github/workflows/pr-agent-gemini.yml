@@ -67,3 +67,29 @@ jobs:
           github_action_config.auto_improve: 'false'
           github_action_config.pr_actions: '["opened","reopened","ready_for_review","synchronize"]'
           github_action_config.allow_issue_comment_commands: 'true'
+
+      - name: Create review summary
+        if: always()
+        run: |
+          mkdir -p review-results
+          echo "# PR Agent Review Summary" > review-results/summary.md
+          echo "" >> review-results/summary.md
+          echo "**Workflow:** PR Agent (Gemini)" >> review-results/summary.md
+          echo "**Model:** ${{ env.GEMINI_MODEL }}" >> review-results/summary.md
+          echo "**Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> review-results/summary.md
+          echo "**PR Number:** ${{ github.event.pull_request.number || github.event.inputs.pull_request_number }}" >> review-results/summary.md
+          echo "**Triggered by:** ${{ github.event_name }}" >> review-results/summary.md
+          echo "" >> review-results/summary.md
+          echo "## Workflow Details" >> review-results/summary.md
+          echo "- Auto Review: Enabled" >> review-results/summary.md
+          echo "- Auto Describe: Enabled" >> review-results/summary.md
+          echo "- Auto Improve: Disabled" >> review-results/summary.md
+          echo "- Response Language: Spanish" >> review-results/summary.md
+
+      - name: Upload review results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-agent-review-${{ github.event.pull_request.number || github.event.inputs.pull_request_number }}-${{ github.run_number }}
+          path: review-results/
+          retention-days: 30

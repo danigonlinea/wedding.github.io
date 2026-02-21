@@ -78,3 +78,33 @@ jobs:
           github_action_config.allow_issue_comment_commands: 'true'
           github_action_config.pr_actions: '["opened","reopened","ready_for_review","synchronize"]'
           github_action_config.pr_number: ${{ env.PR_NUMBER }}
+
+      - name: Create review summary
+        if: always()
+        run: |
+          mkdir -p review-results
+          echo "# Gemini AI Code Review Summary" > review-results/summary.md
+          echo "" >> review-results/summary.md
+          echo "**Workflow:** Gemini AI Code Review" >> review-results/summary.md
+          echo "**Model:** ${{ env.GEMINI_MODEL }}" >> review-results/summary.md
+          echo "**Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> review-results/summary.md
+          echo "**PR Number:** ${{ env.PR_NUMBER }}" >> review-results/summary.md
+          echo "**Triggered by:** ${{ github.event_name }}" >> review-results/summary.md
+          echo "" >> review-results/summary.md
+          echo "## Review Configuration" >> review-results/summary.md
+          echo "- Effort Labels: Enabled" >> review-results/summary.md
+          echo "- Security Labels: Enabled" >> review-results/summary.md
+          echo "- Focused Review: Required" >> review-results/summary.md
+          echo "- Score Review: Required" >> review-results/summary.md
+          echo "- Tests Review: Required" >> review-results/summary.md
+          echo "- Security Review: Required" >> review-results/summary.md
+          echo "- Effort Estimation: Required" >> review-results/summary.md
+          echo "- Response Language: Spanish" >> review-results/summary.md
+
+      - name: Upload review results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gemini-code-review-${{ env.PR_NUMBER }}-${{ github.run_number }}
+          path: review-results/
+          retention-days: 30
