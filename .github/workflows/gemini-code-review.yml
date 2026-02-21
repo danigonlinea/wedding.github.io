@@ -93,11 +93,8 @@ jobs:
           # Get PR details
           gh pr view ${{ env.PR_NUMBER }} --json title,body,comments,reviews > review-results/pr-details.json
 
-          # Get PR diff
-          gh pr diff ${{ env.PR_NUMBER }} > review-results/pr-diff.txt
-
-          # Get PR comments in readable format
-          gh pr view ${{ env.PR_NUMBER }} --comments > review-results/pr-comments.txt
+          # Get PR comments in markdown format
+          gh pr view ${{ env.PR_NUMBER }} --comments > review-results/pr-comments.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -126,11 +123,10 @@ jobs:
           echo "## Files Included" >> review-results/summary.md
           echo "- \`summary.md\`: This file with metadata" >> review-results/summary.md
           echo "- \`pr-details.json\`: PR details, comments, and reviews in JSON format" >> review-results/summary.md
-          echo "- \`pr-comments.txt\`: PR comments in readable format (includes AI review)" >> review-results/summary.md
-          echo "- \`pr-diff.txt\`: Full PR diff" >> review-results/summary.md
+          echo "- \`pr-comments.md\`: PR comments in markdown format (includes AI review)" >> review-results/summary.md
           echo "" >> review-results/summary.md
           echo "## How to View the Review" >> review-results/summary.md
-          echo "1. Check \`pr-comments.txt\` for the AI-generated review comments" >> review-results/summary.md
+          echo "1. Check \`pr-comments.md\` for the AI-generated review comments" >> review-results/summary.md
           echo "2. Or visit the PR directly: https://github.com/${{ github.repository }}/pull/${{ env.PR_NUMBER }}" >> review-results/summary.md
 
       - name: Upload review results
