@@ -10,6 +10,21 @@ on:
         description: 'Pull Request number to review'
         required: true
         type: number
+      model:
+        description: 'Gemini model to use'
+        required: false
+        type: choice
+        default: 'gemini-3.1-pro-preview'
+        options:
+          - 'gemini-3.1-pro-preview'
+          - 'gemini-3-pro-preview'
+          - 'gemini-3-flash-preview'
+          - 'gemini-2.5-pro'
+          - 'gemini-flash-latest'
+          - 'gemini-flash-lite-latest'
+          - 'gemini-2.5-flash'
+          - 'gemini-2.5-flash-lite'
+          - 'gemini-2.0-flash'
 
   issue_comment:
     types: [created]
@@ -28,23 +43,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get PR number (manual trigger)
+      - name: Get PR number and model (manual trigger)
         if: github.event_name == 'workflow_dispatch'
         run: |
           echo "PR_NUMBER=${{ github.event.inputs.pr_number }}" >> $GITHUB_ENV
+          echo "GEMINI_MODEL=${{ github.event.inputs.model }}" >> $GITHUB_ENV
 
-      - name: Get PR number (automatic trigger)
+      - name: Get PR number and model (automatic trigger)
         if: github.event_name == 'pull_request'
         run: |
           echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          echo "GEMINI_MODEL=gemini-3.1-pro-preview" >> $GITHUB_ENV
 
       - name: Run PR-Agent Review
         uses: qodo-ai/pr-agent@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_AI_STUDIO.GEMINI_API_KEY: ${{ secrets.GEM_MODEL_APIK_GH_WORKFLOW }}
-          config.model: 'gemini/gemini-2.0-flash'
-          config.fallback_models: '["gemini/gemini-1.5-flash"]'
+          config.model: 'gemini/${{ env.GEMINI_MODEL }}'
+          config.fallback_models: '["gemini/gemini-2.5-flash","gemini/gemini-2.0-flash"]'
           config.response_language: 'es'
           pr_reviewer.enable_review_labels_effort: 'true'
           pr_reviewer.enable_review_labels_security: 'true'
