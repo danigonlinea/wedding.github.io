@@ -1,0 +1,55 @@
+name: 🤖 Gemini AI Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'Pull Request number to review'
+        required: true
+        type: number
+
+jobs:
+  gemini-review:
+    name: AI Code Review
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get PR number (manual trigger)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "PR_NUMBER=${{ github.event.inputs.pr_number }}" >> $GITHUB_ENV
+
+      - name: Get PR number (automatic trigger)
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
+      - name: Run PR-Agent Review
+        uses: qodo-ai/pr-agent@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI.API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI.API_BASE: 'https://generativelanguage.googleapis.com/v1beta/openai/'
+          config.model: 'gemini/gemini-2.0-flash'
+          config.fallback_models: '["gemini/gemini-1.5-flash"]'
+          pr_reviewer.enable_review_labels_effort: 'true'
+          pr_reviewer.enable_review_labels_security: 'true'
+          pr_reviewer.require_focused_review: 'true'
+          pr_reviewer.require_score_review: 'true'
+          pr_reviewer.require_tests_review: 'true'
+          pr_reviewer.require_security_review: 'true'
+          pr_reviewer.require_estimate_effort_to_review: 'true'
+          pr_description.publish_labels: 'true'
+          pr_description.use_bullet_points: 'true'
+          github_action_config.auto_review: 'true'
+          github_action_config.auto_describe: 'true'
+          github_action_config.auto_improve: 'true'
+          github_action_config.pr_number: ${{ env.PR_NUMBER }}
