@@ -50,7 +50,11 @@ jobs:
           GOOGLE_AI_STUDIO.GEMINI_API_KEY: ${{ secrets.GEM_MODEL_APIK_GH_WORKFLOW }}
           config.model: 'gemini/${{ env.GEMINI_MODEL }}'
           config.fallback_models: '["gemini/gemini-2.5-flash","gemini/gemini-2.0-flash"]'
+          config.language: 'es'
           config.response_language: 'es'
+          pr_code_suggestions.commitable_code_suggestions: 'false'
+          pr_reviewer.extra_instructions: 'Por favor, proporciona toda la revisión en español. Usa terminología técnica en español cuando sea posible.'
+          pr_description.extra_instructions: 'Por favor, escribe la descripción completamente en español.'
           github_action_config.auto_review: 'true'
           github_action_config.auto_describe: 'true'
           github_action_config.auto_improve: 'false'
