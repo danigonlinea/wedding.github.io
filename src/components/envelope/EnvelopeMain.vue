@@ -24,9 +24,9 @@ const openClass = computed(() => {
 })
 
 onMounted(() => {
-  setTimeout(() => {
+  requestAnimationFrame(() => {
     openEnvelope()
-  }, 100)
+  })
 })
 
 const openEnvelope = () => {
