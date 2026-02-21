@@ -2,7 +2,8 @@ name: 🤖 Gemini AI Code Review
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, reopened, ready_for_review, synchronize]
+
   workflow_dispatch:
     inputs:
       pr_number:
@@ -10,12 +11,17 @@ on:
         required: true
         type: number
 
+  issue_comment:
+    types: [created]
+
 jobs:
   gemini-review:
     name: AI Code Review
+    if: ${{ github.event.sender.type != 'Bot' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      issues: write
       pull-requests: write
 
     steps:
@@ -36,10 +42,10 @@ jobs:
         uses: qodo-ai/pr-agent@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI.API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENAI.API_BASE: 'https://generativelanguage.googleapis.com/v1beta/openai/'
+          GOOGLE_AI_STUDIO.GEMINI_API_KEY: ${{ secrets.GEM_MODEL_APIK_GH_WORKFLOW }}
           config.model: 'gemini/gemini-2.0-flash'
           config.fallback_models: '["gemini/gemini-1.5-flash"]'
+          config.response_language: 'es'
           pr_reviewer.enable_review_labels_effort: 'true'
           pr_reviewer.enable_review_labels_security: 'true'
           pr_reviewer.require_focused_review: 'true'
@@ -52,4 +58,6 @@ jobs:
           github_action_config.auto_review: 'true'
           github_action_config.auto_describe: 'true'
           github_action_config.auto_improve: 'true'
+          github_action_config.allow_issue_comment_commands: 'true'
+          github_action_config.pr_actions: '["opened","reopened","ready_for_review","synchronize"]'
           github_action_config.pr_number: ${{ env.PR_NUMBER }}
