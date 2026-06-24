@@ -48,8 +48,9 @@
     <div class="header-image-with-space header-image-pre-wedding-photo">
       <img
         :src="preboda2"
-        alt="Example Image"
+        alt="Foto de preboda"
         class="header-image-with-frame"
+        loading="lazy"
       />
     </div>
   </div>
@@ -75,11 +76,6 @@ const formData = ref({
 
 const isFormSubmitted = ref(false)
 
-const mainPlatesOptions = [
-  { label: 'Carne', value: 'carne' },
-  { label: 'Pescado', value: 'pescado' },
-]
-
 const numberPeople = [
   { label: 'Solo yo', value: 1 },
   { label: 'Seremos 2', value: 2 },
@@ -94,18 +90,17 @@ const submitForm = async () => {
       song: formData.value.songField,
     }
 
-    await addDoc(collection(db, 'guests'), { ...infoGuest })
+    await addDoc(collection(db, 'guests'), infoGuest)
 
     if (window.gtag) {
       window.gtag('event', 'Form', {
         event_category: 'Form',
         event_label: 'Guest Info',
-        value: { ...infoGuest },
+        value: infoGuest,
       })
     }
 
     isFormSubmitted.value = true
-    // console.log('Document written with ID: ', docRef.id)
   } catch (e) {
     console.error('Error adding document: ', e)
   }

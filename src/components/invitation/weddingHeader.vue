@@ -5,8 +5,9 @@
 
       <img
         :src="ramilleteGrande"
-        alt="Example Image"
+        alt="Flores decorativas"
         class="section-image animation-wind"
+        loading="lazy"
       />
     </picture>
 
@@ -15,8 +16,9 @@
 
       <img
         :src="ramilleteFino"
-        alt="Example Image"
+        alt="Flores decorativas izquierda"
         class="section-image animation-wind"
+        loading="lazy"
       />
     </picture>
 
@@ -25,8 +27,9 @@
 
       <img
         :src="ramilleteFino"
-        alt="Example Image"
+        alt="Flores decorativas derecha"
         class="section-image animation-wind"
+        loading="lazy"
       />
     </picture>
 
@@ -34,8 +37,9 @@
       <div class="header-image-hands-container">
         <img
           :src="preboda230"
-          alt="Example Image"
+          alt="Foto de preboda"
           class="header-image-with-frame"
+          loading="eager"
         />
       </div>
 
@@ -82,29 +86,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import preboda230 from '@/assets/preboda/preboda_main.jpg'
 import ramilleteGrande from '@/assets/flowers/flower-top-right.webp'
 import ramilleteFino from '@/assets/flowers/flower-top-left.webp'
 import { ChevronDoubleDownIcon } from '@heroicons/vue/24/solid'
-
-const daysLeftToWedding = ref(daysUntil('2024-10-12'))
-
-function daysUntil(targetDate) {
-  // Get the current date
-  const currentDate = new Date()
-
-  // Parse the target date
-  const parsedTargetDate = new Date(targetDate)
-
-  // Calculate the time difference in milliseconds
-  const timeDifference = parsedTargetDate - currentDate
-
-  // Calculate the number of days
-  const days = Math.ceil(timeDifference / (1000 * 60 * 60 * 24))
-
-  return days
-}
 </script>
 
 <style lang="scss">

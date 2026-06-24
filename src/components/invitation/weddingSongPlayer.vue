@@ -1,9 +1,10 @@
 <template>
   <div>
-    <audio ref="audio" :src="audioSource"></audio>
+    <audio ref="audio" :src="audioSource" preload="metadata"></audio>
     <button
       :class="['float-button', { playing: isPlaying }]"
       @click="togglePlayPause"
+      aria-label="Reproducir música"
     >
       <PlayIcon v-if="!isPlaying" class="song-icon" />
       <PauseIcon v-else class="song-icon" />
@@ -11,7 +12,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { PlayIcon, PauseIcon } from '@heroicons/vue/24/solid'
 
@@ -20,59 +21,48 @@ import contigo from '@/assets/audio/solo-si-es-contigo-bombai.mp3'
 import uno from '@/assets/audio/manuel-carrasco-uno.mp3'
 import arrebato from '@/assets/audio/juanlu-montoya-arrebato.mp3'
 
-export default {
-  components: {
-    PlayIcon,
-    PauseIcon,
-  },
-  setup() {
-    const isPlaying = ref(false)
-    const audioSource = ref('')
-    const audio = ref(null)
+const isPlaying = ref(false)
+const audioSource = ref('')
+const audio = ref(null)
 
-    const togglePlayPause = () => {
-      if (isPlaying.value) {
-        audio.value.pause()
-      } else {
-        audio.value.play()
-      }
+const togglePlayPause = () => {
+  if (isPlaying.value) {
+    audio.value.pause()
+  } else {
+    audio.value.play()
+  }
 
-      if (window.gtag) {
-        window.gtag('event', 'Song Player', {
-          event_category: 'Song Player',
-          event_label: isPlaying.value ? 'Pause' : 'Play',
-          value: { value: isPlaying.value },
-        })
-      }
-
-      isPlaying.value = !isPlaying.value
-    }
-
-    const handleVisibilityChange = () => {
-      if (document.hidden && isPlaying.value) {
-        audio.value.pause()
-        isPlaying.value = false
-      }
-    }
-
-    onMounted(() => {
-      const sources = [algoSencillito, contigo, arrebato, uno]
-      const songChosen = sources[Math.floor(Math.random() * sources.length)]
-      audioSource.value = songChosen
-
-      audio.value.volume = 0.2
-
-      // Listen for visibility change
-      document.addEventListener('visibilitychange', handleVisibilityChange)
+  if (window.gtag) {
+    window.gtag('event', 'Song Player', {
+      event_category: 'Song Player',
+      event_label: isPlaying.value ? 'Pause' : 'Play',
     })
+  }
 
-    onUnmounted(() => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange)
-    })
-
-    return { isPlaying, audioSource, togglePlayPause, audio }
-  },
+  isPlaying.value = !isPlaying.value
 }
+
+const handleVisibilityChange = () => {
+  if (document.hidden && isPlaying.value) {
+    audio.value.pause()
+    isPlaying.value = false
+  }
+}
+
+onMounted(() => {
+  const sources = [algoSencillito, contigo, arrebato, uno]
+  audioSource.value = sources[Math.floor(Math.random() * sources.length)]
+  audio.value.volume = 0.2
+
+  document.addEventListener('visibilitychange', handleVisibilityChange)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('visibilitychange', handleVisibilityChange)
+  if (isPlaying.value) {
+    audio.value.pause()
+  }
+})
 </script>
 
 <style scoped>
