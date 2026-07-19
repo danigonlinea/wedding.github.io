@@ -29,7 +29,7 @@
 
 <script setup>
 import flowerBigGreen from '@/assets/flowers/flower-middle-green-big.webp'
-import WeddingLink from '@/components/ui/WeddingLink.vue'
+import WeddingLink from '@/components/ui/weddingLink.vue'
 </script>
 
 <style scoped>
