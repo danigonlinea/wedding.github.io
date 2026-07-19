@@ -1,0 +1,39 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript", "vue"],
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "openrouter.model": "meta-llama/llama-3.3-70b-instruct:free",
+  "kiroAgent.configureMCP": "Disabled",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#8ca5c4",
+    "activityBar.background": "#8ca5c4",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#f4eaef",
+    "activityBarBadge.foreground": "#15202b",
+    "activityBarTop.activeBackground": "#8ca5c4",
+    "activityBarTop.background": "#8ca5c4",
+    "activityBarTop.foreground": "#15202b",
+    "activityBarTop.inactiveForeground": "#15202b99",
+    "commandCenter.border": "#15202b99",
+    "commandCenter.foreground": "#15202b",
+    "sash.hoverBorder": "#8ca5c4",
+    "statusBar.background": "#6a8ab3",
+    "statusBar.debuggingBackground": "#6a8ab3",
+    "statusBar.debuggingForeground": "#15202b",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#4f709b",
+    "statusBarItem.remoteBackground": "#7f415c",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#6a8ab3",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#6a8ab399",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#6a8ab3"
+}
