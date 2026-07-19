@@ -2,44 +2,71 @@ name: 🤖 Gemini AI Code Review
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, reopened, ready_for_review, synchronize]
+
   workflow_dispatch:
     inputs:
       pr_number:
         description: 'Pull Request number to review'
         required: true
         type: number
+      model:
+        description: 'Gemini model to use'
+        required: false
+        type: choice
+        default: 'gemini-3.1-pro-preview'
+        options:
+          - 'gemini-3.1-pro-preview'
+          - 'gemini-3-pro-preview'
+          - 'gemini-3-flash-preview'
+          - 'gemini-2.5-pro'
+          - 'gemini-flash-latest'
+          - 'gemini-flash-lite-latest'
+          - 'gemini-2.5-flash'
+          - 'gemini-2.5-flash-lite'
+          - 'gemini-2.0-flash'
+
+  issue_comment:
+    types: [created]
 
 jobs:
   gemini-review:
     name: AI Code Review
+    if: ${{ github.event.sender.type != 'Bot' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      issues: write
       pull-requests: write
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Get PR number (manual trigger)
+      - name: Get PR number and model (manual trigger)
         if: github.event_name == 'workflow_dispatch'
         run: |
           echo "PR_NUMBER=${{ github.event.inputs.pr_number }}" >> $GITHUB_ENV
+          echo "GEMINI_MODEL=${{ github.event.inputs.model }}" >> $GITHUB_ENV
 
-      - name: Get PR number (automatic trigger)
+      - name: Get PR number and model (automatic trigger)
         if: github.event_name == 'pull_request'
         run: |
           echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          echo "GEMINI_MODEL=gemini-3.1-pro-preview" >> $GITHUB_ENV
 
       - name: Run PR-Agent Review
         uses: qodo-ai/pr-agent@main
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI.API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENAI.API_BASE: 'https://generativelanguage.googleapis.com/v1beta/openai/'
-          config.model: 'gemini/gemini-2.0-flash'
-          config.fallback_models: '["gemini/gemini-1.5-flash"]'
+          OPENAI.KEY: ${{ secrets.GEM_MODEL_APIK_GH_WORKFLOW }}
+          GOOGLE_AI_STUDIO.GEMINI_API_KEY: ${{ secrets.GEM_MODEL_APIK_GH_WORKFLOW }}
+          config.model: 'gemini/${{ env.GEMINI_MODEL }}'
+          config.fallback_models: '["gemini/gemini-2.5-flash","gemini/gemini-2.0-flash"]'
+          config.language: 'es'
+          config.response_language: 'es'
+          pr_code_suggestions.commitable_code_suggestions: 'false'
           pr_reviewer.enable_review_labels_effort: 'true'
           pr_reviewer.enable_review_labels_security: 'true'
           pr_reviewer.require_focused_review: 'true'
@@ -47,9 +74,127 @@ jobs:
           pr_reviewer.require_tests_review: 'true'
           pr_reviewer.require_security_review: 'true'
           pr_reviewer.require_estimate_effort_to_review: 'true'
+          pr_reviewer.extra_instructions: 'Por favor, proporciona toda la revisión en español. Usa terminología técnica en español cuando sea posible.'
           pr_description.publish_labels: 'true'
           pr_description.use_bullet_points: 'true'
+          pr_description.extra_instructions: 'Por favor, escribe la descripción completamente en español.'
           github_action_config.auto_review: 'true'
           github_action_config.auto_describe: 'true'
           github_action_config.auto_improve: 'true'
+          github_action_config.allow_issue_comment_commands: 'true'
+          github_action_config.pr_actions: '["opened","reopened","ready_for_review","synchronize"]'
           github_action_config.pr_number: ${{ env.PR_NUMBER }}
+
+      - name: Get PR details and comments
+        if: always()
+        run: |
+          mkdir -p review-results
+
+          # Get PR details
+          gh pr view ${{ env.PR_NUMBER }} --json title,body,comments,reviews > review-results/pr-details.json
+
+          # Get PR comments in markdown format
+          gh pr view ${{ env.PR_NUMBER }} --comments > review-results/pr-comments.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract and post review summary
+        if: always()
+        run: |
+          # Wait a bit for PR-Agent to post comments
+          sleep 10
+
+          # Get the latest comments from the PR
+          COMMENTS=$(gh pr view ${{ env.PR_NUMBER }} --json comments --jq '.comments[] | select(.author.login == "github-actions") | select(.body | contains("## PR Reviewer Guide") or contains("## Code feedback") or contains("## Review")) | .body' | tail -1)
+
+          if [ -z "$COMMENTS" ]; then
+            echo "No review comments found from PR-Agent"
+            COMMENTS="⚠️ No se encontraron comentarios de revisión del agente. Por favor, revisa los artifacts para más detalles."
+          fi
+
+          # Create a formatted review summary
+          cat > review-summary.md << 'EOF'
+          ## 🤖 Resumen de Revisión de Código por IA
+
+          **Modelo utilizado:** ${{ env.GEMINI_MODEL }}
+          **Fecha:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+
+          ---
+
+          ### 📋 Revisión Completa
+
+          EOF
+
+          echo "$COMMENTS" >> review-summary.md
+
+          cat >> review-summary.md << 'EOF'
+
+          ---
+
+          ### 💡 Sugerencias Generales
+
+          Para resolver los problemas identificados:
+
+          1. **Revisa cada punto mencionado** en la sección de revisión anterior
+          2. **Prioriza los problemas de seguridad** si los hay
+          3. **Mejora la legibilidad del código** siguiendo las sugerencias de estilo
+          4. **Añade tests** para las funcionalidades nuevas o modificadas
+          5. **Documenta los cambios** en comentarios cuando sea necesario
+          6. **Verifica el rendimiento** de las optimizaciones sugeridas
+
+          ### 📦 Artifacts Disponibles
+
+          Puedes descargar el análisis completo desde los artifacts de esta ejecución:
+          - `pr-comments.md`: Comentarios completos del PR
+          - `pr-details.json`: Detalles estructurados del PR
+          - `summary.md`: Metadata de la revisión
+
+          ---
+
+          *Esta revisión fue generada automáticamente por Gemini AI. Para más detalles, consulta los artifacts o los comentarios individuales en el PR.*
+          EOF
+
+          # Post the comment to the PR
+          gh pr comment ${{ env.PR_NUMBER }} --body-file review-summary.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create review summary
+        if: always()
+        run: |
+          echo "# Gemini AI Code Review Summary" > review-results/summary.md
+          echo "" >> review-results/summary.md
+          echo "**Workflow:** Gemini AI Code Review" >> review-results/summary.md
+          echo "**Model:** ${{ env.GEMINI_MODEL }}" >> review-results/summary.md
+          echo "**Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> review-results/summary.md
+          echo "**PR Number:** ${{ env.PR_NUMBER }}" >> review-results/summary.md
+          echo "**Triggered by:** ${{ github.actor }}" >> review-results/summary.md
+          echo "**Run ID:** ${{ github.run_id }}" >> review-results/summary.md
+          echo "" >> review-results/summary.md
+          echo "## Review Configuration" >> review-results/summary.md
+          echo "- Effort Labels: Enabled" >> review-results/summary.md
+          echo "- Security Labels: Enabled" >> review-results/summary.md
+          echo "- Focused Review: Required" >> review-results/summary.md
+          echo "- Score Review: Required" >> review-results/summary.md
+          echo "- Tests Review: Required" >> review-results/summary.md
+          echo "- Security Review: Required" >> review-results/summary.md
+          echo "- Effort Estimation: Required" >> review-results/summary.md
+          echo "- Response Language: Spanish" >> review-results/summary.md
+          echo "" >> review-results/summary.md
+          echo "## Files Included" >> review-results/summary.md
+          echo "- \`summary.md\`: This file with metadata" >> review-results/summary.md
+          echo "- \`pr-details.json\`: PR details, comments, and reviews in JSON format" >> review-results/summary.md
+          echo "- \`pr-comments.md\`: PR comments in markdown format (includes AI review)" >> review-results/summary.md
+          echo "" >> review-results/summary.md
+          echo "## How to View the Review" >> review-results/summary.md
+          echo "1. Check \`pr-comments.md\` for the AI-generated review comments" >> review-results/summary.md
+          echo "2. Or visit the PR directly: https://github.com/${{ github.repository }}/pull/${{ env.PR_NUMBER }}" >> review-results/summary.md
+
+      - name: Upload review results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gemini-code-review-${{ env.PR_NUMBER }}-${{ github.run_number }}.zip
+          path: review-results/
+          retention-days: 30
+          compression-level: 9

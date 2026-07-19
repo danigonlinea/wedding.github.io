@@ -41,20 +41,20 @@ import WeddingGiftIcon from '@/assets/svg/wedding-gift.svg'
 const isFlipped = ref(false)
 
 const flipCard = () => {
-  if (!isFlipped.value) {
-    isFlipped.value = true
+  if (isFlipped.value) return
+  
+  isFlipped.value = true
 
-    if (window.gtag) {
-      window.gtag('event', 'Gift Card', {
-        event_category: 'Gift Card',
-        event_label: 'See info card details',
-      })
-    }
-
-    setTimeout(() => {
-      isFlipped.value = false
-    }, 10000)
+  if (window.gtag) {
+    window.gtag('event', 'Gift Card', {
+      event_category: 'Gift Card',
+      event_label: 'See info card details',
+    })
   }
+
+  setTimeout(() => {
+    isFlipped.value = false
+  }, 10000)
 }
 
 const unflipCard = () => {
