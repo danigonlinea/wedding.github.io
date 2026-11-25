@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   label: { type: String, required: false, default: 'Enviar' },
   fullWidth: { type: Boolean, required: false, default: false },
 })

@@ -3,8 +3,8 @@
     <audio ref="audio" :src="audioSource" preload="metadata"></audio>
     <button
       :class="['float-button', { playing: isPlaying }]"
-      @click="togglePlayPause"
       aria-label="Reproducir música"
+      @click="togglePlayPause"
     >
       <PlayIcon v-if="!isPlaying" class="song-icon" />
       <PauseIcon v-else class="song-icon" />

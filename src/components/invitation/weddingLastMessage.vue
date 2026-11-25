@@ -7,7 +7,9 @@
         <div class="wedding-last-message-text">
           <span v-if="isWeddingPast">{{ weddingPastMessage }}</span>
           <span v-else>¡Te esperamos!</span>
-          <span v-if="isWeddingPast">¡Gracias por haberlo compartido con nosotros!</span>
+          <span v-if="isWeddingPast"
+            >¡Gracias por haberlo compartido con nosotros!</span
+          >
           <span v-else>Quedan {{ daysLeftToWedding }} días</span>
         </div>
       </div>
@@ -35,7 +37,7 @@ const isWeddingPast = computed(() => daysLeftToWedding.value < 0)
 
 const weddingPastMessage = computed(() => {
   const { years, months, days } = getExactTimeSinceWedding(WEDDING_DATE)
-  
+
   const parts = []
   if (years > 0) {
     parts.push(`${years} ${years === 1 ? 'año' : 'años'}`)
@@ -46,29 +48,29 @@ const weddingPastMessage = computed(() => {
   if (days > 0 || parts.length === 0) {
     parts.push(`${days} ${days === 1 ? 'día' : 'días'}`)
   }
-  
+
   return `Hace ${parts.join(', ')}`
 })
 
 function getExactTimeSinceWedding(dateString) {
   const weddingDate = new Date(dateString)
   const today = new Date()
-  
+
   let years = today.getFullYear() - weddingDate.getFullYear()
   let months = today.getMonth() - weddingDate.getMonth()
   let days = today.getDate() - weddingDate.getDate()
-  
+
   if (days < 0) {
     months--
     const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0)
     days += prevMonth.getDate()
   }
-  
+
   if (months < 0) {
     years--
     months += 12
   }
-  
+
   return { years, months, days }
 }
 

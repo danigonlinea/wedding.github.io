@@ -42,7 +42,7 @@ const isFlipped = ref(false)
 
 const flipCard = () => {
   if (isFlipped.value) return
-  
+
   isFlipped.value = true
 
   if (window.gtag) {

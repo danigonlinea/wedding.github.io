@@ -40,11 +40,10 @@
 </template>
 
 <script setup>
-import { useWindowScroll, useWindowSize } from '@vueuse/core'
+import { useWindowScroll } from '@vueuse/core'
 import { ref, watch, onMounted } from 'vue'
 
 const { y: windowScrollY } = useWindowScroll()
-const { width: windowHeight } = useWindowSize()
 
 const timelineHeight = ref(0)
 const scrollContainer = ref(null)
@@ -86,7 +85,7 @@ watch(
 
 watch(
   () => windowScrollY.value,
-  (newValue, oldValue) => {
+  (newValue) => {
     if (
       scrollPixelsStart.value &&
       newValue > scrollPixelsStart.value &&
