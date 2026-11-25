@@ -56,7 +56,7 @@ cp .env.example .env
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 26.13.1+
 - Yarn (recommended) or npm
 
 ### Installation
